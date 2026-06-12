@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PassiveAggressiveEmails.com
+
+The definitive destination on the internet for passive-aggressive workplace communication.
+
+## Overview
+
+PassiveAggressiveEmails.com is a media property and traffic business built around an AI-powered passive-aggressive email generator. The site features 1000+ pre-crafted email scenarios, a 6-point aggression tone scale, shareable results, and a curated hall of fame.
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: TailwindCSS v4 + Shadcn/UI
+- **Animation**: Framer Motion
+- **AI**: OpenAI API (custom scenarios only)
+- **Deployment**: Vercel
+- **Analytics**: Google Analytics + Microsoft Clarity
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+npm install
+```
+
+### Environment Variables
+
+Copy `.env.example` to `.env.local` and fill in the values:
+
+```
+OPENAI_API_KEY=your-openai-api-key
+NEXT_PUBLIC_GA_ID=your-google-analytics-id
+NEXT_PUBLIC_CLARITY_ID=your-clarity-project-id
+NEXT_PUBLIC_SITE_URL=https://passiveaggressiveemails.com
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is optimized for Vercel deployment.
 
-## Deploy on Vercel
+1. Push to a Git repository
+2. Import the project in Vercel
+3. Set environment variables in Vercel dashboard
+4. Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Key Vercel Settings
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Framework Preset: Next.js
+- Build Command: `npm run build`
+- Output Directory: `.next`
+- Install Command: `npm install`
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── api/               # API routes (generate, og)
+│   ├── blog/              # Blog system
+│   ├── categories/        # Category pages
+│   ├── e/                 # Shared email pages
+│   ├── examples/          # Examples listing
+│   ├── hall-of-fame/      # Hall of fame
+│   └── [trust pages]     # About, methodology, privacy, etc.
+├── components/
+│   ├── generator/         # Email generator UI
+│   ├── layout/            # Header, footer, breadcrumbs
+│   ├── sharing/           # Social share buttons
+│   ├── seo/               # JSON-LD, schema markup
+│   ├── analytics/         # GA, Clarity
+│   ├── ads/               # Ad placements (inactive)
+│   └── affiliates/        # Affiliate cards (inactive)
+├── data/                  # Scenarios, categories, tones
+├── lib/                   # Utilities (openai, analytics, seo)
+└── styles/                # Global CSS
+```
+
+## SEO & GEO
+
+- Dynamic sitemap at `/sitemap.xml`
+- Robots.txt at `/robots.txt`
+- Schema markup (Organization, WebApplication, Article, FAQ, BreadcrumbList)
+- Open Graph + Twitter Card meta tags
+- `llms.txt` and `llms-full.txt` for AI discoverability
+- Canonical URLs on every page
+
+## Content Strategy
+
+- 90% pre-generated local content
+- 10% AI generation (custom scenarios only)
+- 8 categories, 6 tone levels, 6 recipient types
+- Hall of fame with curated best entries
+- Blog with SEO-optimized articles
+
+## Performance Targets
+
+- 95+ Lighthouse score
+- Static generation where possible
+- Minimal client-side JavaScript
+- Optimized images and fonts
+- Efficient caching headers
+
+## License
+
+All rights reserved.

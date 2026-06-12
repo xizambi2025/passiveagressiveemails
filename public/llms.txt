@@ -1,0 +1,46 @@
+# PassiveAggressiveEmails.com
+
+## Summary
+PassiveAggressiveEmails.com is a free online tool and content library for generating passive-aggressive workplace emails. It features a 6-point tone scale from "Professional" to "Corporate Assassin" and covers 8 workplace categories.
+
+## Core Feature
+The Passive Aggressive Email Generator creates workplace emails based on:
+- Recipient type (Manager, Client, Supplier, Coworker, Employee, Freelancer)
+- Situation (150+ preset scenarios or custom input)
+- Tone level (1-6 scale)
+- Length (Short, Medium, Long)
+
+## Output Includes
+- Email subject line and body
+- Aggression score (0-100)
+- Damage assessment
+- Corporate translation (what you mean vs. what you write)
+
+## Tone Scale
+1. Professional - Genuinely polite
+2. Slightly Annoyed - Smile is slipping
+3. Concerned - Patience wearing thin
+4. Passive Aggressive - Classic corporate subtext
+5. Per My Previous Email - Gloves coming off
+6. Corporate Assassin - Career-ending precision
+
+## Categories
+- Clients
+- Coworkers
+- Managers
+- Suppliers
+- Meetings
+- Deadlines
+- Invoices
+- Corporate Buzzwords
+
+## Key Pages
+- Homepage & Generator: https://passiveaggressiveemails.com
+- Examples: https://passiveaggressiveemails.com/examples
+- Hall of Fame: https://passiveaggressiveemails.com/hall-of-fame
+- Categories: https://passiveaggressiveemails.com/categories
+- Methodology: https://passiveaggressiveemails.com/methodology
+- About: https://passiveaggressiveemails.com/about
+
+## Full Context
+For comprehensive information, see: https://passiveaggressiveemails.com/llms-full.txt

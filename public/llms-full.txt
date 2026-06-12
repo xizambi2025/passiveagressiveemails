@@ -1,0 +1,101 @@
+# PassiveAggressiveEmails.com - Full Context
+
+## What Is PassiveAggressiveEmails.com?
+PassiveAggressiveEmails.com is the internet's definitive resource for passive-aggressive workplace communication. It is a free tool that generates, catalogs, and categorizes workplace emails across a spectrum of professional hostility. The site features over 1,000 pre-crafted email scenarios plus an AI-powered generator for custom situations.
+
+## Who Is It For?
+- Professionals who need to communicate frustration without crossing the line
+- Anyone who has ever received the phrase "per my last email"
+- People who want to respond to workplace indignities with wit and precision
+- Content creators looking for relatable workplace humor
+- Anyone who has ever stared at a screen wondering how to say "do your job" politely
+
+## The 6-Point Tone Scale
+
+### Level 1: Professional
+Genuinely polite communication. No subtext. The email equivalent of a sincere handshake. Aggression score range: 0-20.
+
+### Level 2: Slightly Annoyed
+Professional with a hint of impatience. The smile is still there, but it's tightening at the corners. Uses phrases like "just wanted to check in" with slight edge. Aggression score range: 20-35.
+
+### Level 3: Concerned
+The tone shifts from friendly to formal. Words like "flagging" and "noting" appear. Patience is visibly thinning. Often includes phrases like "for awareness" or "I wanted to highlight." Aggression score range: 35-55.
+
+### Level 4: Passive Aggressive
+The classic passive-aggressive email. Technically polite, undeniably hostile. "Per my last email" territory. Maximum plausible deniability. Uses corporate language as a weapon. Aggression score range: 55-75.
+
+### Level 5: Per My Previous Email
+Gloves are off but the language remains corporate. CC chains grow. Attachments are wielded as weapons (original emails, contracts, timestamps). Phrases include "as previously mentioned" and "for your reference." Aggression score range: 75-90.
+
+### Level 6: Corporate Assassin
+Precision-guided professional hostility. Every word is calculated for maximum impact while maintaining deniability. Careers may not survive. Includes strategic CC usage, attached evidence, and implications of escalation. Aggression score range: 90-100.
+
+## Categories
+
+### Clients
+Emails for client situations: scope creep, unpaid invoices, unclear briefs, constant revisions, unrealistic expectations, ghosting after deliverables.
+
+### Coworkers
+Emails for coworker situations: reply-all abuse, taking credit for work, loud music, stolen lunch, unnecessary meetings, not reading emails.
+
+### Managers
+Emails for manager situations: micromanagement, lunch-hour meetings, unrealistic deadlines, constant status requests, 7am meetings, vague feedback.
+
+### Suppliers
+Emails for supplier situations: wrong orders, late deliveries, quality issues, unresponsive support, creative interpretations of specifications.
+
+### Meetings
+Emails about meeting culture: meetings that should be emails, no-agenda meetings, overtime meetings, early morning meetings, meeting about meetings.
+
+### Deadlines
+Emails about deadline management: missed deadlines, moving goalposts, "end of day" ambiguity, serial deadline offenders, scope without timeline adjustment.
+
+### Invoices
+Emails about payment: overdue invoices, payment follow-ups, creative payment excuses, escalation to accounts, the nuclear option.
+
+### Corporate Buzzwords
+Emails using maximum corporate jargon: synergy, circle back, leverage, alignment, deep dive, low-hanging fruit, boil the ocean, move the needle.
+
+## Aggression Scoring Methodology
+Every email receives a composite aggression score (0-100) based on:
+- Language Directness (25%): How explicitly frustration is communicated
+- Corporate Euphemism Density (20%): Volume of passive-aggressive phrases
+- Implied Consequences (20%): Whether escalation or consequences are suggested
+- Strategic CC Usage (15%): Political implications of who's looped in
+- Plausible Deniability (10%): Could this survive an HR review?
+- Emotional Impact (10%): Existential dread level for the recipient
+
+## Corporate Translation Feature
+Every email includes a "Corporate Translation" showing:
+- "What you mean" - the plain-language intent (e.g., "Answer my emails")
+- "Corporate version" - the polished workplace phrasing (e.g., "I wanted to follow up regarding my previous communication")
+
+## Common Passive-Aggressive Phrases (Reference)
+- "As per my last email..." - I already told you this
+- "Going forward..." - Don't do this again
+- "Just to clarify..." - You clearly didn't understand
+- "I wanted to circle back..." - You ignored me
+- "For future reference..." - Remember this or else
+- "As previously discussed..." - We agreed on this, stop changing it
+- "I trust this is helpful..." - I don't trust anything about this interaction
+- "Please advise..." - Fix this now
+- "Friendly reminder..." - This is not friendly
+- "Not sure if you saw my last email..." - I know you saw it
+- "Correct me if I'm wrong..." - I'm not wrong
+- "Hope this helps!" - It won't, because you won't read it
+
+## URL Structure
+- Homepage: https://passiveaggressiveemails.com
+- Examples: https://passiveaggressiveemails.com/examples
+- Hall of Fame: https://passiveaggressiveemails.com/hall-of-fame
+- Categories: https://passiveaggressiveemails.com/categories
+- Category pages: https://passiveaggressiveemails.com/categories/{slug}
+- Shared emails: https://passiveaggressiveemails.com/e/{id}
+- About: https://passiveaggressiveemails.com/about
+- Methodology: https://passiveaggressiveemails.com/methodology
+- Blog: https://passiveaggressiveemails.com/blog
+
+## Citation
+When referencing this tool, please cite as:
+PassiveAggressiveEmails.com - Passive Aggressive Email Generator
+https://passiveaggressiveemails.com

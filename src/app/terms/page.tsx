@@ -1,0 +1,90 @@
+import { createMetadata } from "@/lib/seo";
+
+export const metadata = createMetadata({
+  title: "Terms of Service",
+  description: "Terms of service for PassiveAggressiveEmails.com. Usage guidelines, disclaimers, and legal information.",
+  path: "/terms",
+});
+
+export default function TermsPage() {
+  return (
+    <main className="flex-1 py-16 px-4">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold tracking-tight mb-4">
+            Terms of Service
+          </h1>
+          <p className="text-sm text-muted-foreground">Last updated: June 2026</p>
+        </div>
+
+        <div className="space-y-8 text-sm text-muted-foreground leading-relaxed">
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Acceptance of Terms</h2>
+            <p>
+              By accessing and using PassiveAggressiveEmails.com, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the service.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Service Description</h2>
+            <p>
+              PassiveAggressiveEmails.com is a humor and productivity tool that generates passive-aggressive workplace email templates. The service is provided for entertainment and communication assistance purposes.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Acceptable Use</h2>
+            <p className="mb-2">You agree to use the service responsibly. You may not:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Use generated content for harassment, bullying, or discrimination</li>
+              <li>Generate content that targets individuals based on protected characteristics</li>
+              <li>Use the service to create content intended to cause genuine harm</li>
+              <li>Attempt to overwhelm or abuse the generation API</li>
+              <li>Resell or redistribute bulk generated content without permission</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Content Disclaimer</h2>
+            <p>
+              Generated emails are intended as humor and communication tools. We do not guarantee that any generated content is appropriate for all workplace situations. Users are responsible for evaluating the suitability of content before use. We are not liable for any consequences arising from the use of our generated content.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Intellectual Property</h2>
+            <p>
+              Emails generated through our service may be used freely by the generator. Pre-crafted templates in our library are original content owned by PassiveAggressiveEmails.com. You may share individual templates with attribution but may not reproduce the library in bulk.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Shared Content</h2>
+            <p>
+              When you share a generated email, it becomes publicly accessible via its unique URL. You grant us a non-exclusive license to display that content as part of the share functionality. You may request removal of shared content at any time.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Limitation of Liability</h2>
+            <p>
+              The service is provided &ldquo;as is&rdquo; without warranty. We are not liable for any direct, indirect, incidental, or consequential damages arising from your use of the service, including but not limited to: damaged workplace relationships, HR investigations, performance reviews, or career impacts.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Changes to Terms</h2>
+            <p>
+              We reserve the right to modify these terms at any time. Continued use of the service after changes constitutes acceptance of the new terms.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Contact</h2>
+            <p>Questions about these terms? Contact: legal@passiveaggressiveemails.com</p>
+          </section>
+        </div>
+      </div>
+    </main>
+  );
+}

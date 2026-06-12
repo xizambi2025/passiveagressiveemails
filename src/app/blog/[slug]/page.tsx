@@ -18,7 +18,7 @@ const BLOG_POSTS: Record<string, {
     category: "Workplace Communication",
     date: "2026-06-01",
     readTime: "8 min read",
-    author: "The Editorial Team",
+    author: "The Dept. of Plausible Deniability",
     content: [
       "Passive-aggressive emails are an art form. They require the perfect balance of professionalism and subtext — the ability to communicate displeasure without ever technically being unprofessional. This guide breaks down the key elements of effective passive-aggressive workplace communication.",
       "The foundation of any passive-aggressive email is plausible deniability. If someone were to read your email aloud in a meeting, it should sound perfectly reasonable. The hostility lives between the lines, in the choice of words, the strategic use of timestamps, and the careful selection of who gets CC'd.",
@@ -35,7 +35,7 @@ const BLOG_POSTS: Record<string, {
     category: "Corporate Humor",
     date: "2026-05-28",
     readTime: "6 min read",
-    author: "The Editorial Team",
+    author: "The Dept. of Plausible Deniability",
     content: [
       "'Per my last email.' Four words that can make even the most confident professional break into a cold sweat. But where did this phrase come from, and how did it become the universal signal for 'I am barely containing my frustration'?",
       "The phrase itself is deceptively simple — it's just a reference to a previous communication. But context is everything. When someone writes 'per my last email,' they are simultaneously communicating three things: I already addressed this, you didn't read it, and I am keeping a record.",
@@ -51,7 +51,7 @@ const BLOG_POSTS: Record<string, {
     category: "Corporate Humor",
     date: "2026-05-25",
     readTime: "10 min read",
-    author: "The Editorial Team",
+    author: "The Dept. of Plausible Deniability",
     content: [
       "Corporate language is a dialect designed to say nothing while appearing to say everything. Behind every buzzword is a simpler truth that someone decided was too direct for professional consumption. Here's your field guide to decoding the corporate lexicon.",
       "## The Classics\n\n**Synergy** — We want you to do two people's jobs.\n\n**Circle back** — I'm ending this conversation now, and may or may not revisit it.\n\n**Low-hanging fruit** — The easy stuff we should have done months ago.\n\n**Move the needle** — Actually accomplish something measurable for once.\n\n**Deep dive** — Look at this more carefully because something is clearly wrong.",

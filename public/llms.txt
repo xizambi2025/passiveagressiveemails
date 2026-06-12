@@ -39,6 +39,7 @@ The Passive Aggressive Email Generator creates workplace emails based on:
 - Examples: https://passiveaggressiveemails.com/examples
 - Hall of Fame: https://passiveaggressiveemails.com/hall-of-fame
 - Categories: https://passiveaggressiveemails.com/categories
+- Blog: https://passiveaggressiveemails.com/blog
 - Methodology: https://passiveaggressiveemails.com/methodology
 - About: https://passiveaggressiveemails.com/about
 

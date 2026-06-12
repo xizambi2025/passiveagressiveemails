@@ -2,291 +2,139 @@ import { Scenario } from './types';
 
 export const employeeScenarios: Scenario[] = [
   {
-    id: 'employee-sick-day-monday-friday',
-    recipient: 'employee',
-    situation: 'Employee always calls in sick on Mondays and Fridays',
-    category: 'coworkers',
-    tone: 4,
-    length: 'short',
-    subject: 'Attendance Pattern - An Observation',
-    body: `Hi Justin,
-
-Hope you're feeling better! I noticed you were out sick again this Friday — that makes it 6 Fridays and 4 Mondays in the past quarter. What a peculiar illness that exclusively strikes on days adjacent to weekends!
-
-I'm genuinely concerned. Should I contact our health insurer about this mysterious long-weekend virus? Perhaps they have specialists.
-
-Going forward, I'll need a doctor's note for any Friday/Monday absences. Not because I don't trust you — just because I want to make sure you're getting the medical attention this very specific pattern requires.
-
-Feel better! (Until next Friday, presumably.)
-
-Best`,
-    aggressionScore: 65,
-    damageAssessment: 'Employee knows the pattern has been noticed and documented',
-    corporateTranslation: {
-      whatYouMean: 'I know you\'re not sick. You just want 3-day weekends. Bring a doctor\'s note or show up.',
-      corporateVersion: 'I want to ensure we\'re supporting your health needs while also maintaining team coverage requirements.',
-    },
-    tags: ['attendance', 'sick-days', 'pattern', 'weekend', 'documentation'],
-  },
-  {
-    id: 'employee-bare-minimum',
-    recipient: 'employee',
-    situation: 'Employee does the absolute bare minimum and nothing more',
-    category: 'coworkers',
+    id: "missed-deadline-employee-3",
+    recipient: "employee",
+    situation: "Employee missed a deadline without telling anyone",
+    category: "deadlines",
     tone: 3,
-    length: 'medium',
-    subject: 'Growth Opportunities - Let\'s Chat',
-    body: `Hi Taylor,
-
-I wanted to discuss your career trajectory! Over the past quarter, I've noticed that you consistently deliver exactly what's asked — nothing more, nothing less. Every task completed to the precise letter of the requirement. It's like watching someone fill a glass to exactly the brim without a single extra drop.
-
-While meeting expectations is... fine, I want to make sure you're fulfilled here. Are you bored? Disengaged? Philosophically opposed to going above and beyond? All are valid — I just want to understand.
-
-The reason I ask: there are some exciting stretch opportunities coming up that could lead to promotion. But they require people who occasionally do things they weren't specifically asked to do. Revolutionary concept, I know.
-
-Want to grab coffee and discuss your goals?
-
-Best`,
-    aggressionScore: 45,
-    damageAssessment: 'Employee prompted to reflect on effort level with promotion dangled as carrot',
+    length: "medium",
+    subject: "Checking In - Report Due Yesterday",
+    body: "Hi Marcus,\n\nI hope you're having a good morning! I wanted to check in about the quarterly report that was due yesterday at 5 PM. I noticed it hasn't appeared in my inbox, the shared drive, or indeed anywhere in the known digital universe.\n\nI'm sure there's a good reason, and I'd love to hear it \u2014 ideally along with a realistic revised timeline. What's more concerning than the delay is the silence. A quick 'running behind, will have it by X' is always better than me discovering the absence through the medium of an empty folder.\n\nCould you update me by end of day?\n\nThanks",
+    aggressionScore: 48,
+    damageAssessment: "Firm but fair - they'll know silence isn't acceptable but won't feel attacked",
     corporateTranslation: {
-      whatYouMean: 'You do the absolute minimum. That\'s technically fine but you\'ll never get promoted this way.',
-      corporateVersion: 'I want to explore how we can unlock your potential and align your contributions with growth opportunities.',
+      whatYouMean: "You missed the deadline and didn't even tell me. That's worse than being late.",
+      corporateVersion: "I'd appreciate proactive communication on timeline adjustments going forward."
     },
-    tags: ['bare-minimum', 'engagement', 'motivation', 'growth', 'promotion'],
+    tags: ["missed-deadline", "communication", "silence", "expectations"]
   },
   {
-    id: 'employee-disappearing-act',
-    recipient: 'employee',
-    situation: 'Employee is unreachable during work hours for long stretches',
-    category: 'coworkers',
+    id: "always-late-employee-4",
+    recipient: "employee",
+    situation: "Employee arrives 20-30 minutes late every single day",
+    category: "coworkers",
     tone: 4,
-    length: 'short',
-    subject: 'Availability During Working Hours - A Mystery',
-    body: `Hi Sophie,
-
-I have a question that's been puzzling me: where do you go between 2 PM and 4 PM every day?
-
-During this window, you're not:
-- At your desk
-- Online on Slack (gray dot)
-- Responding to emails
-- In any meeting room
-- In the kitchen (I checked)
-
-You simply... vanish. Like a workplace Bermuda Triangle.
-
-I'm sure there's a reasonable explanation! But given that these are working hours, I'd love to know what it is. Even a vague "I exist somewhere" would be comforting.
-
-Could we chat about this?
-
-Best`,
-    aggressionScore: 55,
-    damageAssessment: 'Employee caught disappearing but given chance to explain',
+    length: "medium",
+    subject: "Start Time Discussion",
+    body: "Hi Jade,\n\nI wanted to have a quick conversation about start times. Our agreed hours are 9:00 AM. Your average arrival time over the past month, based on building access logs (yes, those exist), is 9:27 AM.\n\nI appreciate that everyone has different body clocks, and I'm genuinely open to discussing flexible arrangements if 9 AM doesn't work for you. What I'm less open to is the current arrangement, which appears to be 'arrive whenever, and hope no one notices.'\n\nI've noticed. Can we discuss?\n\nThis isn't a formal conversation \u2014 yet. I'd much prefer we solve it informally with a coffee and an honest chat.\n\nBest",
+    aggressionScore: 58,
+    damageAssessment: "The 'yet' does all the heavy lifting here",
     corporateTranslation: {
-      whatYouMean: 'Where do you go for 2 hours every day? I know you\'re not working.',
-      corporateVersion: 'I want to discuss availability expectations during core hours to ensure team accessibility.',
+      whatYouMean: "You're late every day and I have data to prove it. Fix it before I have to make it official.",
+      corporateVersion: "I'd like to align on scheduling expectations to ensure we're supporting both flexibility and team needs."
     },
-    tags: ['unreachable', 'availability', 'missing', 'accountability'],
+    tags: ["punctuality", "late", "attendance", "flexible-working"]
   },
   {
-    id: 'employee-blaming-others',
-    recipient: 'employee',
-    situation: 'Employee always blames others when things go wrong',
-    category: 'coworkers',
+    id: "bare-minimum-employee-5",
+    recipient: "employee",
+    situation: "Employee does the absolute bare minimum and nothing more",
+    category: "coworkers",
     tone: 5,
-    length: 'medium',
-    subject: 'Re: Bug Report - Accountability Discussion',
-    body: `Hi Marcus,
-
-I received your explanation for the production outage. Let me summarize your position: it was the QA team's fault for not catching it, the DevOps team's fault for deploying it, the PM's fault for prioritizing it, and the designer's fault for requesting it.
-
-Interesting! So everyone is responsible except the person who wrote the code that caused the crash. That's certainly one interpretation of accountability.
-
-Let me offer an alternative narrative: the code that brought down production was committed by your GitHub account, from your machine, during your working hours. The git log is... not ambiguous about this.
-
-Taking ownership of mistakes isn't a punishment — it's a prerequisite for senior-level work. Can we discuss this in our 1:1?
-
-Best`,
-    aggressionScore: 75,
-    damageAssessment: 'Employee directly confronted with evidence. Blame-shifting not accepted.',
+    length: "medium",
+    subject: "Re: Project Contribution Review",
+    body: "Hi Tyler,\n\nPer our quarterly review conversation, I wanted to follow up on something I've observed. When assigned tasks, you complete them precisely as specified \u2014 not one pixel more, not one sentence extra. This is technically not a problem, and yet somehow, it is.\n\nFor example, when I asked you to 'create a summary of the client meeting,' you sent me a single sentence: 'The meeting went well.' While factually accurate, this isn't what anyone means by 'summary.'\n\nI want to be direct: I believe you're capable of much more. The quality of your work when you choose to engage fully is excellent. I'm curious what would help you choose to engage fully more often.\n\nCan we chat this week?\n\nRegards",
+    aggressionScore: 70,
+    damageAssessment: "Direct enough to be unmissable, complimentary enough to not be demoralizing",
     corporateTranslation: {
-      whatYouMean: 'It was your code. Stop blaming everyone else. Own your mistakes.',
-      corporateVersion: 'I want to discuss our incident response culture and individual accountability in the development process.',
+      whatYouMean: "You're phoning it in and we both know you could do better.",
+      corporateVersion: "I'd love to explore how we can unlock your full potential and align on growth-oriented expectations."
     },
-    tags: ['blame', 'accountability', 'ownership', 'production-bug', 'evidence'],
+    tags: ["bare-minimum", "quiet-quitting", "motivation", "performance"]
   },
   {
-    id: 'employee-long-lunches',
-    recipient: 'employee',
-    situation: 'Employee takes 2-hour lunches regularly',
-    category: 'coworkers',
-    tone: 3,
-    length: 'short',
-    subject: 'Lunch Break Duration - Quick Alignment',
-    body: `Hi Alex,
-
-I wanted to check in about lunch timing! Our lunch break is 1 hour, but I've noticed you've been returning closer to the 2-hour mark recently. I mention this not because I'm watching the clock (okay, maybe a little), but because the team had questions about availability during the 1-2 PM window.
-
-If you need flexibility — a longer lunch offset by starting earlier or staying later — I'm open to discussing it! I just need to know the plan so the team can coordinate.
-
-Let me know what works for you and we'll figure out an arrangement.
-
-Best`,
-    aggressionScore: 30,
-    damageAssessment: 'Employee gently corrected with offer of flexibility',
-    corporateTranslation: {
-      whatYouMean: 'Your lunches are twice as long as they should be. Come back on time.',
-      corporateVersion: 'I want to align on schedule expectations to ensure team coverage and communication.',
-    },
-    tags: ['lunch-break', 'time-management', 'schedule', 'flexibility'],
-  },
-  {
-    id: 'employee-excuse-machine',
-    recipient: 'employee',
-    situation: 'Employee has a different excuse every single time a task is late',
-    category: 'deadlines',
+    id: "excessive-breaks-employee-4",
+    recipient: "employee",
+    situation: "Employee takes extremely long and frequent breaks",
+    category: "coworkers",
     tone: 4,
-    length: 'medium',
-    subject: 'Re: Project Update - The Excuse Collection',
-    body: `Hi Ryan,
-
-Thank you for your update! I've noticed that the quarterly report is delayed again, this time due to "internet issues." Allow me to present your excuse hall of fame:
-
-- January: "Computer crashed" 
-- February: "Wasn't clear on requirements" (despite 3 briefing calls)
-- March: "Waiting on input from Tom" (Tom says he wasn't asked)
-- April: "Family emergency" (fair, no judgment there)
-- May: "Internet issues"
-
-I'm genuinely curious what June will bring. I'm running a small pool with the team — current favorites are "alien abduction" and "temporary amnesia."
-
-Joking aside: I need the report by Friday. No extensions, no excuses. If there's a genuine blocker, tell me NOW so we can solve it together. Otherwise, Friday EOD, please.
-
-Thanks`,
-    aggressionScore: 65,
-    damageAssessment: 'Employee confronted with documented pattern of excuses',
+    length: "short",
+    subject: "Break Schedule Discussion",
+    body: "Hi Connor,\n\nI wanted to touch base about break patterns. Company policy allows for a 1-hour lunch and two 15-minute breaks. By my observation, your current schedule is closer to:\n\n- 10:00 AM: Coffee break (35 mins)\n- 11:30 AM: Snack break (20 mins)\n- 12:00 PM: Lunch (1.5 hours)\n- 2:30 PM: Second coffee (30 mins)\n- 4:00 PM: 'Stretching my legs' (25 mins)\n\nThat's roughly 3 hours of breaks in an 8-hour day. I admire your commitment to work-life balance, but some of the 'life' part is meant to happen outside working hours.\n\nLet's chat.\n\nBest",
+    aggressionScore: 63,
+    damageAssessment: "The itemised list is both funny and impossible to deny",
     corporateTranslation: {
-      whatYouMean: 'You always have an excuse and I don\'t believe them anymore. Just do the work.',
-      corporateVersion: 'I want to proactively address any blockers to ensure consistent on-time delivery.',
+      whatYouMean: "You spend half the day not at your desk and I've been tracking it.",
+      corporateVersion: "I'd like to discuss schedule management to ensure we're meeting output expectations."
     },
-    tags: ['excuses', 'pattern', 'accountability', 'documentation', 'deadlines'],
+    tags: ["breaks", "time-management", "attendance", "productivity"]
   },
   {
-    id: 'employee-over-promising',
-    recipient: 'employee',
-    situation: 'Employee promises deliverables they can\'t actually complete',
-    category: 'deadlines',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: "I\'ll Have It By Tomorrow" - A Pattern Discussion',
-    body: `Hi Sarah,
-
-I appreciate your enthusiasm! "I'll have the full migration done by tomorrow" is a bold commitment. Especially given that:
-
-1. The previous "tomorrow" was 3 weeks ago
-2. The migration has 47 remaining tickets
-3. Tomorrow is Saturday
-
-I would genuinely prefer a realistic estimate over an optimistic one. If it's going to take 2 weeks, tell me 2 weeks. I can plan for 2 weeks. I cannot plan for "tomorrow" that turns into "next month."
-
-Under-promise and over-deliver beats over-promise and under-deliver every time. Can we try that approach?
-
-Best`,
-    aggressionScore: 52,
-    damageAssessment: 'Employee coached on realistic estimation without harsh criticism',
-    corporateTranslation: {
-      whatYouMean: 'Stop saying tomorrow when you mean next month. Give me real timelines.',
-      corporateVersion: 'I want to support more accurate estimation to improve our planning reliability.',
-    },
-    tags: ['over-promising', 'estimation', 'reliability', 'timelines'],
-  },
-  {
-    id: 'employee-meeting-multitasker',
-    recipient: 'employee',
-    situation: 'Employee clearly not paying attention in meetings (shopping online, etc.)',
-    category: 'meetings',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Today\'s Sprint Planning - Your Screen Share',
-    body: `Hi Olivia,
-
-Quick note about today's sprint planning: when you accidentally shared your screen for 3 seconds before the presentation, the whole team caught a glimpse of your Amazon cart. The velvet throw pillows look lovely, by the way!
-
-I mention this not to embarrass you (too late?) but because when I asked for your estimate on the authentication feature, you said "add to cart" before correcting yourself.
-
-I totally understand meetings can drag. But perhaps the shopping could happen during the meetings you're NOT speaking in? Just a thought.
-
-The pillow in teal would match your office decor, by the way.
-
-Best`,
-    aggressionScore: 55,
-    damageAssessment: 'Employee mortified but told with humor rather than anger',
-    corporateTranslation: {
-      whatYouMean: 'We all saw you shopping on Amazon during the meeting. Pay attention.',
-      corporateVersion: 'I want to ensure full engagement during our collaborative sessions for optimal outcomes.',
-    },
-    tags: ['distracted', 'multitasking', 'meetings', 'screen-share', 'shopping'],
-  },
-  {
-    id: 'employee-passive-aggressive-to-team',
-    recipient: 'employee',
-    situation: 'Employee is passive-aggressive to other team members',
-    category: 'coworkers',
+    id: "excuse-machine-employee-5",
+    recipient: "employee",
+    situation: "Employee always has elaborate excuses for not delivering",
+    category: "deadlines",
     tone: 5,
-    length: 'medium',
-    subject: 'Communication Style - A Direct Conversation',
-    body: `Hi Hannah,
-
-I want to discuss something that's come up in feedback from three team members this month. It's about communication style — specifically, yours.
-
-Some examples that were flagged:
-- "Oh, you're doing it THAT way? Interesting choice..." (to Jake, re: code architecture)
-- "No worries, I'll just fix it myself. Like always." (in team Slack)
-- "Must be nice to leave at 5!" (to Maria, who works 7-5)
-
-I recognize the irony of having this conversation as someone who manages a passive-aggressive email website. But there's a difference between weaponized politeness in jest and creating a hostile team environment.
-
-Could we discuss constructive alternatives? Direct feedback > coded messages. Always.
-
-Happy to chat in person whenever works.
-
-Best`,
-    aggressionScore: 65,
-    damageAssessment: 'Employee directly addressed with specific examples. Clear expectation set.',
+    length: "long",
+    subject: "Re: Report Delay - Updated Timeline",
+    body: "Hi Ashley,\n\nThank you for your explanation regarding the delayed report. Per your email, the delay was caused by a combination of: your laptop overheating, a power cut, a family emergency, your internet going down, and a Windows update.\n\nAll in one day.\n\nI want to be sympathetic \u2014 life does throw curveballs. However, I also want to share some pattern data:\n\n- January: Report late (laptop stolen)\n- February: Report late (food poisoning)\n- March: Report late (building evacuated)\n- April: Report late (today's email)\n\nYou've had more laptop incidents than anyone in the company's 15-year history. At this point, I'm less concerned about the report and more concerned about what appears to be an elaborate curse.\n\nShall we discuss how I can support you in meeting deadlines consistently? Perhaps a backup laptop. Or an exorcist.\n\nBest",
+    aggressionScore: 74,
+    damageAssessment: "The pattern data is devastating - they can't excuse their way out of this one",
     corporateTranslation: {
-      whatYouMean: 'Your passive-aggressive comments are making people uncomfortable. Stop it.',
-      corporateVersion: 'I want to discuss communication approaches that support a positive team dynamic.',
+      whatYouMean: "Your excuses are getting more creative but I don't believe any of them anymore.",
+      corporateVersion: "I'd like to identify systemic barriers and implement reliability measures together."
     },
-    tags: ['passive-aggressive', 'team-dynamics', 'feedback', 'communication-style'],
+    tags: ["excuses", "reliability", "pattern", "deadlines", "accountability"]
   },
   {
-    id: 'employee-resume-on-printer',
-    recipient: 'employee',
-    situation: 'Employee left their resume on the shared printer',
-    category: 'coworkers',
-    tone: 3,
-    length: 'short',
-    subject: 'Found Something on the Printer',
-    body: `Hi Chris,
-
-I found a document on the shared printer that I believe belongs to you. It's a two-page PDF with your name, work history, and skills section. Looks like it's been recently updated — congratulations on adding "proficient in Tableau" to your skillset!
-
-I've placed it face-down on your desk. No one else saw it. (Probably.)
-
-Two pieces of unsolicited advice:
-1. Use the printer on Floor 3 — less foot traffic
-2. Your "Objective" section could be stronger. Happy to workshop it over coffee if you'd like.
-
-Your secret's safe with me!
-
-Best`,
-    aggressionScore: 40,
-    damageAssessment: 'Employee embarrassed but treated with humor and discretion',
+    id: "passing-buck-employee-4",
+    recipient: "employee",
+    situation: "Employee blames everyone else for their own mistakes",
+    category: "coworkers",
+    tone: 4,
+    length: "medium",
+    subject: "Re: Clarification on the Pricing Error",
+    body: "Hi Olivia,\n\nThank you for your email explaining that the pricing error was caused by 'unclear instructions from marketing,' 'the system being confusing,' and 'Laura not double-checking.'\n\nI've looked into this. Marketing's instructions were a clear email with the correct prices highlighted in yellow. The 'confusing system' has an input field labeled 'Price' where you type the price. And Laura's role doesn't include checking your work \u2014 that's your responsibility.\n\nI mention this not to be difficult, but because mistakes are fine. They happen to everyone. What concerns me is the instinct to identify three other reasons before considering 'I made an error.' That's the part I'd like us to work on.\n\nCan we chat tomorrow?\n\nBest",
+    aggressionScore: 65,
+    damageAssessment: "Methodical dismantling of every excuse - firm but developmental",
     corporateTranslation: {
-      whatYouMean: 'I know you\'re job hunting. Your resume was on the public printer.',
-      corporateVersion: 'I wanted to privately return a document and offer support if there\'s anything about your role we should discuss.',
+      whatYouMean: "Stop blaming everyone else. You made a mistake. Just own it.",
+      corporateVersion: "I'd like to foster a culture of ownership where errors become learning opportunities rather than attribution exercises."
     },
-    tags: ['resume', 'printer', 'job-hunting', 'discretion', 'funny'],
+    tags: ["blame", "accountability", "mistakes", "ownership"]
   },
+  {
+    id: "over-promising-employee-3",
+    recipient: "employee",
+    situation: "Employee promises clients things without checking feasibility",
+    category: "clients",
+    tone: 3,
+    length: "medium",
+    subject: "Re: Client Expectations - Henderson Account",
+    body: "Hi Ryan,\n\nI've just finished a call with Henderson Corp where they excitedly told me about the 'AI-powered dashboard with real-time analytics and predictive forecasting' you promised them by next Friday.\n\nA few observations:\n1. We don't have an AI team\n2. Our dashboard takes 6 weeks minimum\n3. Next Friday is in 5 days\n4. This would cost approximately \u00a380,000 to build properly\n\nI appreciate the enthusiasm for exceeding client expectations. However, there's a meaningful difference between 'exceeding expectations' and 'promising magic.' One delights clients. The other creates very uncomfortable follow-up calls like the one I now need to make.\n\nBefore committing to deliverables, please run them past me or anyone with a calendar and a calculator.\n\nThanks",
+    aggressionScore: 55,
+    damageAssessment: "Clear enough to prevent future incidents without crushing their spirit",
+    corporateTranslation: {
+      whatYouMean: "You promised impossible things and now I have to be the bad guy. Stop doing this.",
+      corporateVersion: "I'd like to establish a pre-commitment review process to ensure we set achievable expectations."
+    },
+    tags: ["over-promising", "client-management", "feasibility", "expectations"]
+  },
+  {
+    id: "ignoring-process-employee-5",
+    recipient: "employee",
+    situation: "Employee ignores established processes because they 'know a better way'",
+    category: "coworkers",
+    tone: 5,
+    length: "medium",
+    subject: "Re: Alternative Approach to Client Onboarding",
+    body: "Hi Zack,\n\nPer your email, you've decided to 'streamline' the client onboarding process by skipping steps 3, 5, 7, and 8 because they're 'redundant.'\n\nI want to share what those steps do:\n- Step 3: Legal compliance check (keeps us out of court)\n- Step 5: Data backup (prevents catastrophic data loss)\n- Step 7: Client verification (ensures we're not onboarding fraudsters)\n- Step 8: Security audit (prevents breaches)\n\nYour streamlined process is faster, I'll give you that. It's also a compliance violation, a data risk, a fraud vulnerability, and a security gap. Other than that, great initiative.\n\nPlease revert to the established process immediately. If you genuinely believe improvements can be made, propose them through the proper channel (which is not 'just stop doing things').\n\nBest regards",
+    aggressionScore: 76,
+    damageAssessment: "The sarcastic 'great initiative' at the end is the cherry on top",
+    corporateTranslation: {
+      whatYouMean: "You broke critical processes because you think you know better. You don't.",
+      corporateVersion: "I'd appreciate adherence to established procedures while proposing enhancements through our formal improvement process."
+    },
+    tags: ["process", "compliance", "cowboy", "procedures", "risk"]
+  }
 ];

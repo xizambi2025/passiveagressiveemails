@@ -28,7 +28,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-heading font-bold text-foreground mb-3">Service Description</h2>
             <p>
-              PassiveAggressiveEmails.com is a humor and productivity tool that generates passive-aggressive workplace email templates. The service is provided for entertainment and communication assistance purposes.
+              PassiveAggressiveEmails.com is a humor and productivity tool that generates passive-aggressive workplace email templates. The service is provided for entertainment and communication assistance purposes. Custom email generation is powered by AI.
             </p>
           </section>
 
@@ -61,7 +61,14 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-heading font-bold text-foreground mb-3">Shared Content</h2>
             <p>
-              When you share a generated email, it becomes publicly accessible via its unique URL. You grant us a non-exclusive license to display that content as part of the share functionality. You may request removal of shared content at any time.
+              When you share a generated email, it becomes publicly accessible via its unique URL. By sharing content, you grant us a perpetual, non-exclusive license to display, distribute, and promote that content as part of the service. Shared content is not associated with any individual user account and cannot be claimed, modified, or removed after sharing.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Advertising and Affiliate Links</h2>
+            <p>
+              This site displays advertisements and contains affiliate links to third-party products and services. These help cover the costs of running the service and keeping it free for all users. Clicking on affiliate links may take you to external websites with their own terms, privacy policies, and cookie practices. We are not responsible for the content or practices of these third-party sites. The presence of ads and affiliate links implies no cost to the user for using PassiveAggressiveEmails.com.
             </p>
           </section>
 
@@ -81,7 +88,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-heading font-bold text-foreground mb-3">Contact</h2>
-            <p>Questions about these terms? Contact: legal@passiveaggressiveemails.com</p>
+            <p>Questions about these terms? Contact: hi@PassiveAggressiveEmails.com</p>
           </section>
         </div>
       </div>

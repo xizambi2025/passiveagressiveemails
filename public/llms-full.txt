@@ -1,7 +1,7 @@
 # PassiveAggressiveEmails.com - Full Context
 
 ## What Is PassiveAggressiveEmails.com?
-PassiveAggressiveEmails.com is the internet's definitive resource for passive-aggressive workplace communication. It is a free tool that generates, catalogs, and categorizes workplace emails across a spectrum of professional hostility. The site features over 1,000 pre-crafted email scenarios plus an AI-powered generator for custom situations.
+PassiveAggressiveEmails.com is the internet's definitive resource for passive-aggressive workplace communication. It is a free tool that generates, catalogs, and categorizes workplace emails across a spectrum of professional hostility. The site features pre-crafted email scenarios across 8 categories plus an AI-powered generator for custom situations.
 
 ## Who Is It For?
 - Professionals who need to communicate frustration without crossing the line
@@ -91,9 +91,10 @@ Every email includes a "Corporate Translation" showing:
 - Categories: https://passiveaggressiveemails.com/categories
 - Category pages: https://passiveaggressiveemails.com/categories/{slug}
 - Shared emails: https://passiveaggressiveemails.com/e/{id}
+- Blog: https://passiveaggressiveemails.com/blog
+- Blog posts: https://passiveaggressiveemails.com/blog/{slug}
 - About: https://passiveaggressiveemails.com/about
 - Methodology: https://passiveaggressiveemails.com/methodology
-- Blog: https://passiveaggressiveemails.com/blog
 
 ## Citation
 When referencing this tool, please cite as:

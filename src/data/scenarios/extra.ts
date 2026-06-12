@@ -2,1233 +2,428 @@ import { Scenario } from './types';
 
 export const extraScenarios: Scenario[] = [
   {
-    id: 'extra-client-moving-target-brand',
-    recipient: 'client',
-    situation: 'Client changes brand direction every review cycle',
-    category: 'clients',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Brand Direction (Version 9)',
-    body: `Hi Sophia,
-
-Exciting! We're going edgy and bold now. For reference, here's our brand journey over 6 weeks:
-
-Week 1: "Clean and corporate"
-Week 2: "Actually, more playful"
-Week 3: "Hmm, back to corporate but with warmth"
-Week 4: "What if we tried luxury?"
-Week 5: "More approachable — think IKEA meets Apple"
-Week 6: "Let's go edgy and bold"
-
-I've now designed for every adjective in the English language. Could we perhaps pick ONE direction and commit? Even just for a week? Baby steps.
-
-Best`,
-    aggressionScore: 58,
-    damageAssessment: 'Client sees pattern of indecision documented clearly',
-    corporateTranslation: {
-      whatYouMean: 'Pick a brand direction and stop changing your mind every 5 days.',
-      corporateVersion: 'I think a locked creative direction would accelerate delivery and improve outcomes.',
-    },
-    tags: ['brand', 'indecision', 'direction', 'changing', 'design'],
-  },
-  {
-    id: 'extra-coworker-stolen-idea',
-    recipient: 'coworker',
-    situation: 'Coworker pitched your idea from last week as their own',
-    category: 'coworkers',
-    tone: 5,
-    length: 'medium',
-    subject: 'Great Idea in Today\'s Meeting!',
-    body: `Hi Kevin,
-
-Loved your idea in today's brainstorm about implementing a customer loyalty points system! It sounded really familiar — almost like something I proposed in last Tuesday's meeting. Word for word. Because it was.
-
-I even have it in my meeting notes from March 3rd (which I shared with the team, including you). Slide 4 of my presentation deck. The one titled "Customer Loyalty Points Proposal" with my name on it.
-
-I appreciate you championing my ideas! But typically when presenting someone else's concept, the convention is to say "building on Sarah's suggestion from last week..." rather than "I had an idea..."
-
-Shall we present it together to the stakeholders? Since we apparently both had the exact same idea at the exact same time? What a coincidence!
-
-Best`,
-    aggressionScore: 78,
-    damageAssessment: 'Coworker caught stealing idea with documented proof',
-    corporateTranslation: {
-      whatYouMean: 'You stole my idea verbatim and presented it as yours. I have proof.',
-      corporateVersion: 'I wanted to clarify attribution on today\'s proposal to ensure collaborative credit is properly assigned.',
-    },
-    tags: ['idea-theft', 'credit', 'brainstorm', 'documentation', 'proof'],
-  },
-  {
-    id: 'extra-manager-contradictory-feedback',
-    recipient: 'manager',
-    situation: 'Manager gives opposite feedback to what the other manager said',
-    category: 'managers',
-    tone: 4,
-    length: 'medium',
-    subject: 'Conflicting Guidance - Need Tiebreaker',
-    body: `Hi David and Sarah,
-
-I'm CCing you both because I've received contradictory guidance and need a tiebreaker before I proceed:
-
-David said: "The report needs to be more detailed. Add data for every sub-category."
-Sarah said: "The report is too long. Cut it by 50% and keep it high-level."
-
-David said: "Include all regional breakdowns."
-Sarah said: "Remove regional data — it's too granular."
-
-I cannot simultaneously add more detail and cut by 50%. This violates both physics and document formatting.
-
-Could you two align on a direction and let me know the result? I'll do whatever the consensus is. I just need there to BE a consensus.
-
-Standing by for the verdict!
-
-Best`,
-    aggressionScore: 52,
-    damageAssessment: 'Both managers forced to confront their contradictory instructions',
-    corporateTranslation: {
-      whatYouMean: 'You two are giving me opposite instructions. Figure it out between yourselves.',
-      corporateVersion: 'I want to align on a unified direction from leadership to ensure the deliverable meets shared expectations.',
-    },
-    tags: ['contradictory', 'managers', 'conflict', 'alignment', 'direction'],
-  },
-  {
-    id: 'extra-supplier-wrong-address-again',
-    recipient: 'supplier',
-    situation: 'Supplier keeps shipping to your old address despite multiple corrections',
-    category: 'suppliers',
-    tone: 4,
-    length: 'short',
-    subject: 'Shipping Address - Attempt #5 to Correct',
-    body: `Hi team,
-
-For the fifth time, our shipping address is:
-
-742 INNOVATION DRIVE, SUITE 400, CHICAGO, IL 60601
-
-It is NOT:
-
-318 Oak Street, Peoria, IL 61602 (our old address from 2021)
-
-We moved. Three years ago. I've updated the address in your system twice, called your team three times, sent four emails, and yet every shipment arrives at an office we no longer occupy.
-
-I'm attaching the new address in 72-point font, bolded, highlighted in yellow, and framed by a border of small arrows pointing at it. Please forward to your shipping department, your warehouse team, your systems administrator, and whoever else needs to know we don't live in Peoria anymore.
-
-Thanks!`,
-    aggressionScore: 55,
-    damageAssessment: 'Supplier embarrassed by repeated failure on basic logistics',
-    corporateTranslation: {
-      whatYouMean: 'Update our address in your system. We moved THREE YEARS AGO.',
-      corporateVersion: 'I need to ensure our current shipping address is properly reflected across all your fulfillment systems.',
-    },
-    tags: ['wrong-address', 'repeated-mistake', 'logistics', 'update'],
-  },
-  {
-    id: 'extra-employee-negative-attitude',
-    recipient: 'employee',
-    situation: 'Employee shoots down every suggestion in meetings with negativity',
-    category: 'meetings',
-    tone: 4,
-    length: 'medium',
-    subject: 'Meeting Contributions - A Constructive Chat',
-    body: `Hi Derek,
-
-I wanted to chat about your contributions in team meetings. I appreciate that you're engaged! However, I've noticed a pattern:
-
-- "We tried that before, it won't work" (said 12 times this quarter)
-- "That's not realistic" (said 8 times)
-- "Good luck with that" (said with accompanying eye roll, 5 times)
-- Alternative suggestions offered: 0
-
-Identifying problems is valuable! But doing ONLY that, without ever proposing solutions, creates an energy in the room that's... let's call it "motivationally challenging."
-
-Going forward, I'd love to implement a simple rule: for every objection raised, include one alternative suggestion. "That won't work because X — but what about Y?" is infinitely more useful than just "that won't work."
-
-Can we try this approach?
-
-Best`,
-    aggressionScore: 55,
-    damageAssessment: 'Employee confronted with specific pattern and given clear alternative behavior',
-    corporateTranslation: {
-      whatYouMean: 'Stop being negative about everything without offering solutions. It kills team morale.',
-      corporateVersion: 'I want to discuss how we can channel your analytical skills into more solution-oriented meeting contributions.',
-    },
-    tags: ['negativity', 'meetings', 'solutions', 'attitude', 'team-morale'],
-  },
-  {
-    id: 'extra-freelancer-double-booked',
-    recipient: 'freelancer',
-    situation: 'Freelancer clearly took on too many projects and your work is suffering',
-    category: 'deadlines',
-    tone: 4,
-    length: 'medium',
-    subject: 'Capacity Discussion - An Honest Check-in',
-    body: `Hi Jamie,
-
-I want to have an honest conversation about capacity. Over the past two weeks:
-- Response time went from 2 hours to 3 days
-- Quality of deliverables dropped noticeably
-- Two deadlines were missed with last-minute excuses
-- Your "unavailable" time blocks tripled on the shared calendar
-
-I also happened to notice (not stalking, just observant) that you've announced three new client projects on LinkedIn in the past month. Congratulations on the business growth!
-
-But I need to ask directly: do you still have capacity for our project? Because if you're overcommitted, I'd rather know now and plan accordingly than watch quality erode week by week.
-
-No judgment — just honesty. What's realistic?
-
-Best`,
-    aggressionScore: 55,
-    damageAssessment: 'Freelancer given graceful exit or opportunity to recommit',
-    corporateTranslation: {
-      whatYouMean: 'You took on too much work and now my project is suffering. Be honest about it.',
-      corporateVersion: 'I want to ensure our project remains a priority and discuss realistic capacity allocation.',
-    },
-    tags: ['overcommitted', 'capacity', 'quality', 'honesty', 'double-booked'],
-  },
-  {
-    id: 'extra-manager-no-raise-record-year',
-    recipient: 'manager',
-    situation: 'Company had record profits but "no budget for raises"',
-    category: 'managers',
-    tone: 5,
-    length: 'medium',
-    subject: 'Re: Compensation Discussion - Some Questions',
-    body: `Hi Michelle,
-
-Thank you for the message that there's "no budget for raises this year." I understand! Times are tough.
-
-A few observations I'm trying to reconcile:
-- Company revenue increased 34% (per last week's all-hands)
-- CEO's compensation package increased by $2.3M (per the annual report)
-- We hired 3 new VPs this quarter (with undoubtedly competitive packages)
-- The office got a $400K renovation (the new lobby is lovely!)
-- My raise: 0%
-
-I'm struggling with the math here. "No budget" seems to mean "no budget for THIS specific purpose" rather than "no budget" in the literal sense.
-
-Could we discuss what specific criteria would unlock a compensation adjustment? I'd like a clear target to aim for that doesn't involve the company's stock price falling.
-
-Appreciate the transparency!`,
-    aggressionScore: 80,
-    damageAssessment: 'Manager confronted with visible corporate hypocrisy. Uncomfortable but important.',
-    corporateTranslation: {
-      whatYouMean: 'The company is printing money and the CEO got millions. Don\'t tell me there\'s no budget for raises.',
-      corporateVersion: 'I want to discuss my compensation trajectory in the context of the company\'s strong financial performance.',
-    },
-    tags: ['raise', 'compensation', 'hypocrisy', 'budget', 'record-profits'],
-  },
-  {
-    id: 'extra-coworker-taking-credit-code',
-    recipient: 'coworker',
-    situation: 'Coworker forked your repo and removed your commits to claim the work',
-    category: 'coworkers',
-    tone: 6,
-    length: 'medium',
-    subject: 'Interesting Git History on the New Repo',
-    body: `Hi Marcus,
-
-I was reviewing the codebase for Project Phoenix and noticed something fascinating about the git history. It appears you created a fresh repo and manually copied all the code from my original repository — but conveniently omitted the commit history that shows I wrote 94% of it.
-
-For anyone following along:
-- Original repo: 847 commits by me over 6 months
-- Your new repo: 1 commit by you titled "Initial commit" dated yesterday
-- Same code. Character for character. Including my comments and even a typo I made in March.
-
-I've saved the original git log, the file comparison showing they're identical, and screenshots of both repos. Not because I'm paranoid, but because apparently I need to be.
-
-I'm going to give you 24 hours to either restore proper attribution or explain this to our engineering director. Your choice.
-
-Regards`,
-    aggressionScore: 95,
-    damageAssessment: 'Nuclear. Coworker caught red-handed in IP theft with irrefutable evidence.',
-    corporateTranslation: {
-      whatYouMean: 'You literally stole my entire codebase and claimed it as yours. I have proof and you have 24 hours.',
-      corporateVersion: 'I\'d like to discuss repository attribution and intellectual property assignment for Project Phoenix.',
-    },
-    tags: ['code-theft', 'git', 'attribution', 'proof', 'nuclear', 'IP'],
-  },
-  {
-    id: 'extra-client-ghosted-approval',
-    recipient: 'client',
-    situation: 'Client approved work verbally but now denies it',
-    category: 'clients',
-    tone: 5,
-    length: 'medium',
-    subject: 'Re: "I Never Approved That" - Meeting Recording Available',
-    body: `Hi Andrew,
-
-You mentioned you "never approved the blue color scheme." I understand the confusion! Memory can be tricky.
-
-Fortunately, I have the following documentation:
-1. Meeting recording from April 3 (timestamp 23:47) where you said "love the blue, let's go with it"
-2. Your Slack message from April 4: "The blue mockups are perfect 👌"
-3. Your email from April 5: "Approved! Proceed with current direction"
-4. The signed approval form dated April 5 (your signature, your initials, your handwriting)
-
-I'm happy to share any or all of these! I keep thorough records specifically for moments like these.
-
-Now, if you've simply changed your mind — that's completely fine! We can revise. But "I never approved that" is factually inaccurate, and I'd prefer we work from shared reality.
-
-Shall I quote for the revision?
-
-Best`,
-    aggressionScore: 80,
-    damageAssessment: 'Client\'s denial demolished with comprehensive proof. Must pay for revision.',
-    corporateTranslation: {
-      whatYouMean: 'You absolutely approved this. I have recordings, messages, and your signed form. Don\'t gaslight me.',
-      corporateVersion: 'I\'d like to review our approval documentation to resolve this misalignment and discuss next steps.',
-    },
-    tags: ['approval', 'denial', 'documentation', 'receipts', 'gaslighting'],
-  },
-  {
-    id: 'extra-meeting-hijacked-personal',
-    recipient: 'coworker',
-    situation: 'Coworker turns every team meeting into a therapy session',
-    category: 'meetings',
+    id: "wrong-name-email-client-3",
+    recipient: "client",
+    situation: "Client keeps calling you the wrong name in emails",
+    category: "clients",
     tone: 3,
-    length: 'short',
-    subject: 'Meeting Format Suggestion',
-    body: `Hi Greg,
-
-I hope you're doing well — genuinely. I know things have been stressful with the house renovation and your neighbor's barking dog situation (and the ongoing feud with your HOA, and the thing with your brother-in-law).
-
-I wanted to suggest that our sprint planning meetings might not be the ideal venue for processing these life events. I say this with care! There are great resources for that — EAP, friends, therapists who bill by the hour.
-
-Our sprints, however, are billed by the company hour, and we've been averaging about 8 minutes of actual sprint planning in our 30-minute sessions.
-
-Could we keep the work meetings for work, and schedule a coffee chat for the personal stuff? I'm genuinely happy to listen — just maybe not when I also need to estimate 14 tickets.
-
-Best`,
+    length: "short",
+    subject: "Re: Quick Update, Rebecca!",
+    body: "Hi Martin,\n\nThank you for your email! Just a small note: my name is Rachel. Not Rebecca. This is the sixth email in a row, and while Rebecca sounds like a lovely person, she doesn't work here.\n\nI only mention it because we've worked together for eight months and I'd hate for you to call me Rebecca in front of others and have no one know who you're talking to.\n\nAll the best from Rachel (not Rebecca, Ruth, Rosie, or Rihanna),\nRachel",
     aggressionScore: 42,
-    damageAssessment: 'Coworker gently redirected without dismissing their struggles',
+    damageAssessment: "They'll quadruple-check the name in every future email",
     corporateTranslation: {
-      whatYouMean: 'Stop venting about your personal life in work meetings. We have tickets to estimate.',
-      corporateVersion: 'I want to ensure our meetings stay focused while also supporting team wellbeing through appropriate channels.',
+      whatYouMean: "You've called me the wrong name for months and I'm starting to take it personally.",
+      corporateVersion: "I'd like to ensure our records reflect the correct contact name."
     },
-    tags: ['oversharing', 'meetings', 'personal', 'boundaries', 'therapy'],
+    tags: ["wrong-name", "identity", "clients", "correction"]
   },
   {
-    id: 'extra-supplier-bait-switch-quality',
-    recipient: 'supplier',
-    situation: 'Supplier sent high-quality samples then delivered cheap version',
-    category: 'suppliers',
-    tone: 5,
-    length: 'medium',
-    subject: 'Re: Bulk Order vs. Sample Quality - A Discrepancy',
-    body: `Hi Roger,
-
-Interesting situation with today's bulk delivery. The samples you sent in February were beautiful — thick cardstock, vivid colors, crisp print quality. That's what we ordered 5,000 units of.
-
-What arrived today is... different. Same design, sure. But printed on what appears to be tissue paper, with colors that look like they were applied by a dying printer running on fumes.
-
-I've placed the sample and the bulk product side by side and taken comparison photos (attached). They are clearly not the same material, weight, or print quality.
-
-This is textbook bait-and-switch. We approved and paid for the sample quality, not the "budget remix" you've delivered.
-
-Options:
-1. Replace the entire order with sample-quality product
-2. Full refund and we part ways
-3. I share these comparison photos in my review of your company
-
-Which works for you?
-
-Regards`,
-    aggressionScore: 78,
-    damageAssessment: 'Supplier caught in bait-and-switch with photographic evidence',
-    corporateTranslation: {
-      whatYouMean: 'The samples were great and the bulk order is garbage. Replace them or refund me.',
-      corporateVersion: 'I need to flag a significant quality discrepancy between approved samples and the production run.',
-    },
-    tags: ['bait-and-switch', 'quality', 'samples', 'bulk', 'evidence'],
-  },
-  {
-    id: 'extra-manager-impossible-kpi',
-    recipient: 'manager',
-    situation: 'Manager sets KPIs that are mathematically impossible to achieve',
-    category: 'managers',
-    tone: 5,
-    length: 'medium',
-    subject: 'Re: Q4 KPIs - A Mathematical Inquiry',
-    body: `Hi Tom,
-
-I've reviewed the Q4 KPIs and have some questions. Specifically about how to achieve them within the known laws of mathematics:
-
-- "Increase revenue by 200% while cutting ad spend by 50%"
-- "Reduce support response time to 30 seconds" (we currently average 4 minutes with a 2-person team)
-- "Ship 40 features" (we shipped 8 last quarter with the same team)
-- "Achieve 100% customer satisfaction" (literally impossible in any human interaction)
-
-I'm trying to figure out: are these aspirational? Motivational? A typo? Because they're not achievable — and I don't mean "challenging," I mean structurally, mathematically, physically impossible.
-
-I'd love to discuss realistic targets that push us forward without requiring the suspension of reality. Can we chat?
-
-Best`,
-    aggressionScore: 70,
-    damageAssessment: 'Manager forced to confront that impossible targets demoralize rather than motivate',
-    corporateTranslation: {
-      whatYouMean: 'These KPIs are impossible and setting us up to fail. Set real targets.',
-      corporateVersion: 'I want to ensure our KPIs are ambitious yet achievable to maintain team motivation and accountability.',
-    },
-    tags: ['kpis', 'impossible', 'targets', 'unrealistic', 'math'],
-  },
-  {
-    id: 'extra-coworker-takes-long-smoke-breaks',
-    recipient: 'coworker',
-    situation: 'Coworker takes 6 smoke breaks a day but complains when you take a coffee break',
-    category: 'coworkers',
+    id: "meeting-notes-nobody-reads-coworker-4",
+    recipient: "coworker",
+    situation: "You send detailed meeting notes and no one reads them, then asks the same questions",
+    category: "meetings",
     tone: 4,
-    length: 'short',
-    subject: 'Re: "Must Be Nice to Have Time for Coffee"',
-    body: `Hi Brad,
-
-Interesting comment about my 10-minute coffee break! Let me provide some context with rough math:
-
-Your smoke breaks today:
-- 9:15 AM (12 min)
-- 10:30 AM (15 min)
-- 12:00 PM (10 min)
-- 2:00 PM (12 min)
-- 3:30 PM (15 min)
-- 4:45 PM (10 min)
-Total: ~74 minutes away from desk
-
-My coffee break: 10 minutes. Total.
-
-I agree — it IS nice to have time for coffee! Almost as nice as having time for 74 minutes of outdoor recreation distributed throughout the day.
-
-Enjoy your next break!
-
-Best`,
-    aggressionScore: 65,
-    damageAssessment: 'Coworker\'s hypocrisy exposed with documented math',
+    length: "medium",
+    subject: "Re: Quick Question About the Anderson Project",
+    body: "Hi Ben,\n\nYou've asked when the Anderson project is launching. The answer is June 15th. I know this because:\n\n1. I said it in the meeting on Monday\n2. I wrote it in the meeting notes sent at 3:47 PM Monday\n3. You replied to those meeting notes with 'Thanks!'\n4. You are now, on Wednesday, asking the question that was answered in the document you replied 'Thanks!' to\n\nI've highlighted the relevant section and re-attached the notes. May I gently suggest that 'Thanks!' is perhaps replaced with actually reading the document before replying to it?\n\nJune 15th. It's in bold now.\n\nBest",
+    aggressionScore: 64,
+    damageAssessment: "The 'you replied Thanks' evidence is devastating and hilarious",
     corporateTranslation: {
-      whatYouMean: 'You take 74 minutes of smoke breaks and judge my 10-minute coffee? Hypocrite.',
-      corporateVersion: 'I want to ensure equitable break policies are applied consistently across the team.',
+      whatYouMean: "You replied to my notes without reading them and are now asking what they said.",
+      corporateVersion: "The answer is in the meeting notes \u2014 I've highlighted the relevant section for convenience."
     },
-    tags: ['smoke-breaks', 'hypocrisy', 'double-standards', 'coffee', 'math'],
+    tags: ["meeting-notes", "not-reading", "duplicate-questions", "documentation"]
   },
   {
-    id: 'extra-client-referral-as-payment',
-    recipient: 'client',
-    situation: 'Client offers "exposure" or referrals instead of paying',
-    category: 'invoices',
+    id: "vague-requirements-client-5",
+    recipient: "client",
+    situation: "Client's project brief is 'make it modern and fresh, you'll know what I mean'",
+    category: "clients",
     tone: 5,
-    length: 'short',
-    subject: 'Re: Payment in Exposure - A Counter-Offer',
-    body: `Hi Brandon,
-
-Thank you for the offer to pay me in "exposure and referrals" instead of money! Creative thinking.
-
-I ran this by my landlord, who sadly does not accept exposure as rent. I also checked with my electricity provider, my internet company, and the grocery store. None of them have an "exposure" payment option at checkout.
-
-Here's my counter-offer: you pay me the agreed $4,000, and I'll give YOU exposure by telling everyone what a great client you are. That's exposure going BOTH ways. Revolutionary!
-
-Alternatively: payment by Friday, per our contract.
-
-Let me know which approach works!
-
-Warm regards`,
+    length: "medium",
+    subject: "Re: Website Design - Creative Direction",
+    body: "Hi Warren,\n\nPer your brief, you'd like the website to be 'modern, fresh, clean, with a wow factor.' You've added that I'll 'know what you mean' and should 'use my creativity.'\n\nI want to be transparent: I do not know what you mean. 'Modern' in web design could mean 500 different things. 'Fresh' is subjective. 'Clean' ranges from minimalist to completely blank. And 'wow factor' is doing a lot of heavy lifting as a creative direction.\n\nTo help translate your vision into pixels, could you:\n1. Share 3 websites you like (and what you like about them)\n2. Share 3 you hate (equally useful)\n3. Tell me who your audience is\n\nOtherwise, I'll produce something I think is modern and fresh, and you'll tell me it's not what you meant, and we'll be in revision limbo until the sun explodes.\n\nBest regards",
     aggressionScore: 72,
-    damageAssessment: 'Client\'s insulting offer shut down with humor. Payment expected.',
+    damageAssessment: "Forces them to give actual direction or accept responsibility for vagueness",
     corporateTranslation: {
-      whatYouMean: 'I cannot pay my rent with exposure. Pay me real money.',
-      corporateVersion: 'I appreciate the partnership intent! However, I need to maintain our agreed compensation structure.',
+      whatYouMean: "'Make it nice' is not a brief. Tell me what you actually want or accept what I make.",
+      corporateVersion: "I'd love to gather some visual references to ensure our creative direction aligns with your vision."
     },
-    tags: ['exposure', 'free-work', 'payment', 'devaluing', 'referrals'],
+    tags: ["vague-requirements", "brief", "creative-direction", "clarity"]
   },
   {
-    id: 'extra-meeting-screen-share-notifications',
-    recipient: 'coworker',
-    situation: 'Someone screen shared and embarrassing notifications popped up',
-    category: 'meetings',
+    id: "reply-to-wrong-person-coworker-2",
+    recipient: "coworker",
+    situation: "Coworker sent you a message clearly intended for someone else (complaining about you)",
+    category: "coworkers",
     tone: 2,
-    length: 'short',
-    subject: 'Quick Tip: Do Not Disturb While Presenting',
-    body: `Hi Lisa,
-
-Great presentation today! One small tech tip for next time: if you're screen sharing, it might be worth enabling "Do Not Disturb" mode first.
-
-Just in case you weren't aware, the following notifications appeared during your client presentation:
-- A Tinder match notification
-- A text from "Mom" saying "Did you feed the cat???"
-- A Slack DM that said "Is this meeting over yet? I'm dying"
-
-The client was very professional about it! But perhaps next time we can keep the presentation strictly... presentation-focused.
-
-No judgment. Just DND settings. They're in System Preferences.
-
-Best`,
-    aggressionScore: 30,
-    damageAssessment: 'Helpful tip delivered with minimal embarrassment',
+    length: "short",
+    subject: "Re: [Message About Me, Sent to Me]",
+    body: "Hi Katie,\n\nI think you may have sent this to the wrong person. Specifically, you've sent it to me \u2014 the person you're describing as 'so annoying in meetings.'\n\nI wanted to let you know before you realise at 3 AM and have a panic attack. These things happen! Auto-complete is a menace.\n\nI'm happy to pretend this didn't happen if you are. Though if I'm genuinely annoying in meetings, I'm open to feedback through... more intentional channels.\n\nBest (and apparently annoying),\nDaniel",
+    aggressionScore: 36,
+    damageAssessment: "Gracious enough to seem like the bigger person while the sender dies of embarrassment",
     corporateTranslation: {
-      whatYouMean: 'Your embarrassing notifications were visible to the client during your screen share.',
-      corporateVersion: 'Quick reminder about presentation mode best practices for client-facing meetings.',
+      whatYouMean: "You sent me a message complaining about me. Awkward.",
+      corporateVersion: "I believe this message was misdirected and wanted to flag for your awareness."
     },
-    tags: ['screen-share', 'notifications', 'embarrassing', 'presentation', 'DND'],
+    tags: ["wrong-recipient", "embarrassing", "complaint", "mistake"]
   },
   {
-    id: 'extra-manager-delegates-up',
-    recipient: 'manager',
-    situation: 'Manager keeps delegating THEIR responsibilities to you',
-    category: 'managers',
-    tone: 5,
-    length: 'medium',
-    subject: 'Role Clarity Discussion - Quick Question',
-    body: `Hi Karen,
-
-I'd love to discuss something I've noticed about our working dynamic. Over the past month, I've been handling:
-
-- Budget reports (your responsibility per org chart)
-- Team 1:1s (you're their manager, not me)
-- Client escalation calls (your calendar says "Karen")
-- Hiring decisions (I don't have hiring authority)
-- Strategy presentations to the board (definitely a manager thing)
-
-Meanwhile, you've been handling... what, exactly? I ask genuinely — not to be difficult, but because I seem to be doing two jobs while being compensated for one.
-
-If my role is expanding to include your responsibilities, I'd like to discuss:
-1. The title change that reflects this
-2. The compensation that accompanies it
-3. What exactly you'll be doing
-
-Can we chat Thursday?
-
-Best`,
-    aggressionScore: 82,
-    damageAssessment: 'Manager directly confronted about not doing their own job. Uncomfortable.',
-    corporateTranslation: {
-      whatYouMean: 'I\'m doing your job AND mine. Either promote me or start doing your work.',
-      corporateVersion: 'I want to align on role responsibilities and discuss whether my expanding scope warrants a formal role adjustment.',
-    },
-    tags: ['delegation', 'manager-responsibilities', 'role-clarity', 'promotion', 'two-jobs'],
-  },
-  {
-    id: 'extra-supplier-minimum-viable-product',
-    recipient: 'supplier',
-    situation: 'Supplier delivered the absolute bare minimum of what was technically specified',
-    category: 'suppliers',
+    id: "humble-brag-email-coworker-4",
+    recipient: "coworker",
+    situation: "Coworker sends company-wide email humble-bragging about an achievement",
+    category: "coworkers",
     tone: 4,
-    length: 'short',
-    subject: 'Re: Order Delivered - Technically Correct Edition',
-    body: `Hi team,
-
-I ordered "500 red pens with company logo." What I received was technically correct:
-- 500: ✓ (exactly 500, I counted)
-- Red: ✓ (the clip is red, the body is white — creative interpretation)
-- Pens: ✓ (they are pen-shaped)
-- Company logo: ✓ (printed at approximately 2pt font, barely visible without a microscope)
-
-While this delivery meets the letter of the specification, it aggressively violates the spirit. When I said "red pens," I meant pens that are red. When I said "company logo," I meant visibly.
-
-Could we discuss what a reasonable interpretation looks like for the reprint?
-
-Thanks!`,
-    aggressionScore: 50,
-    damageAssessment: 'Supplier caught in malicious compliance. Redo expected.',
+    length: "short",
+    subject: "Re: Sharing a Small Win!",
+    body: "Hi Marcus,\n\nCongratulations on your 'small win' of landing the company's largest ever client, which you've shared with all 200 staff in an email that took 7 paragraphs to be humble about.\n\nI particularly enjoyed the phrase 'I don't usually share things like this but...' followed by sharing it with literally everyone in the company.\n\nGenuinely \u2014 well done. But next time, perhaps let your manager announce it? The false modesty of self-reported humility hitting 200 inboxes is a unique genre.\n\nBest,\n(One of 200 recipients of your small win)",
+    aggressionScore: 63,
+    damageAssessment: "They'll ask their manager to announce the next one instead",
     corporateTranslation: {
-      whatYouMean: 'You delivered the bare minimum technically-correct version and you know it.',
-      corporateVersion: 'I\'d like to discuss quality expectations that align with the intent of our specifications.',
+      whatYouMean: "Your humble brag fooled no one. Well done on the win, but the self-promotion is cringe.",
+      corporateVersion: "Great achievement! Might be nice to have leadership formally recognise this."
     },
-    tags: ['malicious-compliance', 'specifications', 'minimum', 'quality'],
+    tags: ["humble-brag", "self-promotion", "company-wide", "achievement"]
   },
   {
-    id: 'extra-coworker-eavesdropping',
-    recipient: 'coworker',
-    situation: 'Coworker inserts themselves into conversations they weren\'t part of',
-    category: 'coworkers',
-    tone: 3,
-    length: 'short',
-    subject: 'Conversation Boundaries',
-    body: `Hi Derek,
-
-Quick observation: when two people are having a private conversation at their desks, and someone from three cubicles away rolls their chair over to contribute — that's a situation we should perhaps discuss.
-
-You've done this approximately 8 times this week. Once while wearing noise-canceling headphones, which means you were either reading lips or have developed superhuman hearing.
-
-I appreciate your enthusiasm for team discussions! But some conversations are not team discussions. They're two-person conversations that you are not part of. And that's okay! Not every nearby sentence requires your input.
-
-Hope this makes sense!
-
-Best`,
-    aggressionScore: 48,
-    damageAssessment: 'Coworker gently told their eavesdropping habit is noticeable',
-    corporateTranslation: {
-      whatYouMean: 'Stop butting into conversations that don\'t involve you.',
-      corporateVersion: 'I want to discuss workspace communication norms around private discussions.',
-    },
-    tags: ['eavesdropping', 'boundaries', 'privacy', 'conversations', 'nosy'],
-  },
-  {
-    id: 'extra-employee-weaponized-incompetence',
-    recipient: 'employee',
-    situation: 'Employee deliberately does tasks badly so they won\'t be asked again',
-    category: 'coworkers',
-    tone: 5,
-    length: 'medium',
-    subject: 'Quality Consistency - An Observation',
-    body: `Hi Tiffany,
-
-I've noticed an interesting pattern. Tasks you enjoy (design work, creative briefs) are executed flawlessly. Tasks you don't enjoy (data entry, meeting notes) arrive with approximately 47 errors per page.
-
-The meeting notes from Tuesday listed attendees as "people," action items as "stuff to do," and the deadline as "sometime." This is from someone who produces pixel-perfect design documentation with proper citations and version control.
-
-I don't believe you're suddenly incompetent at meeting notes. I believe you're strategically incompetent at meeting notes so you won't be asked to do them again. It's clever! But I see through it.
-
-Going forward, all submissions that don't meet your demonstrated capability level will be returned for revision. Unlimited revisions. Until they match the quality I know you're capable of.
-
-Your move!
-
-Best`,
-    aggressionScore: 72,
-    damageAssessment: 'Employee caught in weaponized incompetence strategy. Game over.',
-    corporateTranslation: {
-      whatYouMean: 'I know you\'re doing bad work on purpose so you won\'t be asked again. It won\'t work.',
-      corporateVersion: 'I want to discuss maintaining consistent quality standards across all task types.',
-    },
-    tags: ['weaponized-incompetence', 'strategic', 'quality', 'accountability'],
-  },
-  {
-    id: 'extra-client-project-hold-indefinite',
-    recipient: 'client',
-    situation: 'Client put project on "brief hold" six months ago and won\'t confirm restart or cancellation',
-    category: 'clients',
+    id: "delegating-up-employee-4",
+    recipient: "employee",
+    situation: "Employee keeps coming to you with problems without trying to solve them first",
+    category: "managers",
     tone: 4,
-    length: 'medium',
-    subject: 'Project Status - 6 Months of "Brief Hold"',
-    body: `Hi Christine,
-
-I'm reaching out about Project Zenith, which you placed on a "brief hold" on January 15th. It is now July 15th. That's the longest "brief" in recorded history — beating even my uncle's wedding toasts.
-
-I'm currently in a state of project limbo:
-- I can't take on new work of similar size (in case you restart)
-- I can't close out the project (no formal cancellation)
-- I can't invoice for the remaining work (half-complete)
-- I can't plan my Q3 (because Q1's project still has a pulse... maybe?)
-
-I need one of three answers:
-1. "We're restarting on [date]" — great!
-2. "We're cancelling" — understood, I'll send a final invoice
-3. "We need another month" — okay, but with a formal restart date
-
-What we can't continue is: indefinite silence. My calendar is not your storage closet.
-
-Looking forward to any answer at all!
-
-Best`,
-    aggressionScore: 60,
-    damageAssessment: 'Client forced to make a decision after extended limbo',
+    length: "medium",
+    subject: "Re: Problem with the Analytics Report",
+    body: "Hi Josh,\n\nThank you for flagging the problem with the analytics report. I notice this is the third time this week you've come to me with a problem framed as a question for me to solve.\n\nI'd like to try something new. Before bringing me the problem, could you bring me:\n1. The problem\n2. Two possible solutions you've considered\n3. Which one you'd recommend\n\nThis isn't because I don't want to help \u2014 it's because you're smarter than you think, and I believe you already know the answer to most of these. You're just outsourcing the decision to me because it feels safer.\n\nWhat would you do if I were on holiday?\n\nBest",
+    aggressionScore: 55,
+    damageAssessment: "Developmental without being cruel - actually helps them grow",
     corporateTranslation: {
-      whatYouMean: 'It\'s been 6 months. Either restart, cancel, or stop wasting my time.',
-      corporateVersion: 'I need to finalize project status for resource planning purposes. Could we align on a path forward?',
+      whatYouMean: "Stop dumping problems on my desk. Try solving them yourself first.",
+      corporateVersion: "I'd love to develop your decision-making confidence through a solutions-first approach."
     },
-    tags: ['hold', 'limbo', 'indefinite', 'decision', 'planning'],
+    tags: ["delegation", "problem-solving", "empowerment", "initiative"]
   },
   {
-    id: 'extra-meeting-walking-in-late-loudly',
-    recipient: 'coworker',
-    situation: 'Coworker walks into meetings late and disrupts everything',
-    category: 'meetings',
+    id: "out-of-office-ignored-coworker-5",
+    recipient: "coworker",
+    situation: "Coworker ignores your out-of-office and keeps emailing urgently",
+    category: "coworkers",
+    tone: 5,
+    length: "medium",
+    subject: "Re: URGENT (You're On Holiday But...)",
+    body: "Hi Priya,\n\nI'm replying from my holiday to acknowledge your 5 emails marked URGENT, sent despite receiving my out-of-office reply. The out-of-office that says: 'I am on annual leave until June 20th. I will not be checking emails. For urgent matters, contact Sarah.'\n\nLet me highlight the key parts:\n- 'Will not be checking' (I lied, clearly, but the intent stands)\n- 'Contact Sarah' (Did you contact Sarah? I suspect not)\n\nPer my out-of-office, which you received and apparently interpreted as a personal challenge, I'm not available. Please contact Sarah. She is available. She is expecting your call. She wonders why you haven't called.\n\nI'm going back to my sunlounger.\n\nBest",
+    aggressionScore: 74,
+    damageAssessment: "They'll actually read and respect out-of-office replies from now on",
+    corporateTranslation: {
+      whatYouMean: "I'm on holiday. My OOO told you who to contact. Why are you emailing me?",
+      corporateVersion: "As noted in my out-of-office, please direct urgent matters to Sarah during my absence."
+    },
+    tags: ["out-of-office", "holiday", "boundaries", "urgent", "respect"]
+  },
+  {
+    id: "last-minute-cancel-client-4",
+    recipient: "client",
+    situation: "Client cancels meeting 5 minutes before after you prepped for hours",
+    category: "clients",
+    tone: 4,
+    length: "short",
+    subject: "Re: Sorry - Need to Reschedule!",
+    body: "Hi Amanda,\n\nNo worries about the reschedule! Things happen.\n\nJust for context, in preparation for our 2 PM meeting (cancelled at 1:55 PM), I:\n- Prepared a 15-page presentation (3 hours)\n- Rearranged two other client calls (1 hour of admin)\n- Skipped lunch (priceless, apparently)\n\nI'm flexible for rescheduling. Could I ask that future cancellations come with more than 5 minutes' notice? Even 5 hours would be transformative. My lunch, my calendar, and my blood sugar would all benefit.\n\nLooking forward to the new time.\n\nBest",
+    aggressionScore: 59,
+    damageAssessment: "They'll feel terrible and never cancel last-minute again",
+    corporateTranslation: {
+      whatYouMean: "You cancelled 5 minutes before. I'd prepped for hours. That's incredibly disrespectful.",
+      corporateVersion: "I'd appreciate earlier notice for reschedules to manage preparation time effectively."
+    },
+    tags: ["cancellation", "last-minute", "preparation", "respect"]
+  },
+  {
+    id: "condescending-explanation-coworker-5",
+    recipient: "coworker",
+    situation: "Coworker explains something to you that you literally invented",
+    category: "coworkers",
+    tone: 5,
+    length: "medium",
+    subject: "Re: Helpful Explanation of the CRM System",
+    body: "Hi Brad,\n\nThank you for your detailed email explaining how the CRM system works. I particularly appreciated the bullet points, the screenshots, and the suggestion to 'ask me if you have questions.'\n\nI want to share a fun fact: I built that system. In 2021. Over 6 months. Every feature you've described was designed, developed, and deployed by me. The documentation you've summarised? I wrote it.\n\nI'm genuinely touched that you thought I needed a tutorial on my own creation. It's like explaining water to a fish, or gravity to Newton, or email to whoever invented email.\n\nBut truly \u2014 thank you for the thought. If you have any questions about the system, you know where I am. Because I made it.\n\nBest regards",
+    aggressionScore: 78,
+    damageAssessment: "They will never explain anything to you again without checking first",
+    corporateTranslation: {
+      whatYouMean: "You just explained my own work to me. The audacity.",
+      corporateVersion: "Thank you for the overview \u2014 happy to share deeper technical context given my involvement in the system's development."
+    },
+    tags: ["mansplaining", "condescending", "expertise", "ownership"]
+  },
+  {
+    id: "scheduling-conflict-coworker-3",
+    recipient: "coworker",
+    situation: "Coworker books meeting at same time as your visible calendar block",
+    category: "meetings",
     tone: 3,
-    length: 'short',
-    subject: 'Late Arrival Protocol',
-    body: `Hi Marcus,
-
-Quick suggestion: when arriving 15 minutes late to a meeting that's already in progress, perhaps we could try:
-- Entering quietly
-- Not announcing "SORRY I'M LATE!" at full volume
-- Not asking "what did I miss?" (interrupting the current speaker)
-- Not spending 5 minutes loudly setting up your laptop
-
-Today's entrance was particularly cinematic — the door slam, the dropped coffee, the "CAN SOMEONE RECAP THE LAST 15 MINUTES?" while I was mid-sentence presenting to a client.
-
-Perhaps a silent wave and a later review of the meeting notes? Just brainstorming alternatives to the current... grand entrance approach.
-
-Cheers!`,
-    aggressionScore: 45,
-    damageAssessment: 'Coworker made aware of disruptive behavior with specific examples',
+    length: "short",
+    subject: "Re: Team Planning - Wednesday 2 PM",
+    body: "Hi Emily,\n\nI'd love to join Wednesday's planning session! Unfortunately, I have a client call at 2 PM, which you may have noticed as the large purple block in my calendar labeled 'CLIENT CALL - DO NOT BOOK OVER.'\n\nCalendar transparency only works if we look at each other's calendars before booking. Mine is colour-coded, up-to-date, and apparently invisible.\n\nCould we try 3:30 PM instead? I'll be free, willing, and not on the phone to someone paying us money.\n\nThanks!",
+    aggressionScore: 49,
+    damageAssessment: "They'll actually check calendars before booking from now on",
     corporateTranslation: {
-      whatYouMean: 'You burst into meetings late, loudly, and disruptively. Please stop.',
-      corporateVersion: 'I have a suggestion about minimizing disruption when joining meetings already in progress.',
+      whatYouMean: "You booked over my calendar block. It was clearly marked. Look before you book.",
+      corporateVersion: "I have a conflict at that time \u2014 happy to suggest alternatives that accommodate existing commitments."
     },
-    tags: ['late', 'disruptive', 'entrance', 'meetings', 'etiquette'],
+    tags: ["calendar-conflict", "scheduling", "visibility", "booking"]
   },
   {
-    id: 'extra-freelancer-github-disappeared',
-    recipient: 'freelancer',
-    situation: 'Freelancer deleted the project repository in a dispute',
-    category: 'deadlines',
+    id: "ghosting-interview-manager-4",
+    recipient: "manager",
+    situation: "Applied for internal promotion with no response for 6 weeks",
+    category: "managers",
+    tone: 4,
+    length: "medium",
+    subject: "Internal Promotion Application - Status Update?",
+    body: "Hi Catherine,\n\nI'm following up on my application for the Senior Developer position, submitted 6 weeks ago. I've heard nothing since, which is either:\n\na) A rejection communicated via the medium of silence\nb) An administrative oversight\nc) A psychological endurance test\n\nI'd appreciate knowing which, as the uncertainty is interfering with my ability to pretend everything is fine in our 1:1s. If it's (a), I'd value feedback. If it's (b), a quick update would be lovely. If it's (c), please let me know how many more weeks of stoic uncertainty are required to pass.\n\nLooking forward to any form of acknowledgment.\n\nBest",
+    aggressionScore: 62,
+    damageAssessment: "They'll reply today with profuse apologies and an update",
+    corporateTranslation: {
+      whatYouMean: "It's been 6 weeks with no response on my promotion application. Am I dead to you?",
+      corporateVersion: "I'd appreciate a status update on my application to support my professional development planning."
+    },
+    tags: ["promotion", "ghosting", "application", "internal", "feedback"]
+  },
+  {
+    id: "passive-noted-coworker-6",
+    recipient: "coworker",
+    situation: "Responding to someone who replied 'Noted.' to your detailed proposal",
+    category: "coworkers",
     tone: 6,
-    length: 'medium',
-    subject: 'Re: Deleted Repository - A Legal Situation',
-    body: `Hi Jason,
-
-I noticed that the project repository — containing 4 months of work that I PAID FOR — has been deleted from GitHub. This appears to have happened approximately 2 hours after our disagreement about the final payment milestone.
-
-Let me be very clear about the situation:
-1. The code was produced under our work-for-hire agreement (Section 1.3: "All work product is owned by Client upon creation")
-2. Deleting client property is destruction of assets
-3. GitHub maintains deletion logs and backups
-4. My attorney has been CC'd on this email
-
-You have until 5 PM tomorrow to restore the repository in full. If you have a dispute about payment, there are legal channels for that. Deleting someone's property is not one of them.
-
-This is not a negotiation. Restore the code.
-
-Regards`,
-    aggressionScore: 95,
-    damageAssessment: 'Maximum escalation. Legal involvement. Career-threatening for freelancer.',
+    length: "short",
+    subject: "Re: Q4 Proposal",
+    body: "Hi Jason,\n\nThank you for your response to my 12-page proposal. 'Noted.' A word that conveys so much while saying so little. The period at the end is particularly powerful \u2014 it creates a finality that Shakespeare himself would envy.\n\nI'm curious: was it noted with approval? Noted with disagreement? Noted with indifference? Noted in the same way one might note a cloud passing overhead \u2014 observed but fundamentally unimportant?\n\nI spent 40 hours on that proposal. 'Noted.' contains 5 letters and a full stop. The asymmetry is breathtaking.\n\nCould you perhaps elaborate? Even one additional word would double your output.\n\nRegards.",
+    aggressionScore: 82,
+    damageAssessment: "They'll never reply 'Noted.' to you again without PTSD flashbacks",
     corporateTranslation: {
-      whatYouMean: 'You deleted my code out of spite. Restore it by tomorrow or face legal action.',
-      corporateVersion: 'I need to address an IP security incident regarding our project repository and invoke our contractual remedies.',
+      whatYouMean: "'Noted' is the most dismissive response possible and you know it.",
+      corporateVersion: "I'd appreciate detailed feedback on the proposal to understand your position and next steps."
     },
-    tags: ['code-deletion', 'legal', 'nuclear', 'IP', 'dispute', 'contract'],
+    tags: ["noted", "dismissive", "effort", "response", "minimal"]
   },
   {
-    id: 'extra-coworker-always-negative',
-    recipient: 'coworker',
-    situation: 'Coworker responds to good news with negative predictions',
-    category: 'coworkers',
-    tone: 3,
-    length: 'short',
-    subject: 'Positivity Experiment - A Proposal',
-    body: `Hi Debbie,
-
-I noticed a fun pattern! Whenever someone shares good news, your response follows a predictable formula:
-
-"We landed a big client!" → "Probably won't last."
-"I got promoted!" → "More work, same stress."
-"We hit our quarterly target!" → "Watch, next quarter will be worse."
-"It's Friday!" → "Monday's coming."
-
-I propose an experiment: for one week, what if we tried neutral-to-positive responses? Not toxic positivity — just... not reflexive doom forecasting?
-
-I've prepared some alternatives:
-- Instead of "it won't last" → "that's great, nice work"
-- Instead of "just wait" → [silence is also an option]
-
-Want to try it? One week. Seven days of not being a harbinger of dread.
-
-Cheerfully,
-Best`,
-    aggressionScore: 50,
-    damageAssessment: 'Coworker confronted with humor — may be self-aware enough to change',
-    corporateTranslation: {
-      whatYouMean: 'You respond to literally every good thing with negativity and it\'s exhausting.',
-      corporateVersion: 'I want to discuss how our team communication patterns affect collective morale.',
-    },
-    tags: ['negativity', 'doom', 'morale', 'good-news', 'responses'],
-  },
-  {
-    id: 'extra-manager-email-novel',
-    recipient: 'manager',
-    situation: 'Manager sends 3000-word emails that could be 2 sentences',
-    category: 'managers',
-    tone: 3,
-    length: 'short',
-    subject: 'Re: Strategic Vision Forward-Looking Alignment (TL;DR Request)',
-    body: `Hi Barbara,
-
-Thank you for your email! I've read it three times and I believe the core message is: "Please submit your Q3 report by Friday."
-
-If I'm wrong, please let me know! But if that IS the summary, could I humbly request that future emails of this nature skip the 3,000-word preamble about organizational alignment, strategic vision, cross-functional synergy, and the metaphor about rowing boats in the same direction?
-
-I love a good metaphor as much as anyone. But when it takes 15 minutes to find the action item buried in paragraph 9, I worry things might get missed.
-
-Brevity is the soul of email! (Shakespeare, loosely paraphrased.)
-
-Best`,
-    aggressionScore: 42,
-    damageAssessment: 'Manager may feel called out but the feedback is constructive',
-    corporateTranslation: {
-      whatYouMean: 'Your emails are way too long. Just tell me what you need in 2 sentences.',
-      corporateVersion: 'I want to suggest a communication format that helps action items stand out for faster execution.',
-    },
-    tags: ['long-emails', 'brevity', 'communication', 'tldr', 'action-items'],
-  },
-  {
-    id: 'extra-client-verbal-agreement-denial',
-    recipient: 'client',
-    situation: 'Client denies verbal agreements and now everything needs to be in writing',
-    category: 'clients',
+    id: "surprise-deadline-coworker-4",
+    recipient: "coworker",
+    situation: "Coworker mentions a deadline in passing that you're supposed to be part of",
+    category: "deadlines",
     tone: 4,
-    length: 'medium',
-    subject: 'New Communication Protocol - Everything in Writing',
-    body: `Hi David,
-
-Following our recent situation where you denied approving the color palette change in our April 12 call (despite both of us being there and me having notes), I'd like to propose a new communication protocol:
-
-Going forward, ALL decisions will be confirmed via email. After every call, I'll send a summary of what was agreed. If I don't hear objections within 24 hours, it's confirmed.
-
-This protects both of us! You from forgetting what you approved, and me from being told "I never said that" about things you definitely said.
-
-I realize this might feel bureaucratic, but given that we've had three instances of "I never agreed to that" in the past month (for things we both know you agreed to), I think a paper trail benefits everyone.
-
-Starting now: can you confirm via email that you approve this approach?
-
-Best`,
-    aggressionScore: 62,
-    damageAssessment: 'Client confronted with pattern and given solution that prevents future disputes',
+    length: "short",
+    subject: "Re: The Friday Submission",
+    body: "Hi Lewis,\n\nIn today's meeting you mentioned 'the submission due Friday' that apparently requires my contribution. I have a few concerns:\n\n1. Today is Wednesday\n2. No one told me about this\n3. 'Your section' implies I have a section\n4. I do not have a section because (see point 2)\n\nI'm delighted to contribute! However, this requires two things: knowing the task exists, and having more than 48 hours to complete it. We've failed on both counts.\n\nPlease send me the brief immediately and a realistic timeline. 'Friday' is not realistic. 'Next Friday' might be.\n\nBest",
+    aggressionScore: 63,
+    damageAssessment: "Impossible to argue with the logic - they clearly failed to communicate",
     corporateTranslation: {
-      whatYouMean: 'You keep denying things you said. From now on, everything is in writing because I don\'t trust your memory.',
-      corporateVersion: 'I want to implement a confirmation workflow to ensure mutual clarity on all project decisions.',
+      whatYouMean: "No one told me about this and now you want it in 2 days? That's insane.",
+      corporateVersion: "I'd appreciate earlier visibility on shared deliverables to ensure quality contributions."
     },
-    tags: ['verbal-agreement', 'denial', 'documentation', 'protocol', 'trust'],
+    tags: ["surprise-deadline", "communication", "notice", "assignment"]
   },
   {
-    id: 'extra-coworker-music-no-headphones',
-    recipient: 'coworker',
-    situation: 'Coworker plays music from their laptop speakers in open office',
-    category: 'coworkers',
+    id: "kitchen-mess-coworker-3",
+    recipient: "coworker",
+    situation: "Someone leaves dirty dishes in the kitchen sink every day",
+    category: "coworkers",
     tone: 3,
-    length: 'short',
-    subject: 'Music Appreciation - A Headphone Suggestion',
-    body: `Hi Sam,
-
-I've learned a lot about your music taste this week! I now know you enjoy lo-fi hip hop beats to relax/study to, early 2000s pop punk, and what I can only describe as "experimental Norwegian jazz."
-
-The variety is impressive! What's less impressive is that all of us within a 30-foot radius are learning this through your laptop speakers rather than headphones.
-
-I have a spare pair of earbuds if you need them — happy to donate to the cause of shared workspace peace. Alternatively, there are excellent options on Amazon ranging from $15 to $300, all of which share one beautiful feature: only YOU can hear them.
-
-Let me know if you need those earbuds!
-
-Harmoniously,
-Best`,
+    length: "short",
+    subject: "Kitchen Sink Archaeology",
+    body: "Hi Team,\n\nThe kitchen sink currently contains 4 mugs, 2 plates, a fork, and what I believe is a bowl from last Wednesday. We have a dishwasher. It is 3 feet from the sink. It is not full. It takes 4 seconds to open and place items inside.\n\nThe sink is not a staging area. It is not a 'I'll deal with it later' zone. It is not a museum of abandoned crockery.\n\nI've started naming the mugs. Brian (the one with coffee residue that's achieved sentience) has been there since Monday. He deserves to go home \u2014 to the dishwasher.\n\nPlease collect your items.\n\nThanks",
+    aggressionScore: 44,
+    damageAssessment: "Brian the mug will haunt the culprit into action",
+    corporateTranslation: {
+      whatYouMean: "Wash your dishes. You're not children. The dishwasher is RIGHT THERE.",
+      corporateVersion: "I'd like to reinforce our shared kitchen protocols for everyone's benefit."
+    },
+    tags: ["kitchen", "dishes", "mess", "shared-space", "etiquette"]
+  },
+  {
+    id: "emotional-labor-coworker-5",
+    recipient: "coworker",
+    situation: "Coworker always dumps emotional problems on you then ignores your work questions",
+    category: "coworkers",
+    tone: 5,
+    length: "medium",
+    subject: "Re: Our Communication Dynamic",
+    body: "Hi Natalie,\n\nI've noticed an interesting pattern in our interactions and wanted to flag it:\n\nWhen you need to vent: 40-minute conversations at my desk about your frustrations\nWhen I need a one-line answer to a work question: 'Sorry, super busy right now!'\n\nYou've spent approximately 6 hours this month telling me about inter-departmental politics. I've spent approximately 3 weeks waiting for you to confirm which template we're using.\n\nI value our friendship! But I'd like the emotional support to be roughly... bilateral? And the work communication to be... existent?\n\nCoffee Thursday? We can discuss this and also, finally, the template question.\n\nBest",
+    aggressionScore: 70,
+    damageAssessment: "Direct enough to shift the dynamic without destroying the friendship",
+    corporateTranslation: {
+      whatYouMean: "You use me as a therapist but can't answer a simple work question. That's not fair.",
+      corporateVersion: "I'd like to ensure our professional communication is as strong as our personal rapport."
+    },
+    tags: ["emotional-labor", "one-sided", "boundaries", "communication"]
+  },
+  {
+    id: "passive-aggressive-thumbs-up-coworker-4",
+    recipient: "coworker",
+    situation: "Coworker responds to your detailed Slack message with just a thumbs up emoji",
+    category: "coworkers",
+    tone: 4,
+    length: "short",
+    subject: "Re: The Thumbs Up",
+    body: "Hi Kate,\n\nI sent you a 4-paragraph Slack message outlining the revised project plan, including timeline changes, budget implications, and three questions requiring your input.\n\nYou responded: \ud83d\udc4d\n\nI need to understand what the thumb approves of. Does it approve the timeline? The budget? The existential questions about our strategic direction? Does the thumb mean 'yes to all,' 'acknowledged,' or 'I'm too busy to engage but didn't want to leave you on read'?\n\nOne thumb cannot carry this much interpretive weight. Could you use words? Even small ones. Even 'yes' would be an upgrade.\n\nBest",
+    aggressionScore: 62,
+    damageAssessment: "They'll write actual responses from now on (or at least use more specific emojis)",
+    corporateTranslation: {
+      whatYouMean: "A thumbs up is not a response to questions that need actual answers.",
+      corporateVersion: "I'd appreciate written confirmation on the specific decision points raised."
+    },
+    tags: ["emoji-response", "minimal-effort", "questions", "engagement"]
+  },
+  {
+    id: "unpaid-trial-shift-freelancer-6",
+    recipient: "freelancer",
+    situation: "Company asks for unpaid 'trial day' of work to 'assess fit'",
+    category: "invoices",
+    tone: 6,
+    length: "medium",
+    subject: "Re: Trial Day Opportunity",
+    body: "Hi Richard,\n\nThank you for inviting me to complete an unpaid trial day. I've reviewed the scope: 8 hours of design work, a presentation to your leadership team, and a completed deliverable you'll keep regardless of outcome.\n\nI have a counter-proposal. How about you complete an unpaid trial day for me? Spend 8 hours demonstrating you're a client worth working for. Present evidence to my leadership team (my cat). Produce a deliverable (payment) that I'll keep regardless.\n\nNo? That feels exploitative? Interesting.\n\nI'm happy to provide portfolio work, references, and a paid 2-hour workshop that gives you a taste of my approach. I'm less happy providing a free working day disguised as an 'opportunity.'\n\nBest regards",
+    aggressionScore: 85,
+    damageAssessment: "The counter-proposal mirror technique is so perfect they'll feel ridiculous",
+    corporateTranslation: {
+      whatYouMean: "Unpaid trial days are exploitation. I don't work for free.",
+      corporateVersion: "I'd suggest a paid discovery session as an alternative assessment approach."
+    },
+    tags: ["unpaid-trial", "exploitation", "free-work", "boundaries", "value"]
+  },
+  {
+    id: "vague-feedback-round-two-client-4",
+    recipient: "client",
+    situation: "Client's only feedback is 'I'll know it when I see it'",
+    category: "clients",
+    tone: 4,
+    length: "short",
+    subject: "Re: Design Direction",
+    body: "Hi Miranda,\n\nPer our call, your creative direction is: 'I'll know it when I see it.'\n\nWhile I appreciate the air of mystery, this approach essentially means I'm playing a guessing game where you hold the answer, I provide unlimited attempts, and each wrong guess costs both of us time and money.\n\nMight I suggest an alternative: you tell me three things you definitely want, three things you definitely don't want, and I'll produce something in that territory? This way, at least 6 variables are locked in and I'm guessing within a finite space rather than the entire universe of possible designs.\n\nBest regards",
+    aggressionScore: 60,
+    damageAssessment: "Forces them to articulate something - anything - concrete",
+    corporateTranslation: {
+      whatYouMean: "'I'll know it when I see it' is not direction. Give me something to work with.",
+      corporateVersion: "I'd love to establish some creative guardrails to ensure our exploration is productive."
+    },
+    tags: ["vague-feedback", "unclear-direction", "creative", "guessing"]
+  },
+  {
+    id: "linkedin-notification-coworker-3",
+    recipient: "coworker",
+    situation: "Coworker who sits next to you sends a LinkedIn connection request",
+    category: "coworkers",
+    tone: 3,
+    length: "short",
+    subject: "Your LinkedIn Request",
+    body: "Hi Steve,\n\nI received your LinkedIn connection request this morning. I accepted, of course \u2014 though I should mention you're currently sitting 4 feet away from me. We spoke 20 minutes ago. About lunch.\n\nI'm curious about the LinkedIn message: 'I'd love to connect and explore potential synergies.' Steve, we share a printer. We've discussed your dog's surgery in detail. Our synergies are well-established.\n\nI look forward to endorsing your skills from my desk, which is, again, 4 feet from yours.\n\nBest,\nYour connection (and neighbour)",
     aggressionScore: 40,
-    damageAssessment: 'Coworker made aware without aggression. Headphone solution offered.',
+    damageAssessment: "So funny they'll share it with the whole office (including you)",
     corporateTranslation: {
-      whatYouMean: 'Nobody wants to hear your music through your laptop speakers. Use headphones.',
-      corporateVersion: 'I have a suggestion about shared workspace audio norms that might improve focus for everyone.',
+      whatYouMean: "We sit next to each other. Why are you sending me LinkedIn requests like we're strangers?",
+      corporateVersion: "Connected! Always happy to strengthen professional networks."
     },
-    tags: ['music', 'noise', 'headphones', 'open-office', 'speakers'],
+    tags: ["linkedin", "social-media", "proximity", "formal", "funny"]
   },
   {
-    id: 'extra-manager-toxic-positivity',
-    recipient: 'manager',
-    situation: 'Manager responds to every serious concern with toxic positivity',
-    category: 'managers',
+    id: "status-update-meeting-coworker-4",
+    recipient: "coworker",
+    situation: "Team lead wants to go around the room for updates when everyone already posted them in Slack",
+    category: "meetings",
     tone: 4,
-    length: 'medium',
-    subject: 'Re: "Everything Happens for a Reason" - A Counterpoint',
-    body: `Hi Lisa,
-
-I appreciate your positive outlook! However, when I flag that we've lost 3 team members this quarter and the remaining team is burning out, "everything happens for a reason" isn't really an actionable response.
-
-A sampling of serious concerns I've raised vs. your responses:
-- "We're understaffed" → "Challenges make us stronger!"
-- "The team is burning out" → "Growth requires discomfort!"
-- "We're going to miss the deadline" → "Positive energy attracts positive outcomes!"
-- "Someone quit" → "Everything happens for a reason!"
-
-I love optimism! But sometimes the reason things happen is "we didn't plan well" or "we overloaded the team." And the solution is "fix it," not "believe harder."
-
-Could we try addressing one problem this week with actions instead of affirmations?
-
-Hopefully (but pragmatically) yours`,
-    aggressionScore: 62,
-    damageAssessment: 'Manager confronted with pattern of deflecting problems with positivity',
+    length: "short",
+    subject: "Re: Daily Standup Format",
+    body: "Hi Mike,\n\nQuick thought on our daily standup: we spend 25 minutes going around the room verbally sharing updates that every single person already posted in the #standup Slack channel at 9 AM.\n\nThe current format is: write update, then read update aloud, to people who've already read the update. It's like a book club where everyone reads the book and then someone reads it to them again, slower.\n\nCould we trial an async standup? Updates in Slack, meeting only if something needs discussion? The revolutionary idea being: if no one has anything to add beyond what they've written, we could all have 25 minutes back.\n\nThoughts?\n\nBest",
+    aggressionScore: 58,
+    damageAssessment: "So logical that they can't argue, so funny that they won't be offended",
     corporateTranslation: {
-      whatYouMean: 'Stop responding to real problems with inspirational quotes and DO SOMETHING.',
-      corporateVersion: 'I need to discuss concrete action plans for the operational challenges our team is facing.',
+      whatYouMean: "Why do we read aloud what we already wrote down? This meeting is redundant.",
+      corporateVersion: "I'd like to propose an async-first standup model to respect everyone's time."
     },
-    tags: ['toxic-positivity', 'deflection', 'burnout', 'staffing', 'action'],
+    tags: ["standup", "async", "redundant", "slack", "productivity"]
   },
   {
-    id: 'extra-invoice-payment-predates-start',
-    recipient: 'freelancer',
-    situation: 'Freelancer invoices for hours on days before the project started',
-    category: 'invoices',
-    tone: 5,
-    length: 'short',
-    subject: 'Re: September Invoice - Timeline Discrepancy',
-    body: `Hi Mark,
-
-I received your invoice and noticed something curious: you've billed 16 hours for September 1-3. Our project kicked off on September 8th. I have the signed contract dated September 7th and our kickoff meeting was recorded on September 8th.
-
-Unless you've developed time travel capabilities (in which case, we should discuss much more profitable applications), I'm having difficulty understanding how work occurred before the project existed.
-
-Could you revise the invoice to reflect dates from September 8th onward? Or, if you DID invent time travel, please bill that under a separate, much more expensive line item.
-
-Thanks`,
-    aggressionScore: 68,
-    damageAssessment: 'Freelancer caught billing for impossible dates',
-    corporateTranslation: {
-      whatYouMean: 'You billed for days before the project started. That\'s either a mistake or fraud.',
-      corporateVersion: 'I need to flag a date discrepancy on the current invoice for correction.',
-    },
-    tags: ['invoice-fraud', 'dates', 'discrepancy', 'time-travel', 'billing'],
-  },
-  {
-    id: 'extra-coworker-always-complaining',
-    recipient: 'coworker',
-    situation: 'Coworker treats every interaction as a complaint session',
-    category: 'coworkers',
+    id: "delivery-tracking-supplier-3",
+    recipient: "supplier",
+    situation: "Tracking shows 'delivered' but nothing arrived",
+    category: "suppliers",
     tone: 3,
-    length: 'short',
-    subject: 'Quick Check-in About Your Week',
-    body: `Hi Monica,
-
-I wanted to ask: are you okay? Genuinely. I ask because in the past 5 days, every interaction we've had has been a complaint:
-
-Monday: The coffee is terrible
-Tuesday: The air conditioning is broken
-Wednesday: People are too loud
-Thursday: The chairs are uncomfortable
-Friday: Everything is the worst
-
-I care about you! But I also need to maintain my own energy levels, and our interactions have become... energetically expensive.
-
-Would you be open to a "one positive for every negative" approach? Or perhaps directing concerns to the people who can fix them (facilities for AC, IT for tech issues)?
-
-I'm here for you — in moderation!
-
-Best`,
-    aggressionScore: 42,
-    damageAssessment: 'Coworker gently informed their negativity is impacting others',
-    corporateTranslation: {
-      whatYouMean: 'Your constant complaining is draining everyone around you.',
-      corporateVersion: 'I want to check in on how you\'re doing and discuss channeling feedback to the right teams.',
-    },
-    tags: ['complaining', 'negativity', 'energy', 'morale', 'boundaries'],
-  },
-  {
-    id: 'extra-client-scope-complete-not-happy',
-    recipient: 'client',
-    situation: 'Client is "not happy" but cannot articulate what they want changed',
-    category: 'clients',
-    tone: 4,
-    length: 'medium',
-    subject: 'Re: "Something\'s Off" - Investigation in Progress',
-    body: `Hi Jennifer,
-
-I want to help! You mentioned that "something's off" and it "doesn't feel right" but you can't pinpoint what.
-
-I've now asked you 7 specific questions to narrow it down:
-- Colors? "They're fine"
-- Layout? "That's okay"
-- Typography? "Not the issue"
-- Images? "Those are good"
-- Spacing? "That works"
-- Copy? "It's accurate"
-- Responsive? "Looks right"
-
-So everything is fine, okay, not the issue, good, works, accurate, and right — but also "something's off." We've eliminated every tangible element and are left with vibes.
-
-I cannot design to "vibes" without more input. Could you try: showing me an example of something that DOES feel right? Or pointing to a specific section that feels the most "off"? Any concrete direction would help me help you.
-
-Let's crack this case!
-
-Best`,
-    aggressionScore: 52,
-    damageAssessment: 'Client confronted with their own inability to articulate needs',
-    corporateTranslation: {
-      whatYouMean: 'You say everything is wrong but can\'t tell me what. Give me SOMETHING to work with.',
-      corporateVersion: 'I want to understand your feedback more deeply. Could we try a comparative reference exercise?',
-    },
-    tags: ['vague-feedback', 'vibes', 'articulation', 'design', 'direction'],
-  },
-  {
-    id: 'extra-manager-1on1-cancelled-always',
-    recipient: 'manager',
-    situation: 'Manager consistently cancels your 1:1s but never anyone else\'s',
-    category: 'managers',
-    tone: 4,
-    length: 'short',
-    subject: 'Our 1:1 - Cancelled 6 Times Running',
-    body: `Hi James,
-
-I noticed our 1:1 was cancelled again this week. That makes it 6 consecutive weeks without meeting. I'm bringing this up because:
-
-1. I have feedback to share that has a 6-week backlog
-2. I have a decision that needed your input 4 weeks ago
-3. I noticed you haven't cancelled anyone else's 1:1s
-
-I'm not sure if I should interpret this as "you trust me completely" or "you've forgotten I exist." Both are flattering in different ways!
-
-Could we commit to keeping next week's slot? I'll bring snacks as incentive. Or we could do walking 1:1 if the conference room feels too committal.
-
-Let me know!
-
-Best`,
+    length: "medium",
+    subject: "Order #6654 - Tracking Says Delivered, Reality Disagrees",
+    body: "Hi Mark,\n\nI'm writing about Order #6654, which according to your tracking system was 'delivered and signed for' on Tuesday. I have a concern: it wasn't.\n\nI've checked the reception area, the loading bay, the post room, under my desk, and (in a moment of desperation) the car park. Nothing. No package, no attempted delivery card, no evidence that a courier visited our building at all.\n\nYour tracking says it was signed for by 'M. Jones.' We don't have an M. Jones. We've never had an M. Jones. I'm beginning to think M. Jones is either fictional or receiving a lot of packages that aren't theirs.\n\nCould you investigate with your courier? Happy to confirm our delivery address again.\n\nBest regards",
     aggressionScore: 50,
-    damageAssessment: 'Manager made aware of pattern without accusation',
+    damageAssessment: "Evidence-based and slightly funny - they'll investigate immediately",
     corporateTranslation: {
-      whatYouMean: 'You keep cancelling on me specifically and it\'s starting to feel personal.',
-      corporateVersion: 'I want to ensure regular touchpoints for alignment on my projects and development.',
+      whatYouMean: "Your tracking is wrong. It wasn't delivered. Find my package.",
+      corporateVersion: "I'd appreciate a courier investigation as the delivery confirmation doesn't match our records."
     },
-    tags: ['1on1', 'cancelled', 'pattern', 'neglect', 'feedback'],
+    tags: ["delivery", "tracking", "missing-package", "courier"]
   },
   {
-    id: 'extra-supplier-fake-tracking',
-    recipient: 'supplier',
-    situation: 'Supplier provides tracking number that shows "label created" for weeks',
-    category: 'suppliers',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Tracking Update - "Label Created" for 18 Days',
-    body: `Hi team,
-
-Quick update on the tracking number you provided: it has said "Label Created - Awaiting Carrier Pickup" for 18 consecutive days. Eighteen!
-
-I have two theories:
-1. The carrier has been driving to your warehouse for 18 days (possible if they're walking)
-2. You created a tracking label and never actually shipped anything (concerning)
-
-For context, I can order something from the opposite side of the planet and receive it in 4 days. Your warehouse is 200 miles away.
-
-Could you confirm whether the package has actually, physically, left your building? Not "it's in process" — I mean has a human person placed it in/on a vehicle that moved away from your location?
-
-Tracking link for reference: [link]
-
-Thanks`,
-    aggressionScore: 58,
-    damageAssessment: 'Supplier caught in likely fake tracking. Must provide real shipment or explanation.',
-    corporateTranslation: {
-      whatYouMean: 'This tracking is fake. You haven\'t shipped anything. Where is my order?',
-      corporateVersion: 'I need to verify actual shipment status as tracking hasn\'t updated in 18 days.',
-    },
-    tags: ['tracking', 'fake-shipping', 'label-created', 'delay', 'excuses'],
-  },
-  {
-    id: 'extra-employee-leaving-early',
-    recipient: 'employee',
-    situation: 'Employee leaves 30 minutes early every day thinking no one notices',
-    category: 'coworkers',
-    tone: 3,
-    length: 'short',
-    subject: 'End-of-Day Availability',
-    body: `Hi Rachel,
-
-Quick note about scheduling: I've been trying to catch you for a 4:30 check-in for the past two weeks, but you seem to wrap up around 4:30-ish each day. Our hours run until 5:00.
-
-I'm not clock-watching! But when I consistently can't find you for the last 30 minutes of the day, it impacts coordination — especially with the West Coast team who start pinging at 4.
-
-If you need to shift your hours (8:30-4:30 instead of 9-5), I'm open to discussing that formally. I just need to know what to expect so I can plan accordingly.
-
-Let me know what works!
-
-Best`,
-    aggressionScore: 35,
-    damageAssessment: 'Employee gently corrected with option for schedule adjustment',
-    corporateTranslation: {
-      whatYouMean: 'I notice you leave at 4:30 every day. Either get it approved or stay until 5.',
-      corporateVersion: 'I want to align on your daily schedule to optimize team coordination.',
-    },
-    tags: ['early-departure', 'schedule', 'hours', 'accountability'],
-  },
-  {
-    id: 'extra-manager-last-minute-travel',
-    recipient: 'manager',
-    situation: 'Manager books you on last-minute business travel without asking',
-    category: 'managers',
+    id: "double-booking-coworker-5",
+    recipient: "coworker",
+    situation: "Coworker double-booked a meeting room and insists their meeting is more important",
+    category: "meetings",
     tone: 5,
-    length: 'medium',
-    subject: 'Re: Your Flight to Denver Tomorrow! - Some Concerns',
-    body: `Hi Patricia,
-
-Imagine my surprise when I received a flight confirmation for TOMORROW to Denver! What an adventure.
-
-A few logistics that would have been helpful to sort BEFORE booking:
-1. I have a dentist appointment tomorrow (waited 3 months for this slot)
-2. My child has a school recital tomorrow evening
-3. I don't have a suitcase packed or a dog sitter arranged
-4. I haven't agreed to go
-
-In the future, could we try this sequence: ASK → CONFIRM → BOOK? As opposed to the current process: BOOK → SURPRISE! → DEAL WITH IT.
-
-I can fly Wednesday if the trip is essential. But I need more than 18 hours notice for overnight travel. Is that a reasonable request from someone who has a life outside this building?
-
-Let me know.
-
-Best`,
-    aggressionScore: 72,
-    damageAssessment: 'Manager confronted with lack of consideration. Trip likely rescheduled.',
+    length: "short",
+    subject: "Re: Room 4B - 2 PM Conflict",
+    body: "Hi Oliver,\n\nPer your email stating that your 2 PM meeting in Room 4B is 'more important' than mine and suggesting I 'find another space':\n\nI booked Room 4B two weeks ago. You booked it yesterday. The booking system shows this clearly, with timestamps, because that's how booking systems work. They establish who was first. I was first.\n\n'Importance' is not a valid override for 'I booked it after you.' Otherwise, every meeting would devolve into a philosophical debate about relative significance.\n\nYou're welcome to use the smaller room on Floor 3. It's available, adequate, and doesn't belong to me.\n\nRegards",
+    aggressionScore: 74,
+    damageAssessment: "Undeniable logic backed by system timestamps - they'll back down",
     corporateTranslation: {
-      whatYouMean: 'You booked me on a flight tomorrow without asking. I have a life. Ask first.',
-      corporateVersion: 'I need to discuss travel approval protocols and advance notice requirements.',
+      whatYouMean: "I booked it first. Your meeting isn't more important. Find your own room.",
+      corporateVersion: "I'd suggest checking room availability as my booking predates your request."
     },
-    tags: ['travel', 'last-minute', 'consent', 'work-life-balance', 'boundaries'],
+    tags: ["room-booking", "conflict", "priority", "scheduling"]
   },
   {
-    id: 'extra-client-design-by-committee',
-    recipient: 'client',
-    situation: 'Too many stakeholders giving contradictory feedback',
-    category: 'clients',
+    id: "weekend-slack-coworker-4",
+    recipient: "coworker",
+    situation: "Coworker Slacks you on Saturday morning about non-urgent work",
+    category: "coworkers",
     tone: 4,
-    length: 'medium',
-    subject: 'Re: Feedback from Team (12 Conflicting Opinions)',
-    body: `Hi Andrew,
-
-I've received feedback from 12 stakeholders on the homepage design. Here's a fun summary:
-
-- CEO: "Make the logo bigger"
-- CMO: "Logo should be more subtle"
-- VP Sales: "Need more CTAs"
-- VP Marketing: "Too many CTAs, feels salesy"
-- Designer: "White space is essential"
-- Content lead: "Fill the white space with content"
-- Dev lead: "Simplify it"
-- Product: "Add the feature comparison table"
-
-I now have 12 contradictory directions and no clear decision-maker. This is what we call "design by committee" and it produces websites that look like Frankenstein's monster had a baby with a focus group.
-
-Could you designate ONE person as the final decision-maker? I'll gladly incorporate feedback from anyone, filtered through one voice that has the authority to say "this is final."
-
-Who's the one?
-
-Best`,
+    length: "short",
+    subject: "Re: Saturday Message",
+    body: "Hi Tom,\n\nI received your Slack message at 8:47 AM on Saturday asking about the font size in the Henderson deck.\n\nI want to address two things:\n1. It's 14pt\n2. It's Saturday\n\nOne of these things could have waited until Monday. I'll let you figure out which one. (It's the question about font size. The font doesn't change over the weekend. It'll still be 14pt on Monday. Fonts are patient like that.)\n\nEnjoy the rest of your weekend!\n\nBest",
     aggressionScore: 58,
-    damageAssessment: 'Client educated on why committee design fails. Clear solution proposed.',
+    damageAssessment: "Answers the question while making clear this was not OK timing",
     corporateTranslation: {
-      whatYouMean: '12 people are giving me opposite directions. Pick one person to make decisions.',
-      corporateVersion: 'I want to streamline our feedback process by identifying a single point of approval authority.',
+      whatYouMean: "Don't message me about font sizes on a Saturday morning.",
+      corporateVersion: "I'll address non-urgent queries during business hours to maintain sustainable work practices."
     },
-    tags: ['committee', 'feedback', 'contradictory', 'decision-maker', 'stakeholders'],
+    tags: ["weekend", "boundaries", "non-urgent", "work-life-balance"]
   },
   {
-    id: 'extra-meeting-friday-4pm',
-    recipient: 'manager',
-    situation: 'Manager schedules a non-urgent meeting at 4 PM on Friday',
-    category: 'meetings',
+    id: "feature-request-as-bug-client-5",
+    recipient: "client",
+    situation: "Client reports a 'bug' that is actually a feature they want but never paid for",
+    category: "clients",
+    tone: 5,
+    length: "medium",
+    subject: "Re: BUG - Calendar Feature Not Working",
+    body: "Hi Greg,\n\nPer your bug report: 'The calendar doesn't show events in multiple timezones simultaneously.' I've investigated thoroughly and can confirm \u2014 this is not a bug.\n\nA bug is when something that should work doesn't work. A feature request is when something you'd like to exist doesn't exist yet. These are different things. One I fix for free. The other I build for money.\n\nYour website was scoped as a single-timezone calendar. It performs this function perfectly. Multi-timezone support is a feature we'd be happy to build, for approximately \u00a33,200 and 2 weeks of development.\n\nShall I prepare a formal quote, or shall we close this 'bug'?\n\nBest regards",
+    aggressionScore: 73,
+    damageAssessment: "Clear distinction that prevents this tactic from working again",
+    corporateTranslation: {
+      whatYouMean: "That's not a bug, it's a feature you didn't pay for. Nice try.",
+      corporateVersion: "I've reclassified this from a defect to an enhancement opportunity and can provide a scope estimate."
+    },
+    tags: ["bug-vs-feature", "scope-creep", "definition", "paid-work"]
+  },
+  {
+    id: "expense-policy-manager-3",
+    recipient: "manager",
+    situation: "Manager rejected your reasonable expense claim with no explanation",
+    category: "managers",
     tone: 3,
-    length: 'short',
-    subject: 'Re: Friday 4 PM Meeting - Alternative Proposal',
-    body: `Hi Sarah,
-
-I see the meeting invite for Friday at 4 PM to discuss "2025 planning brainstorm." I appreciate the forward thinking!
-
-A couple of data points:
-- Friday 4 PM has the lowest meeting engagement of any slot in the week (I didn't make this up, Harvard Business Review did)
-- "2025 planning" is not urgently needed in the next 7 working hours
-- The team's collective Friday afternoon brain power is roughly equivalent to a sleepy goldfish
-
-Could we move this to Monday or Tuesday morning when we're caffeinated, engaged, and not mentally already on the weekend?
-
-I promise the quality of brainstorming will increase by approximately 400%.
-
-Thanks!`,
-    aggressionScore: 38,
-    damageAssessment: 'Manager may agree the timing is poor. Meeting likely moves.',
+    length: "short",
+    subject: "Re: Expense Claim #2247 - Rejected",
+    body: "Hi Laura,\n\nI notice my expense claim for \u00a312.50 (client lunch, pre-approved) was rejected. The system just says 'Declined by L. Mitchell' with no further comment.\n\nI'm curious about the reason, as this falls within policy, was pre-approved via email (attached), and is considerably less than the \u00a342 team dinner expense you approved for Kevin last week (visible on the shared expense tracker).\n\nI'm sure there's a rational explanation, and I'd love to hear it before I resubmit.\n\nThanks!",
+    aggressionScore: 50,
+    damageAssessment: "The Kevin comparison makes favouritism impossible to deny",
     corporateTranslation: {
-      whatYouMean: 'Friday at 4 PM is a terrible time for a brainstorm. Move it.',
-      corporateVersion: 'I want to suggest optimal scheduling for this meeting to maximize creative output.',
+      whatYouMean: "You rejected my cheap expense but approved Kevin's expensive one. Explain that.",
+      corporateVersion: "I'd appreciate understanding the rejection criteria to ensure future compliance."
     },
-    tags: ['friday', 'afternoon', 'scheduling', 'engagement', 'timing'],
-  },
-  {
-    id: 'extra-coworker-passive-aggressive-emails',
-    recipient: 'coworker',
-    situation: 'Coworker is passive-aggressive over email but nice in person',
-    category: 'coworkers',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Email Tone Check',
-    body: `Hi Kate,
-
-Interesting contrast! In person yesterday, you said "Great work on the presentation!" with a smile.
-
-Via email this morning, you wrote: "I noticed some inconsistencies in the data that I'm sure you'll want to be aware of going forward, as they reflect on the team's overall attention to detail."
-
-These two communications are about the same presentation. One of them made me feel good. The other one made me want to forward it to an English professor for passive-aggression analysis.
-
-Could we pick a lane? I can handle direct feedback! Just maybe not the kind that requires a decoder ring to interpret.
-
-In person = great. Can we be email-friends too?
-
-Best`,
-    aggressionScore: 52,
-    damageAssessment: 'Coworker confronted with their two-faced communication style',
-    corporateTranslation: {
-      whatYouMean: 'You\'re nice to my face and passive-aggressive in writing. Pick one.',
-      corporateVersion: 'I want to ensure our written communication matches the positive dynamic we have in person.',
-    },
-    tags: ['two-faced', 'email-tone', 'in-person', 'inconsistent', 'communication'],
-  },
-  {
-    id: 'extra-manager-asks-weekend-then-monday',
-    recipient: 'manager',
-    situation: 'Manager assigns Friday work then asks Monday why it\'s not done',
-    category: 'managers',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Where\'s the Report? (The One You Assigned Friday at 5 PM)',
-    body: `Hi Michael,
-
-The report you assigned at 4:58 PM on Friday? It's in progress! I started it this morning at 9 AM — also known as "the first available working hour after you sent it."
-
-For context: you sent it at 4:58 PM Friday. My working day ends at 5:00 PM. That gave me 2 minutes of working time before the weekend.
-
-The weekend is not a working day (a reminder I send approximately monthly). The report will be ready by EOD today, which is one full working day after assignment — a perfectly reasonable turnaround.
-
-If you need Monday deliveries, may I suggest Friday morning assignments? Revolutionary concept: time works forwards!
-
-Best`,
-    aggressionScore: 60,
-    damageAssessment: 'Manager confronted with timeline math. May adjust expectations.',
-    corporateTranslation: {
-      whatYouMean: 'You assigned it Friday at 5 PM. I started it Monday at 9 AM. That\'s how time works.',
-      corporateVersion: 'I want to align on assignment-to-delivery timelines given our operating hours.',
-    },
-    tags: ['friday-assignment', 'monday-deadline', 'weekend', 'time', 'expectations'],
-  },
-  {
-    id: 'extra-supplier-no-invoices-included',
-    recipient: 'supplier',
-    situation: 'Supplier charges but never sends actual invoices or receipts',
-    category: 'invoices',
-    tone: 3,
-    length: 'short',
-    subject: 'Invoice Request - For the 4th Time',
-    body: `Hi Accounting,
-
-I'm writing to request invoices for our last 4 orders. You've been very efficient at charging our credit card! Less efficient at providing the documentation that proves what we were charged for.
-
-My finance team needs actual invoices for:
-- Order #4401 (charged $3,200 on March 1)
-- Order #4456 (charged $2,800 on March 15)
-- Order #4512 (charged $4,100 on April 1)
-- Order #4589 (charged $3,600 on April 15)
-
-I've requested these three previous times. Each time I was told they'd "be sent shortly." It has not been shortly. It has been months.
-
-Could someone please generate and send these invoices today? My accountant is losing patience faster than I am, and I'm running low.
-
-Thanks`,
-    aggressionScore: 45,
-    damageAssessment: 'Supplier aware of administrative failure. Should be simple to resolve.',
-    corporateTranslation: {
-      whatYouMean: 'You charge me but won\'t send invoices. I need documentation. Send it NOW.',
-      corporateVersion: 'I need invoice documentation for recent transactions for our records and compliance.',
-    },
-    tags: ['invoices', 'missing', 'documentation', 'accounting', 'receipts'],
-  },
-  {
-    id: 'extra-coworker-keyboard-warrior',
-    recipient: 'coworker',
-    situation: 'Coworker is aggressive in email but meek in person',
-    category: 'coworkers',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Let\'s Discuss Your Email in Person',
-    body: `Hi Greg,
-
-Your email this morning was... spirited! "Completely unacceptable," "serious concerns about competence," "demands an immediate explanation." Strong words!
-
-I stopped by your desk to discuss and you said "oh no, it's fine, don't worry about it, no big deal!" with a smile.
-
-So which is it? Completely unacceptable or fine? A serious concern or no big deal? Because those are very different situations requiring very different responses.
-
-I'd love to address whichever version is true. But I need you to pick one and commit. The email Greg and the in-person Greg need to sync up.
-
-Available for a chat whenever both versions of you are free!
-
-Best`,
-    aggressionScore: 60,
-    damageAssessment: 'Coworker forced to own either their email tone or their in-person deflection',
-    corporateTranslation: {
-      whatYouMean: 'You\'re a warrior over email and a coward in person. Which one is real?',
-      corporateVersion: 'I want to address your concerns directly. Could we find a communication approach that\'s consistent?',
-    },
-    tags: ['keyboard-warrior', 'inconsistent', 'confrontation', 'email-vs-person'],
-  },
+    tags: ["expenses", "rejection", "inconsistency", "favouritism"]
+  }
 ];

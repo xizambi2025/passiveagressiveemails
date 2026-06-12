@@ -60,10 +60,9 @@ export default function AboutPage() {
                 the situation calls for precision-guided hostility.
               </p>
               <ul className="space-y-2 text-muted-foreground">
-                <li>1,000+ pre-crafted email scenarios</li>
                 <li>8 workplace categories</li>
                 <li>6-point aggression tone scale</li>
-                <li>AI-powered custom generation for unique situations</li>
+                <li>AI-powered custom generation</li>
                 <li>Shareable results with aggression scoring</li>
               </ul>
             </section>

@@ -12,9 +12,9 @@ PassiveAggressiveEmails.com is a media property and traffic business built aroun
 - **Language**: TypeScript
 - **Styling**: TailwindCSS v4 + Shadcn/UI
 - **Animation**: Framer Motion
-- **AI**: OpenAI API (custom scenarios only)
+- **AI**: AI-powered custom generation
 - **Deployment**: Vercel
-- **Analytics**: Google Analytics + Microsoft Clarity
+- **Analytics**: Google Analytics
 
 ## Getting Started
 
@@ -36,7 +36,6 @@ Copy `.env.example` to `.env.local` and fill in the values:
 ```
 OPENAI_API_KEY=your-openai-api-key
 NEXT_PUBLIC_GA_ID=your-google-analytics-id
-NEXT_PUBLIC_CLARITY_ID=your-clarity-project-id
 NEXT_PUBLIC_SITE_URL=https://passiveaggressiveemails.com
 ```
 
@@ -93,7 +92,7 @@ src/
 │   ├── layout/            # Header, footer, breadcrumbs
 │   ├── sharing/           # Social share buttons
 │   ├── seo/               # JSON-LD, schema markup
-│   ├── analytics/         # GA, Clarity
+│   ├── analytics/         # Google Analytics
 │   ├── ads/               # Ad placements (inactive)
 │   └── affiliates/        # Affiliate cards (inactive)
 ├── data/                  # Scenarios, categories, tones

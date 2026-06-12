@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
 import {
@@ -13,6 +14,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
   { href: "/", label: "Generator" },
@@ -33,17 +35,16 @@ export function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Masthead */}
-        <div className="flex flex-col justify-center">
-          <Link
-            href="/"
-            className="font-heading text-lg font-semibold tracking-tight text-foreground sm:text-xl"
-          >
-            PassiveAggressiveEmails
-          </Link>
-          <span className="hidden text-[11px] tracking-wide text-muted-foreground sm:block">
-            The art of professional hostility
-          </span>
-        </div>
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo.png"
+            alt="PassiveAggressiveEmails.com"
+            width={160}
+            height={40}
+            className="h-8 w-auto sm:h-10"
+            priority
+          />
+        </Link>
 
         {/* Desktop navigation */}
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
@@ -56,10 +57,14 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <div className="ml-2">
+            <ThemeToggle />
+          </div>
         </nav>
 
         {/* Mobile menu */}
-        <div className="md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               render={

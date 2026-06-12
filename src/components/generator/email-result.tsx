@@ -183,7 +183,7 @@ export function EmailResult({
           </p>
           <ShareButtons
             url={emailId ? `https://passiveaggressiveemails.com/e/${emailId}` : "https://passiveaggressiveemails.com"}
-            text={`I just generated a ${toneLabel} email. Aggression score: ${aggressionScore}/100.`}
+            text={`💀 "${subject}"\n\nAggression score: ${aggressionScore}/100. Tone: ${toneLabel}.\n\nI found a passive-aggressive email generator and I'm scared at how accurate it is. You NEED to try this.`}
             emailId={emailId || ""}
           />
         </motion.div>

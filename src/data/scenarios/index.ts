@@ -1,48 +1,35 @@
 export type { Scenario } from './types';
 
-import { clientScenarios } from './clients';
 import { coworkerScenarios } from './coworkers';
 import { managerScenarios } from './managers';
+import { clientScenarios } from './clients';
 import { supplierScenarios } from './suppliers';
-import { meetingScenarios } from './meetings';
-import { deadlineScenarios } from './deadlines';
-import { invoiceScenarios } from './invoices';
-import { corporateBuzzwordScenarios } from './corporate-buzzwords';
 import { employeeScenarios } from './employees';
 import { freelancerScenarios } from './freelancers';
+import { deadlineScenarios } from './deadlines';
+import { meetingScenarios } from './meetings';
+import { invoiceScenarios } from './invoices';
+import { corporateBuzzwordScenarios } from './corporate-buzzwords';
 import { miscScenarios } from './misc';
 import { extraScenarios } from './extra';
-import { bonusScenarios } from './bonus';
+import { extra2Scenarios } from './extra2';
+
 import type { Scenario } from './types';
 
 export const scenarios: Scenario[] = [
-  ...clientScenarios,
   ...coworkerScenarios,
   ...managerScenarios,
+  ...clientScenarios,
   ...supplierScenarios,
-  ...meetingScenarios,
-  ...deadlineScenarios,
-  ...invoiceScenarios,
-  ...corporateBuzzwordScenarios,
   ...employeeScenarios,
   ...freelancerScenarios,
+  ...deadlineScenarios,
+  ...meetingScenarios,
+  ...invoiceScenarios,
+  ...corporateBuzzwordScenarios,
   ...miscScenarios,
   ...extraScenarios,
-  ...bonusScenarios,
+  ...extra2Scenarios,
 ];
 
-export {
-  clientScenarios,
-  coworkerScenarios,
-  managerScenarios,
-  supplierScenarios,
-  meetingScenarios,
-  deadlineScenarios,
-  invoiceScenarios,
-  corporateBuzzwordScenarios,
-  employeeScenarios,
-  freelancerScenarios,
-  miscScenarios,
-  extraScenarios,
-  bonusScenarios,
-};
+export default scenarios;

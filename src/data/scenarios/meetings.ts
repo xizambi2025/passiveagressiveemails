@@ -2,276 +2,139 @@ import { Scenario } from './types';
 
 export const meetingScenarios: Scenario[] = [
   {
-    id: 'meeting-could-be-email',
-    recipient: 'manager',
-    situation: 'Invited to a meeting that is clearly just an email',
-    category: 'meetings',
+    id: "meeting-about-meeting-coworker-4",
+    recipient: "coworker",
+    situation: "Someone scheduled a meeting to plan another meeting",
+    category: "meetings",
+    tone: 4,
+    length: "short",
+    subject: "Re: Pre-Meeting Alignment Session",
+    body: "Hi Karen,\n\nI want to make sure I understand: you've scheduled a meeting to plan the meeting that will plan the project. That's a meeting about a meeting about work, which is two layers of abstraction away from actually doing anything.\n\nAt this rate, we'll need a pre-pre-meeting to prepare for the pre-meeting, and a post-meeting to discuss how the pre-meeting went. By my calculations, the actual work will begin sometime in Q7.\n\nCould we perhaps just... start the project? Radical suggestion, I know.\n\nBest",
+    aggressionScore: 66,
+    damageAssessment: "They'll feel the absurdity and hopefully cancel one of the meetings",
+    corporateTranslation: {
+      whatYouMean: "Meetings about meetings are the reason nothing gets done here.",
+      corporateVersion: "I'd like to explore whether we could consolidate preparation and execution into a single session."
+    },
+    tags: ["meta-meeting", "planning", "productivity", "absurdity"]
+  },
+  {
+    id: "recurring-meeting-no-purpose-3",
+    recipient: "manager",
+    situation: "A recurring weekly meeting has had no agenda for months",
+    category: "meetings",
     tone: 3,
-    length: 'short',
-    subject: 'Re: Team Sync Tomorrow - Quick Question',
-    body: `Hi Sarah,
-
-Before I accept the meeting invite, could I ask what we'll be covering that can't be communicated in writing? The agenda reads "Share Q4 update" — which sounds suspiciously like something that could be an email. Or a Slack message. Or a post-it note.
-
-I ask because I have back-to-back meetings all day and would love to protect the one 30-minute slot I was planning to use for actual work.
-
-If it absolutely must be synchronous, I'm there! If not, happy to read a doc at my leisure.
-
-Thanks!`,
-    aggressionScore: 40,
-    damageAssessment: 'Manager might actually cancel the meeting. Win-win.',
+    length: "medium",
+    subject: "Weekly Sync - Purpose Check",
+    body: "Hi Laura,\n\nI've been reflecting on our Wednesday weekly sync. For the past 8 weeks, the meeting has followed a consistent pattern:\n\n1. We all join\n2. Someone asks 'so, anything to discuss?'\n3. Silence\n4. Someone mentions something that could be a Slack message\n5. We agree there's 'nothing major'\n6. We all say 'well, good to check in!'\n7. We leave, having spent 30 minutes achieving the emotional equivalent of a group hug\n\nI value the team connection, but I wonder if we could achieve step 7 without steps 1-6? Perhaps we could make this fortnightly, or on-demand, or replace it with a standing desk and good intentions?\n\nJust a thought.\n\nBest",
+    aggressionScore: 52,
+    damageAssessment: "So relatable that every attendee will secretly forward this to their friends",
     corporateTranslation: {
-      whatYouMean: 'This does not need to be a meeting. Please just send an email.',
-      corporateVersion: 'I want to ensure we\'re using our synchronous time optimally. Is there an async alternative?',
+      whatYouMean: "This meeting has no purpose. It's been pointless for two months. Kill it.",
+      corporateVersion: "I'd love to optimise our meeting cadence to ensure each session drives clear outcomes."
     },
-    tags: ['could-be-email', 'meetings', 'time-management', 'efficiency'],
+    tags: ["recurring-meeting", "pointless", "no-agenda", "productivity"]
   },
   {
-    id: 'meeting-no-agenda',
-    recipient: 'coworker',
-    situation: 'Meeting invite with no agenda or context',
-    category: 'meetings',
+    id: "could-be-slack-meeting-5",
+    recipient: "coworker",
+    situation: "Coworker booked a 30-min meeting for a yes/no question",
+    category: "meetings",
+    tone: 5,
+    length: "short",
+    subject: "Re: Quick Sync - 30 Minutes",
+    body: "Hi Pete,\n\nPer your meeting invite for a '30-minute quick sync,' I called ahead to ask the agenda. Your question is: 'Are we using the blue template or the green template?'\n\nPete. That's a Slack message. That's an email. That's a text message. That's a question you could shout across the office and receive an answer before the echo faded.\n\nThe answer is blue. Meeting cancelled. You're welcome for the 30 minutes I've just given back to your life.\n\nBest regards",
+    aggressionScore: 72,
+    damageAssessment: "Brutal but efficient - they'll message first next time",
+    corporateTranslation: {
+      whatYouMean: "This did not need a meeting. Stop booking meetings for things that need a text message.",
+      corporateVersion: "I've resolved this asynchronously to free up calendar space for items requiring real-time collaboration."
+    },
+    tags: ["unnecessary-meeting", "could-be-email", "time-saving", "efficiency"]
+  },
+  {
+    id: "no-show-meeting-4",
+    recipient: "client",
+    situation: "Client didn't show up to a meeting they arranged",
+    category: "meetings",
+    tone: 4,
+    length: "short",
+    subject: "Missed Our 2 PM Call Today",
+    body: "Hi Victoria,\n\nI joined our 2 PM call today at 1:58 PM (keen, I know) and waited until 2:15 PM in an empty virtual room. It was peaceful but unproductive.\n\nI appreciate things come up! However, as this is the second time, I wanted to mention that a quick 'can't make it' message is always welcome. My time between 2 and 2:15 was spent staring at a 'waiting for host' screen and questioning my existence.\n\nHappy to reschedule. Perhaps we could also set a calendar reminder? I find they help.\n\nBest",
+    aggressionScore: 59,
+    damageAssessment: "The 'questioning my existence' line adds just enough guilt",
+    corporateTranslation: {
+      whatYouMean: "You wasted my time by not showing up and not even telling me.",
+      corporateVersion: "I wanted to check in and find a time that works better for your schedule."
+    },
+    tags: ["no-show", "meeting", "time-wasting", "courtesy"]
+  },
+  {
+    id: "camera-off-meeting-2",
+    recipient: "coworker",
+    situation: "No one turns cameras on in video calls and you're talking to black squares",
+    category: "meetings",
+    tone: 2,
+    length: "short",
+    subject: "Cameras in Meetings?",
+    body: "Hi Team,\n\nI'd like to propose something revolutionary for our video calls: using the video part.\n\nCurrently, I'm delivering presentations to a grid of black rectangles with names on them. I have no idea if anyone is nodding, confused, eating lunch, or has walked away entirely. For all I know, I'm performing a one-man show to an empty theatre.\n\nI appreciate not everyone wants to be on camera every time, but could we aim for cameras on at least during discussions? I promise not to judge your backgrounds or WFH attire.\n\nThanks!",
+    aggressionScore: 30,
+    damageAssessment: "Light and funny enough that people will actually turn cameras on next time",
+    corporateTranslation: {
+      whatYouMean: "I can't tell if anyone is even listening. Turn your cameras on.",
+      corporateVersion: "I'd love to enhance engagement and non-verbal communication in our virtual sessions."
+    },
+    tags: ["camera-off", "video-call", "engagement", "remote-work"]
+  },
+  {
+    id: "overtime-meeting-coworker-4",
+    recipient: "coworker",
+    situation: "Meeting consistently runs 15-20 minutes over the scheduled time",
+    category: "meetings",
+    tone: 4,
+    length: "short",
+    subject: "Re: Team Standup (Running Over)",
+    body: "Hi Jessica,\n\nI wanted to raise a recurring theme: our 15-minute standup has averaged 37 minutes over the past three weeks. This is impressive \u2014 we've achieved a 147% efficiency rate in exceeding our time allocation.\n\nUnfortunately, I have back-to-back meetings, which means every overrun creates a cascade of lateness throughout my day. By 4 PM, I'm joining meetings so late that they're nearly over, which some might call efficient.\n\nCould we implement a hard stop at 15 minutes? Topics that need more time can be taken offline, which is corporate for 'discussed by the people who actually need to discuss them.'\n\nThanks",
+    aggressionScore: 61,
+    damageAssessment: "The 147% efficiency line makes the problem undeniable and funny",
+    corporateTranslation: {
+      whatYouMean: "Your meeting always runs over and it ruins my entire afternoon.",
+      corporateVersion: "I'd suggest implementing time-boxing to respect everyone's calendar commitments."
+    },
+    tags: ["overtime", "running-late", "standup", "time-management"]
+  },
+  {
+    id: "ambush-meeting-manager-5",
+    recipient: "manager",
+    situation: "Manager surprises you with a meeting that turns out to be a performance review",
+    category: "managers",
+    tone: 5,
+    length: "medium",
+    subject: "Re: Today's 'Catch Up'",
+    body: "Hi Martin,\n\nThank you for the 'informal chat' this afternoon. I use quotes because the chat contained a printed performance framework, a scoring rubric, and the phrase 'areas for development,' which is HR for 'criticism.'\n\nPer your invite, this was described as a 'quick catch up.' In my experience, catch-ups involve coffee and pleasant small talk. They do not involve a formal evaluation grid that you'd clearly prepared in advance.\n\nI'm happy to engage in the performance process. I would simply appreciate advance notice next time, so I can prepare rather than being ambushed with a competency matrix while mentally still thinking about lunch.\n\nCould we schedule the formal review for next week with the proper agenda?\n\nBest regards",
+    aggressionScore: 71,
+    damageAssessment: "They'll never ambush-review you again - you've made the boundary clear",
+    corporateTranslation: {
+      whatYouMean: "That wasn't a catch-up, it was a stealth performance review, and that's not okay.",
+      corporateVersion: "I'd appreciate formal notice for evaluation discussions to ensure I can contribute meaningfully."
+    },
+    tags: ["ambush-meeting", "performance-review", "surprises", "trust"]
+  },
+  {
+    id: "monday-morning-brainstorm-coworker-3",
+    recipient: "coworker",
+    situation: "Someone scheduled a creative brainstorm for 8 AM Monday",
+    category: "meetings",
     tone: 3,
-    length: 'short',
-    subject: 'Re: Meeting - What\'s This About?',
-    body: `Hi Chris,
-
-I received your meeting invite titled "Meeting" for Tuesday at 2 PM. The description field is blank, the agenda is absent, and the invite offers no clue whatsoever about the topic.
-
-Am I being fired? Promoted? Invited to a surprise party? The mystery is genuinely stressful.
-
-Could you add a brief agenda so I can prepare appropriately? "Meeting" as a title tells me only that chairs might be involved.
-
-Thanks!`,
-    aggressionScore: 38,
-    damageAssessment: 'Recipient will likely add context without feeling attacked',
+    length: "short",
+    subject: "Re: Monday 8 AM - Creative Brainstorm!",
+    body: "Hi Amy,\n\nI admire your optimism in scheduling a creative brainstorm for 8 AM on a Monday. I want to set expectations: at 8 AM on Monday, my brain is roughly as creative as a brick.\n\nStudies show peak creative thinking happens mid-morning to early afternoon. At 8 AM on Monday, the only thing most people are brainstorming is how to appear awake while sipping coffee and staring into the middle distance.\n\nMight I suggest Tuesday at 10 AM? By then, we'll all have remembered our own names and might even produce ideas worth writing down.\n\nThanks!",
+    aggressionScore: 47,
+    damageAssessment: "Funny enough that they'll laugh and move the meeting",
     corporateTranslation: {
-      whatYouMean: 'What is this meeting about? I cannot prepare for "Meeting."',
-      corporateVersion: 'Could you share a brief agenda so I can come prepared with the right materials?',
+      whatYouMean: "No one is creative at 8 AM Monday. Move this to a time when brains work.",
+      corporateVersion: "I'd love to optimise the session timing for peak cognitive performance."
     },
-    tags: ['no-agenda', 'mystery-meeting', 'preparation', 'context'],
-  },
-  {
-    id: 'meeting-overruns-always',
-    recipient: 'coworker',
-    situation: 'Meeting organizer always runs 15-30 minutes over time',
-    category: 'meetings',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Team Retrospective (Scheduled: 30 min, Actual: 75 min)',
-    body: `Hi Dave,
-
-Thank you for yesterday's "30-minute" retrospective! I have a few observations about time:
-
-- The meeting was scheduled for 30 minutes
-- The meeting ran for 75 minutes
-- That's a 150% overrun
-- My next meeting started 45 minutes ago when you were still talking
-
-This is the fourth consecutive meeting you've run over time. I'm beginning to think your relationship with clocks is purely decorative.
-
-Could we implement a hard stop going forward? I'll volunteer as timekeeper. I have a very loud timer.
-
-Best`,
-    aggressionScore: 60,
-    damageAssessment: 'Meeting organizer confronted with measurable pattern',
-    corporateTranslation: {
-      whatYouMean: 'Your meetings never end on time and it ruins everyone else\'s schedule.',
-      corporateVersion: 'I\'d like to propose stricter time management for our recurring meetings to respect everyone\'s commitments.',
-    },
-    tags: ['overrun', 'time-management', 'meetings', 'schedule-conflict'],
-  },
-  {
-    id: 'meeting-back-to-back-no-breaks',
-    recipient: 'manager',
-    situation: 'Schedule has back-to-back meetings all day with zero breaks',
-    category: 'meetings',
-    tone: 4,
-    length: 'medium',
-    subject: 'Calendar Audit - A Concerning Discovery',
-    body: `Hi Rebecca,
-
-I just reviewed my calendar for next week and made an interesting discovery: I am scheduled in meetings from 8 AM to 6 PM, Monday through Friday, with zero breaks. That's 50 hours of meetings in a 40-hour work week.
-
-Some questions this raises:
-- When am I supposed to do the work we discuss in these meetings?
-- When do biological functions occur? (Eating, hydration, etc.)
-- Is this a scheduling error or an endurance test?
-- Am I being punished for something?
-
-I'd love to implement a "speedy meetings" setting (25/50 min instead of 30/60) and protect at least ONE lunch hour per day. My doctor says I need food at least once daily to remain alive.
-
-Could we review which of these I actually need to attend?
-
-Thank you for your consideration of my continued existence.`,
-    aggressionScore: 58,
-    damageAssessment: 'Manager confronted with unsustainable schedule in humorous way',
-    corporateTranslation: {
-      whatYouMean: 'I have 50 hours of meetings and 0 hours to work. This is insanity.',
-      corporateVersion: 'I\'d like to optimize my calendar allocation to balance collaboration time with execution time.',
-    },
-    tags: ['back-to-back', 'calendar', 'overloaded', 'breaks', 'burnout'],
-  },
-  {
-    id: 'meeting-recurring-pointless',
-    recipient: 'coworker',
-    situation: 'Recurring meeting that no one gets value from but nobody cancels',
-    category: 'meetings',
-    tone: 4,
-    length: 'short',
-    subject: 'Regarding Our Weekly "Status Update" Meeting',
-    body: `Hi team,
-
-I'd like to propose something radical about our Wednesday 10 AM status meeting: what if we stopped having it?
-
-In the last 8 weeks, the meeting has gone like this:
-- Everyone says "nothing new"
-- We sit in silence for 10 seconds
-- Someone says "well, if there's nothing else..."
-- We all leave
-
-That's 30 minutes × 8 people × 8 weeks = 32 hours of collective human life spent confirming that nothing is happening.
-
-I propose a Slack thread instead. If anyone has something to discuss, we meet. If not, we all get 30 minutes of our lives back.
-
-Who's with me?`,
-    aggressionScore: 50,
-    damageAssessment: 'Team likely agrees. Meeting creator might be embarrassed.',
-    corporateTranslation: {
-      whatYouMean: 'This meeting is a waste of everyone\'s time and has been for months.',
-      corporateVersion: 'I\'d like to propose transitioning to an exception-based sync model to maximize our team\'s productive time.',
-    },
-    tags: ['recurring', 'pointless', 'waste-of-time', 'status-update'],
-  },
-  {
-    id: 'meeting-camera-police',
-    recipient: 'manager',
-    situation: 'Manager insists everyone has cameras on for every meeting',
-    category: 'meetings',
-    tone: 3,
-    length: 'short',
-    subject: 'Re: Camera On Policy - A Question',
-    body: `Hi Janet,
-
-Thank you for the new "cameras always on" policy! Quick question: does this apply to the 7:30 AM standup as well? Asking for those of us who look like we've been raised by wolves until at least 9 AM.
-
-I'm curious about the reasoning — is it engagement? Trust? A desire to see my unmade bed in the background? I want to understand the goal so I can achieve it, potentially while looking presentable.
-
-Would a "cameras on for client meetings, optional for internal" compromise work? That way everyone gets visibility when it matters, and I get to attend the early meetings without traumatizing the team.
-
-Open to discussion!
-
-Best`,
-    aggressionScore: 38,
-    damageAssessment: 'Light push-back that may lead to reasonable compromise',
-    corporateTranslation: {
-      whatYouMean: 'Not every meeting needs my face. Some of us have bad lighting and worse hair.',
-      corporateVersion: 'I want to discuss a nuanced camera policy that balances engagement with practicality.',
-    },
-    tags: ['camera-on', 'video-calls', 'wfh', 'appearance', 'policy'],
-  },
-  {
-    id: 'meeting-hijacked-off-topic',
-    recipient: 'coworker',
-    situation: 'Someone always derails meetings with off-topic stories',
-    category: 'meetings',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Sprint Planning Notes (and Your Vacation Photos)',
-    body: `Hi Mark,
-
-Thanks for today's sprint planning session! I especially enjoyed the 20-minute detour about your trip to Portugal. The photos were lovely, truly. But I'm not sure they were relevant to our Q3 release timeline.
-
-I noticed a pattern: in the last 4 meetings, we've covered approximately 12 minutes of agenda per hour, with the remaining 48 minutes dedicated to your anecdotes.
-
-Could we implement a "parking lot" for non-agenda items? That way your Portugal stories get their own dedicated time (perhaps lunch?) and we can ship software during the meeting about shipping software.
-
-Thanks!`,
-    aggressionScore: 55,
-    damageAssessment: 'Coworker gently told their stories are derailing productivity',
-    corporateTranslation: {
-      whatYouMean: 'Please stop hijacking every meeting with irrelevant stories. We have work to do.',
-      corporateVersion: 'I\'d like to introduce a meeting structure that ensures we cover all agenda items while leaving room for team bonding.',
-    },
-    tags: ['off-topic', 'derailing', 'stories', 'time-wasting', 'agenda'],
-  },
-  {
-    id: 'meeting-last-minute-cancel-pattern',
-    recipient: 'coworker',
-    situation: 'Person cancels meetings at the last minute repeatedly',
-    category: 'meetings',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Sorry, Something Came Up! (Again)',
-    body: `Hi Nina,
-
-No problem at all! Things come up. They especially seem to come up exactly 5 minutes before our scheduled meetings. Specifically, our last 5 scheduled meetings. What are the odds?
-
-I've now prepared for this conversation 5 times, blocked 5 calendar slots, and turned down 3 other meeting requests that conflicted with our time. That's approximately 4 hours of my life invested in meetings that didn't happen.
-
-I'd love to actually connect! When works for you? And by "works," I mean "you'll genuinely be available and not cancel 5 minutes before." I'm flexible — just looking for commitment.
-
-Let me know a time that's truly convenient!`,
-    aggressionScore: 60,
-    damageAssessment: 'Pattern made visible with documentation of impact',
-    corporateTranslation: {
-      whatYouMean: 'You cancel on me every single time. Either meet with me or stop pretending you will.',
-      corporateVersion: 'I want to find a meeting time that genuinely works for both our schedules to avoid further rescheduling.',
-    },
-    tags: ['cancellation', 'last-minute', 'pattern', 'disrespect', 'time'],
-  },
-  {
-    id: 'meeting-invited-not-needed',
-    recipient: 'manager',
-    situation: 'Included in meetings where you have nothing to contribute',
-    category: 'meetings',
-    tone: 3,
-    length: 'short',
-    subject: 'Re: Finance Review Meeting - My Role?',
-    body: `Hi Tom,
-
-Thanks for including me in tomorrow's finance review! Quick question: why?
-
-I'm a frontend developer. The agenda covers budget allocation, vendor contracts, and fiscal year planning. I'm not sure what I bring to this conversation beyond moral support and a warm body in a chair.
-
-If there's a specific item where my input is needed, I'm happy to attend for that portion. Otherwise, could I be removed from the invite? Those 2 hours would be wonderfully spent on the project you asked me to deliver by Friday.
-
-Let me know!
-
-Best`,
-    aggressionScore: 35,
-    damageAssessment: 'Manager realizes the invite was unnecessary — time saved for both',
-    corporateTranslation: {
-      whatYouMean: 'I have nothing to do with this meeting. Please remove me.',
-      corporateVersion: 'I want to ensure my attendance is adding value. Could you clarify my expected contribution?',
-    },
-    tags: ['irrelevant-meeting', 'time-waste', 'role-clarity', 'decline'],
-  },
-  {
-    id: 'meeting-standup-45-minutes',
-    recipient: 'coworker',
-    situation: 'Daily standup that should be 15 minutes takes 45',
-    category: 'meetings',
-    tone: 4,
-    length: 'short',
-    subject: 'Standup Optimization Proposal',
-    body: `Hi team,
-
-Fun fact: our "15-minute standup" has averaged 43 minutes over the past two weeks. That's a standup in name only. At 43 minutes, it's more of a "sit-down," both literally and figuratively.
-
-The standup format is simple: What did you do? What will you do? Any blockers? That's three sentences per person, not three paragraphs.
-
-Proposal: I'll facilitate tomorrow's standup with a strict 2-minute-per-person timer. Anyone who goes over gets their audio muted and replaced with hold music. (Kidding. Mostly.)
-
-Are we aligned on getting this back to 15 minutes?
-
-Thanks!`,
-    aggressionScore: 50,
-    damageAssessment: 'Team embarrassed about standup inflation but will likely comply',
-    corporateTranslation: {
-      whatYouMean: 'This standup is three times too long. Everyone needs to shut up faster.',
-      corporateVersion: 'I\'d like to propose a standup format refresh to improve our daily sync efficiency.',
-    },
-    tags: ['standup', 'too-long', 'efficiency', 'format', 'daily'],
-  },
+    tags: ["monday-morning", "brainstorm", "creativity", "scheduling"]
+  }
 ];

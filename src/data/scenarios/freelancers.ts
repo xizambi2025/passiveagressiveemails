@@ -2,320 +2,139 @@ import { Scenario } from './types';
 
 export const freelancerScenarios: Scenario[] = [
   {
-    id: 'freelancer-vanished-mid-project',
-    recipient: 'freelancer',
-    situation: 'Freelancer disappeared mid-project without warning',
-    category: 'deadlines',
-    tone: 5,
-    length: 'medium',
-    subject: 'Project Status? (Day 14 of Silence)',
-    body: `Hi Alex,
-
-It's been 14 days since your last communication. The project is approximately 60% complete, our deadline is in 5 days, and you have vanished like a developer into a vim terminal with no exit strategy.
-
-I've tried:
-- 6 emails (read receipts show you opened 4 of them)
-- 3 Slack messages (you were "active" on Tuesday)
-- 1 LinkedIn message (desperate times)
-- Briefly considered a private investigator (partially joking)
-
-I need one of two things from you within 24 hours:
-1. A status update and confirmation you'll deliver by Friday
-2. All project files, credentials, and work-in-progress so I can engage someone else
-
-Silence is not an option anymore. Please respond.
-
-Regards`,
-    aggressionScore: 72,
-    damageAssessment: 'Freelancer given firm ultimatum with documented attempts to reach them',
-    corporateTranslation: {
-      whatYouMean: 'WHERE ARE YOU? I can see you\'re reading these. Respond or I\'m finding someone else.',
-      corporateVersion: 'I need to assess project continuity and determine next steps given the communication gap.',
-    },
-    tags: ['ghosting', 'mid-project', 'deadline', 'ultimatum', 'silence'],
-  },
-  {
-    id: 'freelancer-delivered-different-thing',
-    recipient: 'freelancer',
-    situation: 'Freelancer delivered something completely different from what was briefed',
-    category: 'clients',
-    tone: 5,
-    length: 'medium',
-    subject: 'Deliverable Received - Is This the Right Project?',
-    body: `Hi Jordan,
-
-I received your deliverable and... I have questions.
-
-We briefed: A minimalist landing page for a B2B SaaS product, dark theme, professional tone.
-You delivered: A colorful e-commerce template with a cartoon mascot and "Shop Now!" buttons.
-
-I've double-checked the brief (attached), the mood board (attached), the reference sites (attached), and our call recording (available upon request). At no point did anyone mention shopping carts or cartoon animals.
-
-Did you perhaps send me another client's project? That would be the charitable interpretation, and I'm choosing to go with it.
-
-Could you deliver the correct project by Wednesday? The one in the brief we discussed for 45 minutes?
-
-Thanks`,
-    aggressionScore: 70,
-    damageAssessment: 'Freelancer embarrassed but given benefit of doubt (briefly)',
-    corporateTranslation: {
-      whatYouMean: 'This is wrong. Completely wrong. Did you even read the brief?',
-      corporateVersion: 'I\'d like to flag a significant misalignment between the brief and the delivered asset.',
-    },
-    tags: ['wrong-deliverable', 'brief', 'misalignment', 'confusion'],
-  },
-  {
-    id: 'freelancer-quality-nosedive',
-    recipient: 'freelancer',
-    situation: 'Freelancer\'s quality dropped significantly after securing the contract',
-    category: 'clients',
-    tone: 4,
-    length: 'medium',
-    subject: 'Quality Discussion - Portfolio vs. Reality',
-    body: `Hi Nina,
-
-I wanted to have an honest conversation about the recent deliverables. When we hired you, your portfolio showed meticulous, award-winning work. What we've been receiving is... different.
-
-A comparison:
-- Portfolio piece: Pixel-perfect, thoughtful typography, masterful spacing
-- Our deliverables: Misaligned elements, Comic Sans (was this ironic?), exported at 72 DPI
-
-It's like hiring a Michelin-star chef and receiving microwave meals. Both are technically "food," but the resemblance ends there.
-
-I want to be fair: is something going on? Are you overloaded? Burning out? Using an intern? Because the work that sold us and the work we're receiving appear to be from different planets.
-
-Let's discuss how to get back to portfolio quality. We're paying portfolio rates.
-
-Best`,
-    aggressionScore: 62,
-    damageAssessment: 'Freelancer confronted but given chance to explain or correct',
-    corporateTranslation: {
-      whatYouMean: 'The work you showed us was amazing. The work you\'re giving us is terrible. What happened?',
-      corporateVersion: 'I\'d like to align expectations around quality standards based on the caliber demonstrated in our initial evaluation.',
-    },
-    tags: ['quality-drop', 'portfolio', 'bait-and-switch', 'standards'],
-  },
-  {
-    id: 'freelancer-overcharging-hours',
-    recipient: 'freelancer',
-    situation: 'Freelancer logging suspicious number of hours for simple tasks',
-    category: 'invoices',
-    tone: 5,
-    length: 'medium',
-    subject: 'Timesheet Review - Some Questions About Math',
-    body: `Hi Patrick,
-
-I'm reviewing this month's timesheet and have some questions:
-
-- "Update button color": 8 hours
-- "Fix typo on homepage": 4 hours
-- "Add email to footer": 6 hours
-- "Resize logo": 3 hours
-
-For context, I just changed a button color on another project. It took 4 minutes. And the typo fix — are we talking about a typo, or rewriting War and Peace?
-
-I'm not suggesting anything nefarious! Maybe your workflow involves extensive meditation before each CSS change. Or perhaps there's context I'm missing, like the button was trapped in a nested dependency matrix that required archaeology to access.
-
-Could you provide a brief breakdown of what each task entailed? I want to understand the complexity I might be overlooking.
-
-Thanks`,
-    aggressionScore: 70,
-    damageAssessment: 'Freelancer caught padding hours. Will need to justify or reduce invoice.',
-    corporateTranslation: {
-      whatYouMean: '8 hours to change a button color? You\'re either incompetent or padding your invoice.',
-      corporateVersion: 'I\'d like to review time allocations against task complexity to ensure we\'re estimating effectively.',
-    },
-    tags: ['time-padding', 'overcharging', 'timesheet', 'accountability', 'hours'],
-  },
-  {
-    id: 'freelancer-no-revisions-policy',
-    recipient: 'freelancer',
-    situation: 'Freelancer refuses to make any revisions at all',
-    category: 'clients',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: "No Revisions" Policy - A Concern',
-    body: `Hi Drake,
-
-I received your response that the deliverable is "final and no revisions will be made." Interesting stance!
-
-A few thoughts:
-1. Our contract includes 2 rounds of revisions
-2. The deliverable has 3 factual errors, a misspelled company name, and a broken link
-3. These aren't "revisions" so much as "corrections to make the thing functional"
-
-I'm not asking you to redesign it. I'm asking you to spell our company name correctly. It's in the email signature. Right there. You can see it.
-
-Please make the corrections outlined in my previous email. Per our contract. Which you signed.
-
-Thanks`,
-    aggressionScore: 65,
-    damageAssessment: 'Freelancer\'s refusal met with contract evidence. Must comply.',
-    corporateTranslation: {
-      whatYouMean: 'Fix your mistakes. This isn\'t optional. You literally spelled our name wrong.',
-      corporateVersion: 'I want to reference our agreement regarding revision rounds to ensure the final deliverable meets baseline quality.',
-    },
-    tags: ['revisions', 'contract', 'errors', 'quality', 'corrections'],
-  },
-  {
-    id: 'freelancer-subcontracted-secretly',
-    recipient: 'freelancer',
-    situation: 'Freelancer secretly subcontracted the work to someone less qualified',
-    category: 'clients',
+    id: "exposure-payment-freelancer-6",
+    recipient: "freelancer",
+    situation: "Someone offers to pay in 'exposure' instead of money",
+    category: "invoices",
     tone: 6,
-    length: 'medium',
-    subject: 'Re: Deliverable - A Question About Authorship',
-    body: `Hi Melissa,
-
-Interesting situation. The document you delivered has metadata showing it was created by "Rajesh_Fiverr2023." The code commits are from a GitHub account called "cheapcodefast." And the design files list a different Adobe Creative Cloud user entirely.
-
-Now, I hired YOU — specifically because of YOUR portfolio, YOUR experience, and YOUR hourly rate of $150/hour. If the work is being done by someone else, I have questions:
-
-1. Who actually did this work?
-2. What are they being paid? (I suspect less than $150/hour)
-3. Why am I paying premium rates for outsourced work?
-
-This is a breach of our agreement (Section 2: no subcontracting without written approval). We need to discuss this immediately.
-
-If you've been outsourcing our project, we'll need to have a very different conversation about our engagement going forward.
-
-Regards`,
-    aggressionScore: 90,
-    damageAssessment: 'Freelancer caught in deception. Relationship likely over. Legal options open.',
+    length: "medium",
+    subject: "Re: Collaboration Opportunity!",
+    body: "Hi Bradley,\n\nThank you for the 'opportunity' to design your entire brand identity in exchange for 'exposure to our 340 Instagram followers.'\n\nI've given this careful thought. Unfortunately, my landlord has informed me that she does not accept exposure as rent payment. My electricity provider similarly refuses to power my home with the warm glow of your social media mentions. Even my cat, who works for free, expects payment in the form of actual food.\n\nMy rate card is attached. If the budget is zero, might I suggest Canva? It's free and offers templates that are, frankly, better than what exposure would buy.\n\nWishing you and your 340 followers all the best.\n\nKind regards",
+    aggressionScore: 84,
+    damageAssessment: "They'll either pay or never ask another creative for free work again",
     corporateTranslation: {
-      whatYouMean: 'You outsourced my project to someone on Fiverr while charging me premium rates. You are a fraud.',
-      corporateVersion: 'I\'d like to discuss some inconsistencies in the deliverable authorship that raise questions about our subcontracting clause.',
+      whatYouMean: "Exposure doesn't pay bills. Pay me or go away.",
+      corporateVersion: "I appreciate the partnership opportunity but require monetary compensation aligned with market rates."
     },
-    tags: ['subcontracting', 'deception', 'outsourcing', 'breach', 'nuclear'],
+    tags: ["exposure", "free-work", "payment", "value", "creative"]
   },
   {
-    id: 'freelancer-invoice-before-delivery',
-    recipient: 'freelancer',
-    situation: 'Freelancer sends invoice before completing the work',
-    category: 'invoices',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Invoice Received - But Where\'s the Work?',
-    body: `Hi Connor,
-
-Thank you for the invoice! Very efficient of you. Quick question: where's the deliverable it's for?
-
-Our agreement is payment upon delivery. The delivery was due yesterday. The delivery has not arrived. But the invoice has! The invoice is very punctual. I wish the work shared its enthusiasm for deadlines.
-
-I'd love to pay this invoice! I'm genuinely excited to pay it. But I'd like to receive the thing I'm paying for first. Call me old-fashioned, but I find this sequence (receive goods → pay for goods) works best for both parties.
-
-Deliverable first, then payment. In that order. Every time.
-
-Thanks!`,
-    aggressionScore: 55,
-    damageAssessment: 'Freelancer gently reminded that payment follows delivery, not precedes it',
-    corporateTranslation: {
-      whatYouMean: 'You invoiced me before delivering anything. That\'s not how this works.',
-      corporateVersion: 'I want to align our invoicing schedule with our agreed payment milestones.',
-    },
-    tags: ['invoice-before-delivery', 'payment-terms', 'deliverable', 'sequence'],
-  },
-  {
-    id: 'freelancer-scope-creep-reverse',
-    recipient: 'freelancer',
-    situation: 'Freelancer delivers less than agreed scope and claims it\'s complete',
-    category: 'deadlines',
+    id: "scope-creep-freelancer-5",
+    recipient: "freelancer",
+    situation: "Client keeps adding tasks beyond the original freelance agreement",
+    category: "clients",
     tone: 5,
-    length: 'medium',
-    subject: 'Re: "Project Complete!" - A Checklist Review',
-    body: `Hi Samantha,
-
-Congratulations on completing the project! Or rather, on completing approximately 60% of it and calling it done. Bold strategy!
-
-Let me compare your "complete" delivery against our agreed scope:
-
-✅ Homepage design — Done
-✅ About page — Done  
-✅ Contact form — Done
-❌ Blog section — Missing
-❌ Portfolio page — Missing
-❌ E-commerce integration — Missing
-❌ Mobile responsive design — It... kind of works? On one phone? Sideways?
-
-The last three items represent about 40% of the project scope and, coincidentally, 40% of the budget. So either we're not done, or I'm overpaying by 40%.
-
-Which of these two interpretations would you prefer to discuss?
-
-Looking forward to the ACTUAL completion!`,
-    aggressionScore: 72,
-    damageAssessment: 'Freelancer caught delivering incomplete work with clear documentation',
+    length: "medium",
+    subject: "Re: One More Thing...",
+    body: "Hi Pamela,\n\nPer our original agreement, I was hired to write 5 blog posts. Since then, you've requested I also:\n\n- Rewrite your About page\n- Draft 20 social media captions\n- 'Just quickly' proofread your 40-page annual report\n- Create an email newsletter template\n- Write your CEO's LinkedIn bio\n\nI'm delighted to do all of these things. I do them professionally. For money. Which is different from 'as a favour because you already paid me for something else.'\n\nI've attached a quote for the additional work. Alternatively, I can complete the original 5 posts as agreed and we can scope a separate project for the extras.\n\nBest regards",
+    aggressionScore: 74,
+    damageAssessment: "Clear boundary that protects the relationship while protecting your income",
     corporateTranslation: {
-      whatYouMean: 'This is not done. You skipped 40% of the work. Finish it.',
-      corporateVersion: 'I\'d like to reconcile the delivered scope against our agreement to identify remaining items.',
+      whatYouMean: "These extras aren't included and I'm not doing them for free.",
+      corporateVersion: "I'd love to support these additional initiatives and have prepared a supplementary scope proposal."
     },
-    tags: ['incomplete', 'scope', 'checklist', 'delivery', 'accountability'],
+    tags: ["scope-creep", "boundaries", "additional-work", "contract"]
   },
   {
-    id: 'freelancer-communication-one-word',
-    recipient: 'freelancer',
-    situation: 'Freelancer responds with one-word answers to detailed questions',
-    category: 'clients',
-    tone: 3,
-    length: 'short',
-    subject: 'Re: Project Questions - Could Use a Bit More Detail',
-    body: `Hi Marcus,
-
-Thank you for your responses to my 5 detailed questions:
-
-My question: "What's the status of the database migration, and are there any blockers?"
-Your answer: "Fine."
-
-My question: "Can you walk me through your approach to the API authentication?"
-Your answer: "Sure."
-
-My question: "When do you expect to have the test suite completed?"
-Your answer: "Soon."
-
-I appreciate the brevity! But I need actual information. "Fine," "Sure," and "Soon" don't help me plan, report to stakeholders, or understand what's happening.
-
-Could you try full sentences? Maybe even two of them? I believe in you.
-
-Thanks`,
-    aggressionScore: 45,
-    damageAssessment: 'Freelancer humorously prodded to communicate with actual substance',
-    corporateTranslation: {
-      whatYouMean: 'Your one-word answers are useless. Give me real information.',
-      corporateVersion: 'I need more detailed status updates to maintain project visibility with stakeholders.',
-    },
-    tags: ['communication', 'one-word', 'brevity', 'information', 'updates'],
-  },
-  {
-    id: 'freelancer-availability-mismatch',
-    recipient: 'freelancer',
-    situation: 'Freelancer said they were full-time available but clearly isn\'t',
-    category: 'deadlines',
+    id: "revision-hell-freelancer-4",
+    recipient: "freelancer",
+    situation: "Client requests revisions that undo all previous revisions",
+    category: "clients",
     tone: 4,
-    length: 'medium',
-    subject: 'Re: Availability Discussion - "Full-Time" Definition',
-    body: `Hi Rachel,
-
-When we discussed availability, you mentioned being "full-time dedicated" to our project. I'd love to explore what "full-time" means to you, because our definitions may differ:
-
-My definition: ~40 hours/week focused on our project
-Your apparent definition: ~8 hours/week, usually Tuesdays
-
-Evidence:
-- Average response time: 2-3 days
-- Available for calls: Only Tuesday/Thursday afternoons
-- Commits in the repository: Exclusively between 11 PM - 2 AM on random nights
-- Progress rate: Consistent with ~2 hours/day maximum
-
-I don't mind if you have other commitments! But I need you to be honest about your capacity so I can plan accordingly. Our timeline was built around 40 hours/week. At 8 hours/week, we'll deliver in approximately 5 months instead of 5 weeks.
-
-Can we discuss realistic availability?
-
-Best`,
-    aggressionScore: 62,
-    damageAssessment: 'Freelancer confronted with evidence of limited availability claims',
+    length: "short",
+    subject: "Re: Revision Round 6 Feedback",
+    body: "Hi Graham,\n\nI've reviewed your latest round of revisions. You've asked me to revert the logo to the style from V2, use the colours from V4, the font from V1, and the layout from V5.\n\nI've created a Frankenstein's monster of your preferences as requested. I want to flag that we've now used all 3 included revision rounds plus 3 additional rounds at \u00a375 each.\n\nMight I gently suggest that V7 be the final version? My creative soul and your budget would both benefit from closure.\n\nBest",
+    aggressionScore: 60,
+    damageAssessment: "The 'Frankenstein's monster' line will haunt them into a decision",
     corporateTranslation: {
-      whatYouMean: 'You said full-time but you\'re clearly working 2 hours a day max. Be honest.',
-      corporateVersion: 'I want to recalibrate our timeline based on realistic capacity allocation to set appropriate expectations.',
+      whatYouMean: "You're going in circles and it's costing us both. Please just pick one.",
+      corporateVersion: "I'd recommend we finalise the creative direction to optimise remaining budget allocation."
     },
-    tags: ['availability', 'full-time', 'deception', 'capacity', 'timeline'],
+    tags: ["revisions", "indecisive", "budget", "creative"]
   },
+  {
+    id: "late-payment-freelancer-6",
+    recipient: "freelancer",
+    situation: "Client is 90 days late on payment and keeps saying 'it's being processed'",
+    category: "invoices",
+    tone: 6,
+    length: "long",
+    subject: "Invoice #0042 - Final Notice Before Legal Action",
+    body: "Hi Veronica,\n\nI'm writing about Invoice #0042, which has celebrated several milestones since its issue date:\n\n- 30 days: 'It's being processed' (your words, April 3rd)\n- 60 days: 'Finance is backed up' (your words, May 5th)\n- 90 days: Silence (your current approach)\n\nI've been patient. I've been understanding. I've been professional. I am now being direct: this invoice is 90 days overdue. The work was completed and delivered on time, was approved, and has been live on your website generating revenue for three months while I've been generating follow-up emails.\n\nThis is my final communication before I pass this to my collections service. I'd much prefer we resolve this between ourselves. Payment within 7 days avoids the late fee (per contract), the collections process, and the awkwardness of me leaving a Google review about my experience.\n\nI await your immediate response.\n\nRegards",
+    aggressionScore: 87,
+    damageAssessment: "The Google review threat is the nuclear button. They'll pay.",
+    corporateTranslation: {
+      whatYouMean: "Pay me right now or I'm going to collections and trashing your reputation.",
+      corporateVersion: "I'd appreciate immediate resolution to maintain our positive business relationship."
+    },
+    tags: ["late-payment", "invoice", "collections", "overdue", "final-notice"]
+  },
+  {
+    id: "rush-job-freelancer-4",
+    recipient: "freelancer",
+    situation: "Client wants rush delivery but won't pay rush fees",
+    category: "deadlines",
+    tone: 4,
+    length: "medium",
+    subject: "Re: Need This by Tomorrow - URGENT",
+    body: "Hi Keith,\n\nI'd be happy to complete this by tomorrow. My rush fee for 24-hour turnaround is 50% on top of the standard rate, as outlined in my terms.\n\nYour reply of 'surely we can work something out, we're partners' is noted. However, partnership typically implies mutual benefit. In this scenario, the benefit to you is receiving work urgently. The benefit to me is... also receiving work urgently? That doesn't quite work.\n\nI can deliver by tomorrow at the rush rate, or by Friday at the standard rate. Both are genuine offers made with professional warmth.\n\nWhich would you prefer?\n\nBest",
+    aggressionScore: 64,
+    damageAssessment: "Politely dismantles the 'we're partners' manipulation while offering clear options",
+    corporateTranslation: {
+      whatYouMean: "Rush work costs more money. We're not 'partners,' you're a client who wants a discount.",
+      corporateVersion: "I've outlined delivery options at appropriate price points to meet your timeline needs."
+    },
+    tags: ["rush-job", "pricing", "boundaries", "urgency", "negotiation"]
+  },
+  {
+    id: "ghosting-after-delivery-freelancer-5",
+    recipient: "freelancer",
+    situation: "Client received the work, went silent, and is now using it without paying",
+    category: "invoices",
+    tone: 5,
+    length: "medium",
+    subject: "Re: Invoice & Usage of Delivered Materials",
+    body: "Hi Diana,\n\nI hope you're well! I noticed something interesting today \u2014 the website copy I delivered three weeks ago (and invoiced for, still unpaid) is now live on your website. How exciting! For one of us.\n\nPer our agreement, ownership of the work transfers upon payment. Until payment is received, I retain all intellectual property rights. The work currently on your website is, legally speaking, mine.\n\nI'm sure this is an oversight in your accounts department and not a deliberate attempt to use work without paying for it. I'd hate to have to issue a takedown notice \u2014 it seems so formal for what I'm confident is just a delayed payment.\n\nInvoice re-attached. Payment within 5 business days would be lovely.\n\nBest regards",
+    aggressionScore: 79,
+    damageAssessment: "The 'how exciting, for one of us' is chef's kiss passive aggression",
+    corporateTranslation: {
+      whatYouMean: "You're using my work without paying for it. That's theft. Pay up or I'm sending lawyers.",
+      corporateVersion: "I'd appreciate payment processing to formalise the IP transfer for the materials currently in use."
+    },
+    tags: ["unpaid", "IP-rights", "ghosting", "usage-without-payment"]
+  },
+  {
+    id: "friends-and-family-discount-freelancer-4",
+    recipient: "freelancer",
+    situation: "Acquaintance asks for 'mates rates' on a major project",
+    category: "invoices",
+    tone: 4,
+    length: "short",
+    subject: "Re: Quick Job - Mates Rates?",
+    body: "Hi Steve,\n\nThanks for thinking of me for your company's website! I'm flattered.\n\nRegarding 'mates rates' \u2014 I should clarify: we met once at Dave's barbecue in 2019. You asked me what I do, I said 'web design,' and you said 'oh nice, I might need that someday.' I wouldn't characterise us as mates so much as 'acquaintances who've shared proximity to the same sausages.'\n\nMy standard rate is attached. I offer a 10% loyalty discount for repeat clients, which requires being a client at least once first.\n\nHappy to chat if you'd like to proceed!\n\nBest",
+    aggressionScore: 67,
+    damageAssessment: "The sausage line is so specific they can't possibly argue they're close friends",
+    corporateTranslation: {
+      whatYouMean: "We're not friends and you don't get a discount for having met me once.",
+      corporateVersion: "I'd be happy to provide my standard pricing for this project."
+    },
+    tags: ["mates-rates", "discount", "boundaries", "pricing", "acquaintance"]
+  },
+  {
+    id: "do-it-in-five-minutes-freelancer-5",
+    recipient: "freelancer",
+    situation: "Client insists something 'should only take 5 minutes' when it takes hours",
+    category: "clients",
+    tone: 5,
+    length: "medium",
+    subject: "Re: Small Update to the Website (5 min job)",
+    body: "Hi Carol,\n\nPer your email, you've described the task as a '5-minute job.' Let me walk through what's actually involved:\n\n- Back up the current site (10 mins)\n- Navigate to the correct template file (5 mins)\n- Make the structural change you've described as 'just move this bit' (2 hours)\n- Test across 4 browsers (30 mins)\n- Test across 3 device sizes (20 mins)\n- Fix the things that broke (1-2 hours)\n- Deploy to staging for your review (15 mins)\n- Deploy to production (10 mins)\n\nTotal: approximately 5 hours. Or as I prefer to call it, sixty of your 5-minute estimates stacked together.\n\nI'm happy to do this! It'll be quoted at my hourly rate for approximately half a day. Shall I proceed?\n\nBest",
+    aggressionScore: 73,
+    damageAssessment: "They'll never say '5 minutes' again without wincing",
+    corporateTranslation: {
+      whatYouMean: "It's not 5 minutes. You don't know what you're talking about. This costs money.",
+      corporateVersion: "I've scoped the technical requirements and prepared an accurate estimate for your review."
+    },
+    tags: ["underestimation", "scope", "time-estimate", "education", "expectations"]
+  }
 ];

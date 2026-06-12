@@ -2,329 +2,139 @@ import { Scenario } from './types';
 
 export const corporateBuzzwordScenarios: Scenario[] = [
   {
-    id: 'buzzword-synergy-overload',
-    recipient: 'manager',
-    situation: 'Responding to an email entirely in corporate jargon',
-    category: 'corporate-buzzwords',
+    id: "circle-back-buzzword-5",
+    recipient: "coworker",
+    situation: "Coworker says 'let's circle back' to avoid making a decision",
+    category: "corporate-buzzwords",
+    tone: 5,
+    length: "medium",
+    subject: "Re: Circling Back on Circling Back",
+    body: "Hi Nathan,\n\nPer our meeting today, you suggested we 'circle back' on the vendor decision. I want to flag that we've now circled back 4 times. We are, quite literally, going in circles.\n\nFor reference:\n- January: 'Let's circle back next week'\n- February: 'Let's park this and circle back'\n- March: 'Good discussion \u2014 let's circle back when we have more data'\n- Today: 'Let's circle back once everyone's aligned'\n\nI'm dizzy from the circling. The vendor we're evaluating has now launched two new products, hired 50 people, and gone public \u2014 all while we've been preparing to circle back.\n\nMight I propose a radical alternative: making a decision? Today? In this reality?\n\nBest",
+    aggressionScore: 73,
+    damageAssessment: "They can never say 'circle back' in your presence again without feeling shame",
+    corporateTranslation: {
+      whatYouMean: "Stop saying 'circle back.' Just make the decision. It's been months.",
+      corporateVersion: "I'd love to drive this to resolution today to maintain our competitive positioning."
+    },
+    tags: ["circle-back", "indecision", "buzzwords", "procrastination"]
+  },
+  {
+    id: "synergy-overload-manager-4",
+    recipient: "manager",
+    situation: "Manager's presentation was entirely buzzwords with zero substance",
+    category: "corporate-buzzwords",
+    tone: 4,
+    length: "medium",
+    subject: "Re: Q3 Strategy Presentation - Clarifying Questions",
+    body: "Hi Douglas,\n\nThank you for today's Q3 strategy presentation. I've reviewed my notes and have some clarifying questions:\n\nSlide 3: 'Leverage synergies across verticals' \u2014 which departments are working together on what?\nSlide 7: 'Move the needle on our North Star metrics' \u2014 which metrics, and in which direction?\nSlide 12: 'Blue-sky ideation sprint to unlock value' \u2014 what are we building?\nSlide 15: 'Disrupt our own paradigm' \u2014 I genuinely don't know what this means.\n\nI want to execute the strategy enthusiastically, but to do so, I need to understand what the strategy is. Could you provide a one-page summary using words that appear in a standard dictionary?\n\nLooking forward to clarity.\n\nBest",
+    aggressionScore: 67,
+    damageAssessment: "They'll either provide actual substance or realize they don't have any",
+    corporateTranslation: {
+      whatYouMean: "Your entire presentation was meaningless jargon. What do you actually want us to do?",
+      corporateVersion: "I'd value a tactical addendum that translates strategic direction into actionable workstreams."
+    },
+    tags: ["buzzwords", "synergy", "strategy", "clarity", "presentation"]
+  },
+  {
+    id: "thought-leader-buzzword-6",
+    recipient: "coworker",
+    situation: "Coworker calls themselves a 'thought leader' in every meeting",
+    category: "corporate-buzzwords",
     tone: 6,
-    length: 'medium',
-    subject: 'Re: Leveraging Synergies - My Aligned Response',
-    body: `Hi Barbara,
-
-Thank you for your email about leveraging cross-functional synergies to optimize our go-forward value proposition. I'd love to circle back on that after we've moved the needle on our bandwidth constraints.
-
-Let me take this offline and do a deep dive into how we can be more proactive about our thought leadership in this space. I think if we can find a way to boil the ocean while simultaneously picking the low-hanging fruit, we'll be in a great position to create a paradigm shift that disrupts our core competencies.
-
-I'll ping you when I've gotten my ducks in a row. Let's make sure we don't let the perfect be the enemy of the good as we action this going forward.
-
-Best,
-[Your name who definitely knows what any of that means]`,
-    aggressionScore: 85,
-    damageAssessment: 'Manager either laughs or doesn\'t realize they\'re being mocked',
+    length: "short",
+    subject: "Re: Thought Leadership Initiative",
+    body: "Hi Brandon,\n\nI've noticed you've referred to yourself as a 'thought leader' seven times this quarter. Out of professional curiosity, I have a few questions:\n\n1. Who are the thought followers?\n2. Where are you leading these thoughts to?\n3. Is there a thought leadership qualification, or is it self-appointed?\n4. What distinguishes a thought leader from someone who simply... has thoughts?\n\nI ask because I also have thoughts. Regular ones. But I've never felt the need to promote them to leadership status. Perhaps I'm missing a step.\n\nEnjoying your content regardless,\nBest",
+    aggressionScore: 81,
+    damageAssessment: "They'll never unironically call themselves a thought leader again",
     corporateTranslation: {
-      whatYouMean: 'I\'m writing back in the same meaningless jargon to show you how absurd you sound.',
-      corporateVersion: 'I want to demonstrate alignment with your communication style while exploring collaborative opportunities.',
+      whatYouMean: "Stop calling yourself a thought leader. It's embarrassing for everyone.",
+      corporateVersion: "I'm curious about how you define thought leadership and how it maps to team outcomes."
     },
-    tags: ['jargon', 'parody', 'corporate-speak', 'synergy', 'mockery'],
+    tags: ["thought-leader", "self-promotion", "buzzwords", "ego"]
   },
   {
-    id: 'buzzword-lets-take-offline',
-    recipient: 'coworker',
-    situation: 'Someone says "let\'s take this offline" about something that IS offline',
-    category: 'corporate-buzzwords',
+    id: "pivot-buzzword-4",
+    recipient: "manager",
+    situation: "Company 'pivots' strategy every two weeks",
+    category: "corporate-buzzwords",
+    tone: 4,
+    length: "medium",
+    subject: "Re: Exciting New Direction!",
+    body: "Hi Rachel,\n\nThank you for the email about our 'exciting new direction.' I've been keeping a log:\n\n- Week 1: 'We're all-in on enterprise'\n- Week 3: 'Actually, pivot to SMB'\n- Week 5: 'New direction: freemium'\n- Week 7: 'Pivoting to premium only'\n- Week 9: 'Exciting new direction!' (today)\n\nWe've pivoted so many times we've completed a full rotation and are now facing the original direction with a different name.\n\nI'm happy to execute on this week's strategy. I'm less clear on whether it'll still be the strategy by the time I've finished reading this email.\n\nCould we perhaps commit to a direction for... a month? Maybe two? My work would benefit from a horizon longer than a fortnight.\n\nBest",
+    aggressionScore: 69,
+    damageAssessment: "The documented pivot history is both hilarious and impossible to deny",
+    corporateTranslation: {
+      whatYouMean: "You change direction so often that doing any actual work is pointless.",
+      corporateVersion: "I'd love to understand the strategic thesis behind this pivot to ensure sustained commitment."
+    },
+    tags: ["pivot", "strategy", "direction-change", "instability"]
+  },
+  {
+    id: "bandwidth-buzzword-5",
+    recipient: "coworker",
+    situation: "Everyone uses 'bandwidth' to avoid taking on work",
+    category: "corporate-buzzwords",
+    tone: 5,
+    length: "short",
+    subject: "Re: Bandwidth Check",
+    body: "Hi Team,\n\nPer today's meeting, I asked for volunteers for the Q4 audit. Responses received:\n\n- James: 'Don't have the bandwidth'\n- Sarah: 'Bandwidth is maxed'\n- Tim: 'Zero bandwidth right now'\n- Laura: 'Love to help but \u2014 bandwidth'\n\nWe are not WiFi routers. We don't have bandwidth. We have time, priority, and willingness. And right now, it appears the whole team is simultaneously at capacity for a task nobody wants to do. Fascinating coincidence.\n\nThe audit needs to happen. Please let me know who has the... willingness... by Thursday.\n\nThanks",
+    aggressionScore: 74,
+    damageAssessment: "Calls out the collective excuse without singling anyone out - genius",
+    corporateTranslation: {
+      whatYouMean: "You're all using 'bandwidth' as code for 'I don't want to.' Someone has to do this.",
+      corporateVersion: "I'd appreciate capacity transparency to allocate this critical deliverable appropriately."
+    },
+    tags: ["bandwidth", "avoidance", "volunteering", "buzzwords", "workload"]
+  },
+  {
+    id: "low-hanging-fruit-buzzword-4",
+    recipient: "manager",
+    situation: "Manager keeps asking for 'low-hanging fruit' wins but all the easy stuff is done",
+    category: "corporate-buzzwords",
+    tone: 4,
+    length: "medium",
+    subject: "Re: Quick Wins Needed",
+    body: "Hi Stuart,\n\nPer your request for 'low-hanging fruit' and 'quick wins' for the board presentation:\n\nI want to respectfully inform you that we have comprehensively harvested all low-hanging fruit. The tree has been picked clean. We've actually built a ladder and got the medium-hanging fruit too. What remains is high-hanging fruit that requires scaffolding, specialised equipment, and \u2014 critically \u2014 time and budget.\n\nThe 'quick wins' phase of this product was approximately 18 months ago. Everything achievable in under a week has been achieved. What remains is hard, complex, resource-intensive work that cannot be repackaged as a 'quick win' for a board deck.\n\nI can provide a realistic roadmap for the next phase of improvements. It won't sound as breezy in a presentation, but it'll be honest.\n\nBest",
+    aggressionScore: 65,
+    damageAssessment: "The extended fruit metaphor is devastating and delightful",
+    corporateTranslation: {
+      whatYouMean: "There are no more easy wins. Everything left is hard. Stop asking for shortcuts.",
+      corporateVersion: "I'd like to present a strategic roadmap that reflects our maturity stage and appropriate investment level."
+    },
+    tags: ["low-hanging-fruit", "quick-wins", "unrealistic", "expectations"]
+  },
+  {
+    id: "deep-dive-buzzword-3",
+    recipient: "coworker",
+    situation: "Coworker suggests a 'deep dive' for everything instead of just answering the question",
+    category: "corporate-buzzwords",
     tone: 3,
-    length: 'short',
-    subject: 'Re: Let\'s Take This Offline',
-    body: `Hi Gary,
-
-You mentioned we should "take this offline." I just want to clarify — this IS offline. We're in a room. Together. Physically. There is no "online" happening here from which to go "offline."
-
-Did you mean "let's discuss this later"? Or "let's discuss this in a smaller group"? Or "I don't want to talk about this right now"? All valid! Just not technically "offline."
-
-Happy to continue this conversation in whatever dimension you'd prefer.
-
-Best`,
-    aggressionScore: 40,
-    damageAssessment: 'Mild embarrassment, probably laughed off',
+    length: "short",
+    subject: "Re: Deep Dive Proposal",
+    body: "Hi Mark,\n\nI asked a yes-or-no question: 'Should we use the blue or green colour scheme?' You've responded by proposing a 'deep dive session with cross-functional stakeholders to align on our visual identity framework.'\n\nMark. It's blue or green. This does not require a deep dive. A shallow paddle would suffice. Possibly a light glance at both options followed by pointing.\n\nBlue or green? I trust your instinct. No stakeholders required.\n\nThanks!",
+    aggressionScore: 50,
+    damageAssessment: "Funny enough that they'll laugh and just answer 'green'",
     corporateTranslation: {
-      whatYouMean: 'We\'re already offline. That phrase doesn\'t mean what you think it means.',
-      corporateVersion: 'I want to clarify the best forum for this discussion to ensure productive outcomes.',
+      whatYouMean: "Just answer the question. Not everything needs a workshop.",
+      corporateVersion: "I'd appreciate a direct recommendation to maintain project velocity."
     },
-    tags: ['take-offline', 'misuse', 'jargon', 'in-person', 'funny'],
+    tags: ["deep-dive", "over-engineering", "simple-question", "process"]
   },
   {
-    id: 'buzzword-circle-back',
-    recipient: 'manager',
-    situation: 'Manager has "circled back" on the same topic 12 times without resolution',
-    category: 'corporate-buzzwords',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Circling Back (Orbit #12)',
-    body: `Hi Steve,
-
-Thanks for circling back! By my count, this is the 12th time we've circled back on the website redesign decision. At this point, we're not circling — we're in a full orbit.
-
-For context: the first "circle back" was January 15th. It is now July. We have circled so many times that I'm dizzy.
-
-Could we perhaps... land? Make a decision? Any decision? Even a wrong one would at least break the gravitational pull of this infinite loop.
-
-I'm free for a "final decision" meeting whenever you're ready to stop circling and start deciding.
-
-Regards`,
-    aggressionScore: 58,
-    damageAssessment: 'Manager called out on decision paralysis through their own language',
-    corporateTranslation: {
-      whatYouMean: 'Make a decision. We\'ve been going in circles for 6 months.',
-      corporateVersion: 'I\'d like to drive this to a resolution. Can we set a decision deadline?',
-    },
-    tags: ['circle-back', 'indecision', 'loops', 'decisions', 'paralysis'],
-  },
-  {
-    id: 'buzzword-thought-leadership',
-    recipient: 'manager',
-    situation: 'Manager wants you to create "thought leadership" content about nothing',
-    category: 'corporate-buzzwords',
-    tone: 4,
-    length: 'medium',
-    subject: 'Re: Thought Leadership Content - Some Questions',
-    body: `Hi Jennifer,
-
-I'm excited to work on the "thought leadership" piece you've assigned! A few clarifying questions:
-
-1. What thought are we leading?
-2. Who are we leading it toward?
-3. Is there a specific insight or thesis, or am I manufacturing authority from thin air?
-4. When you say "thought leadership," do you mean "a blog post"? Because I can write a blog post.
-
-I want to make sure my thought is sufficiently leader-y. My concern is that without a genuine insight or unique perspective, we'll just be adding to the internet's collection of "5 Tips for Synergizing Your Disruption Pipeline" posts that no one reads.
-
-Should I proceed with substance, or is the goal purely SEO? Both are valid — I just need to know which hat to wear.
-
-Looking forward to leading some thoughts!`,
-    aggressionScore: 55,
-    damageAssessment: 'Manager confronted with emptiness of request. May provide actual direction.',
-    corporateTranslation: {
-      whatYouMean: '"Thought leadership" means nothing. Tell me what you actually want me to write.',
-      corporateVersion: 'I want to ensure our content strategy has a clear thesis and audience to maximize engagement impact.',
-    },
-    tags: ['thought-leadership', 'meaningless', 'content', 'blog', 'direction'],
-  },
-  {
-    id: 'buzzword-move-the-needle',
-    recipient: 'manager',
-    situation: 'Everything must "move the needle" but no one defines the needle',
-    category: 'corporate-buzzwords',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Does This Move The Needle? - A Needle Inquiry',
-    body: `Hi Mark,
-
-You asked if my project proposal "moves the needle." I'd love to answer that! But first, some questions about The Needle:
-
-- Which needle? (Revenue? Users? Satisfaction? An actual sewing needle?)
-- How much movement qualifies? (1%? 10%? Any vibration at all?)
-- What is the needle's current position?
-- Is there a needle dashboard I should be referencing?
-
-I suspect the answer you want is "yes, it moves the needle." So: yes! It definitely moves the needle. Possibly even two needles. Maybe a whole pincushion.
-
-Or we could discuss specific KPIs like adults? Let me know!
-
-Best`,
-    aggressionScore: 55,
-    damageAssessment: 'Manager gently mocked for vague success criteria',
-    corporateTranslation: {
-      whatYouMean: 'Define your success metrics in plain English or stop asking if things "move the needle."',
-      corporateVersion: 'I\'d love to align on specific success metrics so I can quantify the project\'s impact.',
-    },
-    tags: ['move-the-needle', 'vague-metrics', 'kpi', 'success-criteria'],
-  },
-  {
-    id: 'buzzword-deep-dive',
-    recipient: 'coworker',
-    situation: 'Someone suggests a "deep dive" into every trivial topic',
-    category: 'corporate-buzzwords',
-    tone: 3,
-    length: 'short',
-    subject: 'Re: Let\'s Do a Deep Dive on the Lunch Menu',
-    body: `Hi Brian,
-
-You mentioned wanting to "do a deep dive" into the catering options for next week's team lunch. I appreciate the thoroughness!
-
-However, I'd gently suggest that selecting sandwiches vs. pizza might warrant a "shallow wade" rather than a full deep dive. Perhaps even a "brief glance."
-
-I'm saving my scuba gear for topics like "why our database crashed" or "where did Q3's budget go." For lunch selection, maybe we can just... pick one?
-
-Happy to cast a vote: pizza. Deep dive complete.
-
-Cheers`,
-    aggressionScore: 42,
-    damageAssessment: 'Coworker lightly teased for overusing corporate language on trivial matters',
-    corporateTranslation: {
-      whatYouMean: 'Not everything needs a deep dive. It\'s just lunch.',
-      corporateVersion: 'I want to suggest a streamlined decision-making process for lower-stakes items.',
-    },
-    tags: ['deep-dive', 'overuse', 'trivial', 'lunch', 'proportionality'],
-  },
-  {
-    id: 'buzzword-bandwidth',
-    recipient: 'manager',
-    situation: 'Manager asks if you "have bandwidth" for yet another task',
-    category: 'corporate-buzzwords',
+    id: "align-buzzword-5",
+    recipient: "manager",
+    situation: "Manager says 'let's align' every time they mean 'do what I say'",
+    category: "corporate-buzzwords",
     tone: 5,
-    length: 'medium',
-    subject: 'Re: Do You Have Bandwidth? - Bandwidth Report',
-    body: `Hi Amanda,
-
-You asked if I "have bandwidth" for the new analytics project. Let me provide a full bandwidth report:
-
-Current allocation:
-- Project Alpha: 30%
-- Client Beta: 25%
-- Weekly reporting: 15%
-- Meetings about meetings: 20%
-- Responding to "bandwidth" questions: 5%
-- Remaining bandwidth: 5%
-
-So technically, yes, I have 5% bandwidth available. That translates to approximately 2 hours per week. At that rate, the analytics project would be completed in roughly 14 months.
-
-Alternatively, we could discuss which current commitment to deprioritize. Because "bandwidth" isn't a renewable resource I can generate through enthusiasm — it's math.
-
-Which project should I put down to pick this one up?
-
-Thanks!`,
-    aggressionScore: 68,
-    damageAssessment: 'Manager forced to make prioritization decisions instead of just adding work',
+    length: "short",
+    subject: "Re: Alignment Session",
+    body: "Hi Rebecca,\n\nPer your email suggesting we 'align' on the project direction, I want to clarify what alignment means in this context.\n\nIn my experience over the past year, 'let's align' translates to: 'I've already decided, and this meeting is where you learn what I've decided while I maintain the illusion of collaboration.'\n\nIf you've made a decision, I'm genuinely happy to execute it. You're the boss. But could we skip the theatre and just send the decision via email? It would save us both 30 minutes of me pretending to have input.\n\nAlternatively, if you genuinely want input, I have some. Happy either way.\n\nBest",
+    aggressionScore: 76,
+    damageAssessment: "Either they'll start genuinely collaborating or admit they just want compliance",
     corporateTranslation: {
-      whatYouMean: 'No, I don\'t have bandwidth. I\'m already at 100%. Tell me what to drop.',
-      corporateVersion: 'I want to have a prioritization discussion to ensure this new initiative gets the focus it deserves.',
+      whatYouMean: "'Align' means 'agree with me.' Just tell me what to do instead of pretending to ask.",
+      corporateVersion: "I'd love clarity on whether this session is collaborative or informational so I can prepare accordingly."
     },
-    tags: ['bandwidth', 'overloaded', 'prioritization', 'workload', 'capacity'],
-  },
-  {
-    id: 'buzzword-low-hanging-fruit',
-    recipient: 'manager',
-    situation: 'Manager keeps asking for "low-hanging fruit" that doesn\'t exist',
-    category: 'corporate-buzzwords',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Quick Wins / Low-Hanging Fruit',
-    body: `Hi Paul,
-
-You asked me to identify "low-hanging fruit" for our quarterly goals. I've conducted an extensive search and here's my report:
-
-The fruit has been picked. All of it. Every piece of low-hanging fruit within reach was harvested in Q1 and Q2. The tree is bare at accessible heights.
-
-What remains is high-hanging fruit that requires ladders (budget), climbing equipment (additional headcount), and time (more than one sprint).
-
-I know "there's no easy fruit left" isn't the answer you wanted, but it's the honest one. Shall we discuss the ladder budget?
-
-Best`,
-    aggressionScore: 52,
-    damageAssessment: 'Manager educated that easy wins have limits',
-    corporateTranslation: {
-      whatYouMean: 'There are no quick wins left. Everything remaining requires real investment.',
-      corporateVersion: 'I\'d like to reframe our expectations — the remaining opportunities require strategic investment to pursue.',
-    },
-    tags: ['low-hanging-fruit', 'quick-wins', 'realistic', 'investment'],
-  },
-  {
-    id: 'buzzword-pivot',
-    recipient: 'manager',
-    situation: 'Manager "pivots" the project direction every week',
-    category: 'corporate-buzzwords',
-    tone: 5,
-    length: 'medium',
-    subject: 'Re: Time to Pivot! (Pivot #7)',
-    body: `Hi Sarah,
-
-Exciting — another pivot! Let me update the project direction tracker:
-
-Week 1: "Let's build a mobile app!" → PIVOT
-Week 2: "Actually, web-first." → PIVOT
-Week 3: "What about a chrome extension?" → PIVOT
-Week 4: "Back to mobile, but different." → PIVOT
-Week 5: "Let's go desktop." → PIVOT
-Week 6: "Hybrid approach!" → PIVOT
-Week 7 (today): "What if we focused on mobile?"
-
-Sarah, we have completed a full circle. We've pivoted back to Week 1. If a pivot brings you back to where you started, is it even a pivot? Or is it just... spinning?
-
-The team has built approximately 30% of six different things and 100% of zero things. I'd love to actually ship something this quarter.
-
-Can we commit to ONE direction for more than 5 business days?
-
-Eagerly awaiting Pivot #8`,
-    aggressionScore: 75,
-    damageAssessment: 'Manager confronted with decision chaos through thorough documentation',
-    corporateTranslation: {
-      whatYouMean: 'You change direction every week and now we\'ve built nothing. COMMIT TO SOMETHING.',
-      corporateVersion: 'I\'d like to discuss strategic direction stability to enable the team to deliver meaningful progress.',
-    },
-    tags: ['pivot', 'direction-changes', 'indecision', 'shipping', 'spinning'],
-  },
-  {
-    id: 'buzzword-culture-fit',
-    recipient: 'manager',
-    situation: 'Manager uses "culture fit" as excuse for everything',
-    category: 'corporate-buzzwords',
-    tone: 5,
-    length: 'short',
-    subject: 'Re: "Culture Fit" Concerns',
-    body: `Hi Monica,
-
-You mentioned that my request to work from home Fridays isn't a "culture fit." I'm curious about this culture we're fitting:
-
-- The culture of coming to an empty office (since 60% of the team is remote Fridays)?
-- The culture of spending 2 hours commuting to sit on Zoom calls?
-- The culture of being present for... the presence of it?
-
-Could you define "culture fit" as it applies here? Because from where I'm sitting (in the office, alone, on a Friday), the culture seems to be "doing whatever the people who work from home do, but from a desk."
-
-I'd love clarity on what specifically about my physical location on Fridays impacts the culture.
-
-Thanks!`,
-    aggressionScore: 68,
-    damageAssessment: 'Manager\'s vague "culture" argument thoroughly deconstructed',
-    corporateTranslation: {
-      whatYouMean: '"Culture fit" isn\'t a real argument. Half the team works from home Fridays.',
-      corporateVersion: 'I\'d appreciate specific criteria for this policy to ensure fair and consistent application.',
-    },
-    tags: ['culture-fit', 'wfh', 'double-standards', 'vague-excuses'],
-  },
-  {
-    id: 'buzzword-action-items-never-actioned',
-    recipient: 'coworker',
-    situation: 'Meeting "action items" are assigned but never actioned',
-    category: 'corporate-buzzwords',
-    tone: 4,
-    length: 'medium',
-    subject: 'Action Items - Status Check (Week 8)',
-    body: `Hi team,
-
-Quick check-in on our action items from the last 8 weekly meetings! Here's a comprehensive status report:
-
-Week 1 Action Items: Not actioned
-Week 2 Action Items: Not actioned
-Week 3 Action Items: Briefly discussed, then not actioned
-Week 4 Action Items: Carried over from Week 1 (still not actioned)
-Week 5 Action Items: New items added to the not-actioned pile
-Week 6 Action Items: The word "action" beginning to lose all meaning
-Week 7 Action Items: Mostly just the same items as Weeks 1-6
-Week 8 Action Items: [Presumably these will also not be actioned]
-
-I'm starting to think we should rename these "Inaction Items" for accuracy.
-
-Can we commit to completing at least ONE item this week? Just one. As an experiment. To see what it feels like.
-
-Enthusiastically,
-Your accountability buddy`,
-    aggressionScore: 60,
-    damageAssessment: 'Team confronted with collective failure to follow through',
-    corporateTranslation: {
-      whatYouMean: 'Nobody does anything they say they\'ll do in meetings. We just create lists and ignore them.',
-      corporateVersion: 'I want to improve our action item completion rate. Can we implement accountability check-ins?',
-    },
-    tags: ['action-items', 'follow-through', 'accountability', 'meetings', 'inaction'],
-  },
+    tags: ["align", "pseudo-collaboration", "decision-making", "autonomy"]
+  }
 ];

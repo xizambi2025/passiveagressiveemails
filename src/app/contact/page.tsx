@@ -30,16 +30,8 @@ export default function ContactPage() {
             </p>
             <div className="space-y-3 text-sm">
               <div>
-                <span className="font-medium">General Inquiries: </span>
-                <span className="text-muted-foreground">hello@passiveaggressiveemails.com</span>
-              </div>
-              <div>
-                <span className="font-medium">Partnerships: </span>
-                <span className="text-muted-foreground">partnerships@passiveaggressiveemails.com</span>
-              </div>
-              <div>
-                <span className="font-medium">Press: </span>
-                <span className="text-muted-foreground">press@passiveaggressiveemails.com</span>
+                <span className="font-medium">For everything: </span>
+                <span className="text-muted-foreground">hi@PassiveAggressiveEmails.com</span>
               </div>
             </div>
           </section>
@@ -49,7 +41,7 @@ export default function ContactPage() {
             <p className="text-muted-foreground leading-relaxed">
               Have a workplace situation that deserves the passive-aggressive
               treatment? We&apos;re always looking for new scenarios to add to our
-              library. Send us the situation, and our editorial team will craft the
+              library. Send us the situation, and The Dept. of Plausible Deniability will craft the
               perfect response.
             </p>
           </section>

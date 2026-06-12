@@ -14,8 +14,11 @@ export function getShareUrl(id: string): string {
 export function getShareText(params: {
   toneLabel: string;
   aggressionScore: number;
+  subject?: string;
 }): string {
-  return `I just generated a ${params.toneLabel} email. Aggression score: ${params.aggressionScore}/100. 💀`;
+  const scoreEmoji = params.aggressionScore >= 80 ? "💀" : params.aggressionScore >= 60 ? "🔥" : "😬";
+  const subjectLine = params.subject ? `\n\n"${params.subject}"` : "";
+  return `${scoreEmoji} Aggression score: ${params.aggressionScore}/100. Tone: ${params.toneLabel}.${subjectLine}\n\nI found a passive-aggressive email generator and it's dangerously accurate. You NEED to try this.`;
 }
 
 export function getLinkedInShareUrl(url: string, text: string): string {
@@ -31,7 +34,7 @@ export function getFacebookShareUrl(url: string): string {
 }
 
 export function getWhatsAppShareUrl(text: string, url: string): string {
-  return `https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}`;
+  return `https://wa.me/?text=${encodeURIComponent(`${text}\n\n${url}`)}`;
 }
 
 export function getEmailShareUrl(

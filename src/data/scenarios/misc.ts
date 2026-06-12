@@ -2,718 +2,360 @@ import { Scenario } from './types';
 
 export const miscScenarios: Scenario[] = [
   {
-    id: 'misc-reply-all-complaint',
-    recipient: 'coworker',
-    situation: 'Someone replied all to complain about reply-all emails',
-    category: 'coworkers',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Re: Re: PLEASE STOP REPLYING ALL',
-    body: `Hi team,
-
-I appreciate the irony of sending this to 200 people, but: please stop replying all to say "please stop replying all." You are now part of the problem you're trying to solve.
-
-Current score: 47 reply-all emails about a birthday cake order. 12 of which are people asking others to stop replying all. Each reply-all complaint generated 3 more reply-alls.
-
-The cake was chocolate, by the way. For anyone still wondering.
-
-Please respond only to me if you have further questions. Or better yet, don't respond at all.
-
-In silence,
-Best`,
-    aggressionScore: 52,
-    damageAssessment: 'Everyone embarrassed. Reply-all chain may actually stop.',
-    corporateTranslation: {
-      whatYouMean: 'You\'re all replying all to complain about replying all. The irony is killing me.',
-      corporateVersion: 'I\'d like to address our email communication norms to reduce noise.',
-    },
-    tags: ['reply-all', 'irony', 'team-email', 'mass-email', 'funny'],
-  },
-  {
-    id: 'misc-out-of-office-aggressive',
-    recipient: 'client',
-    situation: 'Setting up an out-of-office that sets clear boundaries',
-    category: 'clients',
-    tone: 4,
-    length: 'short',
-    subject: '[Auto-Reply] Out of Office - Actually Out',
-    body: `Thank you for your email! I am currently out of the office from December 23 to January 2 with LIMITED access to email.
-
-When I say "limited," I mean "none." I will not be checking email. This is not a test. I am genuinely, physically, and emotionally unavailable.
-
-If your matter is urgent:
-- Truly urgent (production is on fire): Contact James at j.smith@company.com
-- "Urgent" (you want something before I'm back): It can wait. I promise.
-- "URGENT!!!!" (you always write this): It's never actually been urgent. Deep breath.
-
-I will respond to all emails when I return on January 3. They will be addressed in the order of actual importance, not the number of exclamation marks in your subject line.
-
-Happy holidays!`,
-    aggressionScore: 60,
-    damageAssessment: 'Crystal clear boundaries. Some clients may be offended. Most will respect it.',
-    corporateTranslation: {
-      whatYouMean: 'I am on vacation. Do not email me. I will not respond. Accept this.',
-      corporateVersion: 'I\'m taking planned PTO and have arranged coverage for truly critical items.',
-    },
-    tags: ['out-of-office', 'vacation', 'boundaries', 'holidays', 'auto-reply'],
-  },
-  {
-    id: 'misc-meeting-notes-never-read',
-    recipient: 'coworker',
-    situation: 'Sending meeting notes that you know nobody will read then being asked questions already answered in them',
-    category: 'meetings',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Quick Question (Answered in Meeting Notes, Page 1, Line 3)',
-    body: `Hi Laura,
-
-Great question! The answer is in the meeting notes I sent on Monday. Page 1. Third paragraph. First sentence. It's bolded. And highlighted. And has a star emoji next to it.
-
-But since I know reading is hard when there are so many other emails to not read, here's your answer: Yes, the deadline is March 15.
-
-I'll continue sending meeting notes for the permanent record. Whether anyone reads them remains, as always, a beautiful mystery.
-
-Best`,
-    aggressionScore: 55,
-    damageAssessment: 'Coworker mildly shamed for not reading readily available information',
-    corporateTranslation: {
-      whatYouMean: 'READ THE NOTES I SEND. The answer was RIGHT THERE.',
-      corporateVersion: 'I\'ve included this in our meeting documentation for easy reference.',
-    },
-    tags: ['meeting-notes', 'unread', 'questions', 'documentation', 'reading'],
-  },
-  {
-    id: 'misc-thermostat-wars',
-    recipient: 'coworker',
-    situation: 'Office thermostat being constantly adjusted by someone',
-    category: 'coworkers',
+    id: "ac-wars-coworker-3",
+    recipient: "coworker",
+    situation: "Office temperature war - someone keeps changing the thermostat",
+    category: "coworkers",
     tone: 3,
-    length: 'short',
-    subject: 'Office Temperature - A Peace Treaty Proposal',
-    body: `Hi team,
-
-I'm proposing a formal ceasefire in the Thermostat Wars of 2024. For those keeping score:
-
-- 9:00 AM: Mystery person sets it to 66°F (arctic expedition vibes)
-- 10:30 AM: Counter-strike to 76°F (tropical resort)
-- 11:00 AM: Back to 66°F (penguins rejoice)
-- Noon: Locked at 72°F by facilities (peace briefly achieved)
-- 12:30 PM: Someone broke into the lock (chaos returns)
-
-I propose 72°F and a blanket policy (literal blankets) for those who run cold. The alternative is continuing this Cold War until facilities removes the thermostat entirely.
-
-Can we agree on 72 and end this?
-
-Shiveringly yours`,
-    aggressionScore: 35,
-    damageAssessment: 'Office tension acknowledged with humor. May lead to resolution.',
-    corporateTranslation: {
-      whatYouMean: 'Stop changing the thermostat every 5 minutes. 72°F. Done.',
-      corporateVersion: 'I\'d like to establish a shared workspace climate policy to support productivity.',
-    },
-    tags: ['thermostat', 'office', 'temperature', 'passive-aggressive', 'team'],
-  },
-  {
-    id: 'misc-slack-status-lies',
-    recipient: 'employee',
-    situation: 'Employee\'s Slack status says "In a Meeting" for 6 hours straight',
-    category: 'coworkers',
-    tone: 3,
-    length: 'short',
-    subject: 'Slack Status Check - Longest Meeting in History?',
-    body: `Hi Tom,
-
-I noticed your Slack status has said "In a Meeting 🟡" for the past 6 hours. I wanted to check: are you actually in a 6-hour meeting? Because if so, that's a human rights violation and I'd like to help.
-
-If you're NOT in a 6-hour meeting and perhaps just forgot to update your status (while conveniently being unreachable), no judgment! Happens to the best of us. Every day. From 10 AM to 4 PM.
-
-Just wanted to make sure you're okay in there.
-
-Concerned,
-Best`,
-    aggressionScore: 48,
-    damageAssessment: 'Employee caught using status as avoidance mechanism',
-    corporateTranslation: {
-      whatYouMean: 'Your status is a lie and we both know it. You\'re hiding.',
-      corporateVersion: 'I want to check in about your availability today — noticed your status has been in meetings all day.',
-    },
-    tags: ['slack-status', 'unreachable', 'avoidance', 'hiding'],
-  },
-  {
-    id: 'misc-parking-spot-steal',
-    recipient: 'coworker',
-    situation: 'Someone keeps taking your assigned parking spot',
-    category: 'coworkers',
-    tone: 4,
-    length: 'short',
-    subject: 'Parking Spot #47 - A Territorial Discussion',
-    body: `Hi team,
-
-For the third time this week, I've arrived at my assigned parking spot (#47, clearly labeled with my name and department) to find it occupied by a silver Tesla with no permit.
-
-To the owner of this Tesla: I admire your confidence. Pulling into a spot that has someone else's name physically painted on the ground takes a level of audacity I can only aspire to.
-
-However, I'd appreciate it if you'd park in your own spot, a visitor space, or literally anywhere else in the state. I've attached the parking map with available spaces highlighted. There are 23 of them. None of them are #47.
-
-Thank you for your future cooperation.
-
-Regards`,
-    aggressionScore: 55,
-    damageAssessment: 'Spot-stealer publicly identified without direct naming',
-    corporateTranslation: {
-      whatYouMean: 'Get out of my parking spot. It has my NAME on it.',
-      corporateVersion: 'I\'d like to address a recurring facility usage issue regarding assigned parking.',
-    },
-    tags: ['parking', 'territory', 'assigned-spot', 'office', 'annoyance'],
-  },
-  {
-    id: 'misc-email-signature-novel',
-    recipient: 'coworker',
-    situation: 'Someone has an absurdly long email signature',
-    category: 'corporate-buzzwords',
-    tone: 3,
-    length: 'short',
-    subject: 'Re: Quick Question (Buried Beneath Your 47-Line Signature)',
-    body: `Hi Rebecca,
-
-I found your one-line response! It was hiding above your signature, which is currently longer than some of my actual emails. For reference:
-
-- Your message: 8 words
-- Your signature: 47 lines, including 3 logos, 2 legal disclaimers, a inspirational quote, your LinkedIn, Twitter, Instagram, TikTok, personal blog, podcast, pronouns, time zone, favorite color, and a small map to your office.
-
-I appreciate thoroughness! But perhaps we could trim it for internal communications? I spend more time scrolling past your signature than reading your actual emails.
-
-Just a thought!
-
-Best
-[Name]
-[No other information needed because you know who I am]`,
+    length: "short",
+    subject: "Office Temperature Situation",
+    body: "Hi Team,\n\nI've noticed the office thermostat has been adjusted 14 times today. We appear to be locked in an invisible war between the 'arctic tundra' faction and the 'surface of the sun' contingent.\n\nCurrently, my side of the office requires a parka while accounts are working in what appears to be a sauna. The thermostat is not a toy. It is not a democracy. And changing it when you walk past is not a constitutional right.\n\nCan we agree on 21\u00b0C and invest in personal fans/cardigans as needed?\n\nThanks,\n(Currently: freezing)",
     aggressionScore: 42,
-    damageAssessment: 'Coworker may feel self-conscious but the point is valid',
+    damageAssessment: "Relatable enough that the whole office will laugh and agree to a truce",
     corporateTranslation: {
-      whatYouMean: 'Your email signature is absurdly long. Nobody needs your TikTok in a work email.',
-      corporateVersion: 'I have a suggestion about email communication efficiency that might streamline our internal correspondence.',
+      whatYouMean: "Stop touching the thermostat. You're all driving me insane.",
+      corporateVersion: "I'd like to propose a shared environmental comfort agreement."
     },
-    tags: ['email-signature', 'excessive', 'communication', 'funny', 'formatting'],
+    tags: ["thermostat", "office-temperature", "shared-space", "war"]
   },
   {
-    id: 'misc-printer-always-broken',
-    recipient: 'manager',
-    situation: 'Office printer has been broken for weeks and no one fixes it',
-    category: 'corporate-buzzwords',
-    tone: 3,
-    length: 'short',
-    subject: 'Printer Status Update - Week 6 of the Uprising',
-    body: `Hi IT team,
-
-The printer on Floor 2 has now been broken for 6 weeks. It currently displays "PC LOAD LETTER" which I believe is printer for "I have given up on life."
-
-During this time, I've:
-- Filed 3 IT tickets (status: "In Progress" since Week 1)
-- Offered it encouraging words
-- Considered a candlelight vigil
-
-12 people use this printer. That's 12 people walking to Floor 4 daily, which is great for our step counts but terrible for our productivity.
-
-Could someone either fix it or formally declare it deceased so we can mourn and move on?
-
-Hopefully yours`,
-    aggressionScore: 40,
-    damageAssessment: 'IT shamed gently with humor. Printer may finally get attention.',
-    corporateTranslation: {
-      whatYouMean: 'The printer has been broken for 6 weeks. Fix it or replace it. Please.',
-      corporateVersion: 'I\'d like to escalate a recurring equipment issue affecting team productivity on Floor 2.',
-    },
-    tags: ['printer', 'broken', 'IT', 'facilities', 'waiting'],
-  },
-  {
-    id: 'misc-promoted-over-you',
-    recipient: 'manager',
-    situation: 'Someone less qualified got promoted over you',
-    category: 'managers',
-    tone: 5,
-    length: 'medium',
-    subject: 'Career Development Discussion Request',
-    body: `Hi Catherine,
-
-Congratulations to Brad on his promotion to Senior! I'm genuinely happy for him.
-
-I do have some questions about the decision criteria, given that I've been in the role 2 years longer, have higher performance ratings for 3 consecutive quarters, mentored 4 junior developers (including Brad), and led the two highest-revenue projects this year.
-
-I'm not asking this to be bitter — I'm asking because I need to understand what I'm missing. If the criteria are clear, I can work toward them. If they're not... well, that's a different conversation.
-
-Could we schedule time to discuss:
-1. What Brad's promotion was based on
-2. What specifically I need to do/demonstrate for the same advancement
-3. A timeline for my path forward
-
-I want to make sure I'm not running a race without knowing where the finish line is.
-
-Best`,
-    aggressionScore: 70,
-    damageAssessment: 'Manager forced to justify the decision or acknowledge unfairness',
-    corporateTranslation: {
-      whatYouMean: 'Why did someone less qualified get promoted over me? Explain yourself.',
-      corporateVersion: 'I\'d like to understand the promotion criteria and align my development plan with advancement opportunities.',
-    },
-    tags: ['promotion', 'passed-over', 'fairness', 'career', 'criteria'],
-  },
-  {
-    id: 'misc-expense-report-rejected',
-    recipient: 'manager',
-    situation: 'Expense report rejected for legitimate business expenses',
-    category: 'invoices',
-    tone: 4,
-    length: 'medium',
-    subject: 'Re: Expense Report Rejection - Clarification Needed',
-    body: `Hi Laura,
-
-My expense report was rejected with the note: "Seems excessive." I'd love some context!
-
-The rejected items:
-- Client lunch ($85): The client chose the restaurant. I ordered a salad. The CLIENT had the steak. Should I have slapped the menu out of their hands?
-- Taxi to airport ($45): Was I supposed to walk to the airport? With luggage? From downtown?
-- Conference registration ($299): That you asked me to attend. Via email. Which I have.
-
-For reference, these are all within our published expense policy limits. I checked. Twice.
-
-Could you approve these, or let me know which specific policy they violate? "Seems excessive" isn't a category in the employee handbook — I looked there too.
-
-Thanks!`,
-    aggressionScore: 60,
-    damageAssessment: 'Manager confronted with own approval + policy compliance evidence',
-    corporateTranslation: {
-      whatYouMean: 'These are legitimate expenses within policy. Approve them.',
-      corporateVersion: 'I\'d like to discuss the rejection criteria for my recent expense submission to ensure future compliance.',
-    },
-    tags: ['expense-report', 'rejection', 'policy', 'legitimate', 'unfair'],
-  },
-  {
-    id: 'misc-bathroom-break-tracking',
-    recipient: 'manager',
-    situation: 'Manager seems to be tracking bathroom break frequency',
-    category: 'managers',
-    tone: 5,
-    length: 'short',
-    subject: 'Re: "Away From Desk" Frequency - A Biological Explanation',
-    body: `Hi Greg,
-
-Thank you for your concern about my "away from desk" time. You're correct that I leave my desk approximately 3-4 times per day for 5-10 minutes.
-
-This is because I drink water. Water, as you may know, is processed by the human body and must eventually be... released. This is not a personal failing or a productivity concern. It's biology.
-
-If you'd like, I can hydrate less. My doctor advises against it, but I'm sure my UTI will understand it's for productivity metrics.
-
-Alternatively, we could focus on my output (which is consistently above target) rather than my bladder schedule. Just a thought!
-
-Best`,
-    aggressionScore: 75,
-    damageAssessment: 'Manager humiliated for monitoring bathroom usage. Likely won\'t bring it up again.',
-    corporateTranslation: {
-      whatYouMean: 'Are you seriously monitoring my bathroom breaks? This is unhinged.',
-      corporateVersion: 'I want to discuss focus on output-based performance metrics rather than desk-time tracking.',
-    },
-    tags: ['micromanaging', 'bathroom', 'absurd', 'monitoring', 'biology'],
-  },
-  {
-    id: 'misc-team-building-mandatory-fun',
-    recipient: 'manager',
-    situation: 'Mandatory "fun" team building event during personal time',
-    category: 'meetings',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Mandatory Fun - Saturday Team Building!',
-    body: `Hi Jessica,
-
-I'm excited about the mandatory team building event on Saturday! A few questions:
-
-1. If it's "mandatory," is it paid? (Our labor laws have thoughts on this)
-2. If it's "fun," why is it mandatory? (Fun things don't need to be mandated)
-3. Is "trust falls at 8 AM on a Saturday" genuinely anyone's idea of team bonding?
-
-I'd love to participate in team building! During work hours. On a workday. When I'm being paid. This seems both legal and logical.
-
-Could we move this to a Friday afternoon instead? Same bonding, fewer labor law concerns.
-
-Eagerly yours (Monday-Friday, 9-5)`,
-    aggressionScore: 60,
-    damageAssessment: 'Manager confronted with legal and logical issues of mandatory weekend "fun"',
-    corporateTranslation: {
-      whatYouMean: 'I am not giving up my Saturday for unpaid "mandatory fun." Move it to a workday.',
-      corporateVersion: 'I want to discuss scheduling and compensation structure for our upcoming team building initiative.',
-    },
-    tags: ['team-building', 'mandatory', 'weekend', 'boundaries', 'labor-law'],
-  },
-  {
-    id: 'misc-open-plan-headphones',
-    recipient: 'coworker',
-    situation: 'Coworker taps you on shoulder when you have headphones on',
-    category: 'coworkers',
-    tone: 3,
-    length: 'short',
-    subject: 'Headphone Protocol - A Public Service Announcement',
-    body: `Hi team,
-
-Quick PSA: when someone is wearing headphones in an open office, this is the international symbol for "I am concentrating and would prefer not to be interrupted."
-
-It does NOT mean:
-- "Please tap me on the shoulder repeatedly"
-- "Hover behind me until I sense your presence"
-- "Start talking at my back and get offended when I don't hear you"
-
-If you need me and I'm headphone'd: Slack message, email, or carrier pigeon. I'll respond within 5 minutes. The headphones come off for meetings and emergencies. "Did you see the email from HR about the kitchen?" is neither.
-
-Thank you for respecting the headphone forcefield!
-
-Best`,
-    aggressionScore: 38,
-    damageAssessment: 'Team educated on office norms with minimal personal targeting',
-    corporateTranslation: {
-      whatYouMean: 'Stop interrupting me when I clearly have headphones on for a reason.',
-      corporateVersion: 'I\'d like to establish communication norms for our open office to respect focus time.',
-    },
-    tags: ['headphones', 'open-office', 'interruptions', 'focus', 'etiquette'],
-  },
-  {
-    id: 'misc-volunteered-for-party-planning',
-    recipient: 'manager',
-    situation: 'Always asked to plan office parties because you\'re the only woman on the team',
-    category: 'managers',
-    tone: 5,
-    length: 'medium',
-    subject: 'Re: Can You Plan Dave\'s Farewell Party?',
-    body: `Hi Robert,
-
-I'd love to discuss this request! I've planned the last 6 office celebrations:
-- Holiday party (Dec)
-- Tom's birthday (Jan)
-- New hire welcome (Feb)  
-- Team anniversary (Mar)
-- Client appreciation event (Apr)
-- Spring social (May)
-
-Interestingly, our team has 8 members, 7 of whom have never been asked to plan a single event. I'm curious about the selection criteria. Is it alphabetical? Seat location? Something else I'm not seeing?
-
-I'm happy to take my turn in a ROTATION. But if I'm specifically being asked because of an assumption about who "naturally" handles this type of work, I'd love to discuss that assumption.
-
-Who else on the team could lead Dave's farewell? I'll happily contribute as an attendee.
-
-Best`,
-    aggressionScore: 72,
-    damageAssessment: 'Manager confronted with gendered labor pattern. May feel uncomfortable but message is important.',
-    corporateTranslation: {
-      whatYouMean: 'I\'m tired of being the default party planner because I\'m a woman. Ask someone else.',
-      corporateVersion: 'I\'d like to discuss equitable distribution of non-role-specific tasks across the team.',
-    },
-    tags: ['gender', 'office-housework', 'fairness', 'party-planning', 'boundaries'],
-  },
-  {
-    id: 'misc-linkedin-recruiter-current-job',
-    recipient: 'coworker',
-    situation: 'Your manager just connected with a recruiter on LinkedIn',
-    category: 'coworkers',
+    id: "printer-coworker-2",
+    recipient: "coworker",
+    situation: "Someone left the printer jammed and walked away",
+    category: "coworkers",
     tone: 2,
-    length: 'short',
-    subject: 'LinkedIn Suggestion for You!',
-    body: `Hi team,
-
-Just a fun LinkedIn tip: if you're connecting with recruiters from competing companies, you might want to adjust your privacy settings so your team doesn't get "People You May Know" suggestions featuring those connections.
-
-Not pointing any fingers! Just a general digital literacy observation I thought might be helpful for anyone currently... networking.
-
-Happy to share more LinkedIn tips if needed!
-
-Best`,
-    aggressionScore: 45,
-    damageAssessment: 'Person subtly warned their job-hunting is visible. May appreciate the heads-up.',
-    corporateTranslation: {
-      whatYouMean: 'I can see you\'re connecting with recruiters. Be more careful.',
-      corporateVersion: 'Quick reminder about professional social media privacy settings!',
-    },
-    tags: ['linkedin', 'recruiter', 'privacy', 'job-hunting', 'subtle'],
-  },
-  {
-    id: 'misc-email-at-11pm-expecting-response',
-    recipient: 'manager',
-    situation: 'Manager emails at 11 PM and follows up at 7 AM asking why you haven\'t responded',
-    category: 'managers',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Following Up on My 11 PM Email',
-    body: `Hi David,
-
-I saw your 7 AM follow-up asking why I hadn't responded to your 11 PM email. Let me explain the mystery:
-
-At 11 PM, I was sleeping. This is a common human activity that typically occurs during nighttime hours. It involves closed eyes and unconsciousness, which makes email checking physically impossible.
-
-I have now responded at 9 AM, which is when my working day begins. The turnaround time was 10 hours, 8 of which were dedicated to the biological necessity of sleep.
-
-If you need same-night responses, we should discuss an on-call arrangement and its associated compensation. Otherwise, I'm happy to maintain my current response window of "when I'm awake and working."
-
-Best`,
-    aggressionScore: 62,
-    damageAssessment: 'Manager boundaries clearly set with biological reality',
-    corporateTranslation: {
-      whatYouMean: 'I was ASLEEP at 11 PM like a normal person. Don\'t expect midnight responses.',
-      corporateVersion: 'I want to align on communication expectations around response times outside business hours.',
-    },
-    tags: ['after-hours', 'boundaries', 'sleep', 'expectations', 'night-email'],
-  },
-  {
-    id: 'misc-cc-world-minor-issue',
-    recipient: 'coworker',
-    situation: 'Coworker escalated a tiny issue by CCing your boss and their boss',
-    category: 'coworkers',
-    tone: 5,
-    length: 'short',
-    subject: 'Re: URGENT: Shared Drive Folder Name (CC: Everyone in Management)',
-    body: `Hi Karen,
-
-I see you've CC'd both our managers, the department head, and the VP on a discussion about... the shared drive folder naming convention. Bold move!
-
-Just to be clear: you want a folder called "2024_Projects" and I suggested "Projects_2024." This is the matter requiring executive attention.
-
-I'm happy to use whatever naming convention you'd like. It's a folder name. It affects nothing of consequence. You could call it "Banana_Hammock" and I would not have CC'd leadership about it.
-
-Going forward, perhaps we could try resolving sub-VP-level disagreements between ourselves? Just a thought.
-
-Best`,
-    aggressionScore: 68,
-    damageAssessment: 'Coworker embarrassed by obvious over-escalation of trivial matter',
-    corporateTranslation: {
-      whatYouMean: 'You CC\'d the VP over a folder name. You look insane and now I do too.',
-      corporateVersion: 'I think we can resolve this directly without executive input — happy to align offline.',
-    },
-    tags: ['escalation', 'cc-manager', 'trivial', 'overreaction', 'folder'],
-  },
-  {
-    id: 'misc-dress-code-inconsistent',
-    recipient: 'manager',
-    situation: 'Got dress coded but others wear the same thing without comment',
-    category: 'managers',
-    tone: 4,
-    length: 'short',
-    subject: 'Re: Dress Code Reminder - Some Questions',
-    body: `Hi Lisa,
-
-Thank you for the reminder about our "business casual" dress code regarding my dark jeans today. I want to make sure I understand the policy correctly.
-
-For calibration, I noticed the following today:
-- Mark: cargo shorts and flip-flops (no comment)
-- Jake: wrinkled t-shirt with beer logo (no comment)
-- Tom: athletic shorts (also no comment)
-
-Are my dark jeans less "business casual" than cargo shorts? Is there a chart? A pantone of acceptability? Because I'm genuinely confused about where the line is and why it seems to shift depending on who's crossing it.
-
-Happy to comply with a consistent standard! Key word: consistent.
-
-Thanks`,
-    aggressionScore: 60,
-    damageAssessment: 'Manager confronted with inconsistent enforcement',
-    corporateTranslation: {
-      whatYouMean: 'Why am I getting dress-coded when other people literally wear shorts?',
-      corporateVersion: 'I want to understand the dress code parameters to ensure consistent compliance across the team.',
-    },
-    tags: ['dress-code', 'inconsistency', 'double-standards', 'unfair'],
-  },
-  {
-    id: 'misc-wifi-name-neighbor',
-    recipient: 'coworker',
-    situation: 'Someone changed the office WiFi name to something passive aggressive',
-    category: 'coworkers',
-    tone: 2,
-    length: 'short',
-    subject: 'WiFi Network Name Change?',
-    body: `Hi IT,
-
-Quick question: was the WiFi network name changed intentionally? Because "StopMicrowavingFishJEREMY" doesn't seem like a standard corporate SSID.
-
-While I appreciate the creativity (and agree with the sentiment), clients can see our WiFi names when they visit. Perhaps we could address the fish issue through more... traditional channels?
-
-Suggest renaming back to "CompanyName_5G" and sending Jeremy a direct message instead.
-
-Thanks!`,
-    aggressionScore: 30,
-    damageAssessment: 'Funny situation defused. Jeremy may finally get the message.',
-    corporateTranslation: {
-      whatYouMean: 'Someone weaponized the WiFi name and it\'s unprofessional but also hilarious.',
-      corporateVersion: 'I\'d like to flag an IT configuration change that may not align with our corporate presentation standards.',
-    },
-    tags: ['wifi', 'funny', 'fish', 'office', 'IT', 'creative'],
-  },
-  {
-    id: 'misc-always-last-to-know',
-    recipient: 'manager',
-    situation: 'You find out about major changes affecting your role through company newsletter',
-    category: 'managers',
-    tone: 5,
-    length: 'medium',
-    subject: 'Re: Org Restructure - Finding Out Via Newsletter',
-    body: `Hi Patricia,
-
-Interesting read in today's company newsletter! Particularly the part about our department being restructured and my team being merged with Operations. Fun way to find out!
-
-I have to ask: was there a communication plan here that skipped me, or am I genuinely learning about changes to MY role through the same newsletter that announces the cafeteria menu?
-
-Some things I'd love to have known before the general population:
-- My team is being merged (affects me directly)
-- My reporting line is changing (affects me very directly)
-- My project is being "reprioritized" (is this a euphemism?)
-
-In the future, could changes affecting my actual employment be communicated to me before, or at least simultaneously with, the 3,000 other people who also received this newsletter?
-
-Appreciate it.
-
-Regards`,
-    aggressionScore: 75,
-    damageAssessment: 'Manager embarrassed by clear communication failure. Will likely apologize.',
-    corporateTranslation: {
-      whatYouMean: 'I found out MY role is changing through a newsletter meant for all-staff. What the hell?',
-      corporateVersion: 'I want to discuss communication cadence around changes that directly impact my role and team.',
-    },
-    tags: ['communication', 'last-to-know', 'restructure', 'disrespect', 'newsletter'],
-  },
-  {
-    id: 'misc-calendar-invite-no-location',
-    recipient: 'coworker',
-    situation: 'Meeting invite with no location — physical or virtual',
-    category: 'meetings',
-    tone: 3,
-    length: 'short',
-    subject: 'Re: Team Sync - WHERE?',
-    body: `Hi Jason,
-
-Quick logistical question about tomorrow's meeting: where is it?
-
-The invite has:
-- Date: ✓
-- Time: ✓
-- Attendees: ✓
-- Location: [the void]
-- Zoom link: [also the void]
-
-Am I supposed to show up somewhere physical? Join a call? Astral project? Interpretive dance in the parking lot until I sense the meeting's energy?
-
-Please advise. I'm flexible on format but I do need to know which physical or digital space to occupy.
-
-Thanks!`,
-    aggressionScore: 38,
-    damageAssessment: 'Recipient mildly embarrassed, will add location. No lasting damage.',
-    corporateTranslation: {
-      whatYouMean: 'You forgot to include WHERE the meeting is. Basic logistics, please.',
-      corporateVersion: 'Could you add the meeting location or dial-in details to the invite?',
-    },
-    tags: ['no-location', 'meeting-invite', 'logistics', 'forgetful'],
-  },
-  {
-    id: 'misc-loud-typer',
-    recipient: 'coworker',
-    situation: 'Coworker types incredibly loudly on a mechanical keyboard',
-    category: 'coworkers',
-    tone: 3,
-    length: 'short',
-    subject: 'Keyboard Volume - A Gentle Inquiry',
-    body: `Hi Jason,
-
-First: I want you to know I respect your commitment to mechanical keyboards. The clicky-clack is very satisfying. For you.
-
-For the rest of us within a 20-foot radius, it sounds like a tiny army is tap-dancing on your desk for 8 hours a day. During calls, clients have asked if I'm "at a construction site."
-
-Would you consider:
-a) A keyboard with quieter switches (Cherry MX Silent Reds are great!)
-b) A desk mat that absorbs some sound
-c) O-ring dampeners (cheap and effective!)
-
-I don't want you to give up what you love. I just want to hear my own thoughts occasionally.
-
-Quietly yours`,
+    length: "short",
+    subject: "Printer on Floor 3",
+    body: "Hi Team,\n\nA gentle PSA: if you jam the printer, the protocol is to unjam it \u2014 not slowly back away and pretend it never happened. The printer is currently displaying an error that roughly translates to 'someone crumpled paper into my guts and fled.'\n\nI've fixed it this time, but for future reference, the instructions are literally printed on the inside of the paper tray door. It takes 30 seconds and saves the next person (me, always me) from performing printer surgery.\n\nThanks!",
     aggressionScore: 35,
-    damageAssessment: 'Coworker may be surprised but suggestion is constructive',
+    damageAssessment: "Light and communal - the culprit will feel quietly guilty",
     corporateTranslation: {
-      whatYouMean: 'Your keyboard is SO LOUD. Please make it quieter or I will lose my mind.',
-      corporateVersion: 'I have a suggestion about shared workspace acoustics that might benefit the whole team.',
+      whatYouMean: "Fix the printer when you break it. Don't just walk away like a coward.",
+      corporateVersion: "I'd like to remind everyone of our shared equipment maintenance responsibilities."
     },
-    tags: ['keyboard', 'noise', 'open-office', 'mechanical-keyboard', 'considerate'],
+    tags: ["printer", "shared-equipment", "responsibility", "office"]
   },
   {
-    id: 'misc-shared-doc-no-permission',
-    recipient: 'coworker',
-    situation: 'Someone shares a doc but doesn\'t give you edit access when you need to edit',
-    category: 'coworkers',
+    id: "unnecessary-cc-coworker-5",
+    recipient: "coworker",
+    situation: "Coworker CC'd your manager on an email about a typo",
+    category: "coworkers",
+    tone: 5,
+    length: "short",
+    subject: "Re: Typo on Page 3 (CC: Your Manager, HR, The FBI)",
+    body: "Hi Eleanor,\n\nThank you for flagging the typo on page 3. You're right \u2014 'teh' should indeed be 'the.' Well spotted. I've fixed it. It took approximately 3 seconds.\n\nI couldn't help but notice you CC'd my manager on this correction. I want to confirm: you've escalated a two-letter typo to senior management level. Was this a misclick, or do you genuinely believe that my typing 'teh' instead of 'the' requires directorial oversight?\n\nFor future reference, typos can typically be resolved at ground level. Between you and me. Without involving the chain of command.\n\nBest regards",
+    aggressionScore: 75,
+    damageAssessment: "They'll think twice before CC'ing your manager on trivial matters",
+    corporateTranslation: {
+      whatYouMean: "Why did you involve my boss over a typo? That's petty and we both know it.",
+      corporateVersion: "I appreciate the attention to detail and have resolved the item at the appropriate level."
+    },
+    tags: ["cc-abuse", "escalation", "typo", "petty", "manager"]
+  },
+  {
+    id: "meeting-multitasking-coworker-4",
+    recipient: "coworker",
+    situation: "Coworker clearly doing other work during a meeting and gets caught",
+    category: "meetings",
+    tone: 4,
+    length: "short",
+    subject: "Re: Today's Sync",
+    body: "Hi Dan,\n\nI enjoyed today's meeting, particularly the moment when I asked for your thoughts on the Q3 roadmap and you responded with, 'Sorry, can you repeat that?' followed by the unmistakable sound of you unmuting your keyboard.\n\nFor the record, everyone can tell when you're typing during a call. The mute button hides sound, not the 15-second delay before every response and the gentle clacking audible during others' speaking time.\n\nI'm happy to excuse you from meetings where you're not needed. But if you're in the meeting, I'd appreciate you being in the meeting.\n\nBest",
+    aggressionScore: 61,
+    damageAssessment: "Embarrassing enough to ensure full attention next time",
+    corporateTranslation: {
+      whatYouMean: "Everyone knows you were doing other work. It's disrespectful and obvious.",
+      corporateVersion: "I'd love to ensure meetings are attended with full engagement or attendance is made optional."
+    },
+    tags: ["multitasking", "distracted", "meeting", "respect", "mute"]
+  },
+  {
+    id: "passive-aggressive-email-trail-coworker-6",
+    recipient: "coworker",
+    situation: "Coworker forwarded an email chain to your manager to make you look bad",
+    category: "coworkers",
+    tone: 6,
+    length: "medium",
+    subject: "Re: Fwd: Project Timeline (Forwarded to Helen Without Context)",
+    body: "Hi Craig,\n\nI noticed you forwarded our email chain to Helen (my manager) with the note 'FYI - concerns about timeline.'\n\nWhat's interesting is that you forwarded emails 4 through 7 of an 11-email chain. You omitted emails 1-3, where you agreed to the timeline and confirmed resourcing. You also omitted emails 8-11, where I flagged the delay was caused by your team missing their deliverable.\n\nThe selective forwarding is creative. In journalism, we'd call it 'editorial.' In this context, I'd call it something else.\n\nI've replied-all with the complete chain for Helen's benefit. Context is important, don't you think?\n\nBest regards",
+    aggressionScore: 89,
+    damageAssessment: "Full context reply-all is the professional equivalent of pulling out receipts in court",
+    corporateTranslation: {
+      whatYouMean: "You tried to throw me under the bus by cherry-picking emails. I've exposed the full picture.",
+      corporateVersion: "I've provided the complete correspondence for full transparency and context."
+    },
+    tags: ["forwarding", "manipulation", "context", "receipts", "politics"]
+  },
+  {
+    id: "parking-spot-coworker-3",
+    recipient: "coworker",
+    situation: "Someone keeps parking in your designated spot",
+    category: "coworkers",
+    tone: 3,
+    length: "short",
+    subject: "Parking Bay 47",
+    body: "Hi Team,\n\nA gentle note about Parking Bay 47: it's mine. It has my name on it. Literally \u2014 there's a sign with my name printed on it, bolted to the wall at eye level.\n\nDespite this, I've arrived to find it occupied three times this week by a silver Audi. I don't know whose Audi this is, but I'd love to meet them, partly to resolve this, and partly because I'm impressed by their ability to ignore a sign that's directly in their line of sight.\n\nIf the Audi owner could relocate to one of the many unassigned bays, I'd be grateful. Otherwise, I'll be forced to involve facilities, which feels absurd for what is essentially 'reading a sign.'\n\nThanks",
+    aggressionScore: 48,
+    damageAssessment: "The 'impressed by their ability to ignore a sign' line is devastating politeness",
+    corporateTranslation: {
+      whatYouMean: "Stop parking in my spot. My name is literally on the sign. Can you not read?",
+      corporateVersion: "I'd like to flag a recurring parking allocation issue for resolution."
+    },
+    tags: ["parking", "assigned-space", "inconsiderate", "facilities"]
+  },
+  {
+    id: "email-sign-off-coworker-2",
+    recipient: "coworker",
+    situation: "Replying to an email where someone used 'Regards' (the cold version)",
+    category: "coworkers",
     tone: 2,
-    length: 'short',
-    subject: 'Re: Please Review and Edit - Access Request',
-    body: `Hi Mike,
-
-Got your message asking me to "edit the strategy doc and add my section by EOD." One small issue: you shared it as "view only."
-
-I can view it beautifully! Very comprehensive. I can read every word. I just can't type any of mine.
-
-Could you update my permissions to "editor"? That way I can fulfill the request that you sent me to edit the thing you won't let me edit.
-
-The circle of Google Docs permissions continues.
-
-Thanks!`,
-    aggressionScore: 28,
-    damageAssessment: 'Minimal — just pointing out an obvious oversight with light humor',
+    length: "short",
+    subject: "Re: Q3 Numbers",
+    body: "Hi Karen,\n\nThanks for the Q3 numbers! All looks good from my end.\n\nAlso, I notice your sign-off has evolved from 'Best wishes' to 'Kind regards' to 'Regards' over our last three exchanges. Should I be concerned? In email semiotics, bare 'Regards' is approximately one step above 'Noted.' and one step below 'Thanks.'\n\nIf I've offended you somehow, please let me know directly rather than through the gradual cooling of your valediction.\n\nWarm wishes (deliberately warm),\nTom",
+    aggressionScore: 38,
+    damageAssessment: "So cheeky that they'll laugh and realize their cold sign-off was noticed",
     corporateTranslation: {
-      whatYouMean: 'You asked me to edit a doc you shared as view-only. Give me edit access.',
-      corporateVersion: 'Could you update my document permissions so I can contribute as requested?',
+      whatYouMean: "Your emails are getting progressively colder and I've noticed.",
+      corporateVersion: "I hope everything is well between us \u2014 happy to discuss any concerns!"
     },
-    tags: ['permissions', 'google-docs', 'access', 'oversight', 'mild'],
+    tags: ["sign-off", "email-tone", "passive-aggressive", "communication"]
   },
   {
-    id: 'misc-motivational-poster-response',
-    recipient: 'manager',
-    situation: 'Manager sends motivational quote instead of addressing a real problem you raised',
-    category: 'managers',
+    id: "slack-novel-coworker-4",
+    recipient: "coworker",
+    situation: "Coworker sends 15 separate Slack messages instead of one coherent paragraph",
+    category: "coworkers",
     tone: 4,
-    length: 'short',
-    subject: 'Re: Re: Staffing Concerns - Quotes vs. Solutions',
-    body: `Hi Richard,
-
-Thank you for responding to my detailed email about our understaffing crisis with a quote from Henry Ford: "Whether you think you can or think you can't, you're right."
-
-I appreciate the inspiration! However, I think Henry Ford also had more than 3 engineers trying to serve 2,000 customers. He likely would not have responded to "we need more people" with a motivational poster.
-
-To be clear: the issue isn't my mindset. The issue is that we have the workload of 8 people and the headcount of 3. No amount of positive thinking adds 5 employees to our team.
-
-Could we discuss hiring? With numbers? And a timeline? Instead of philosophy?
-
-Gratefully (for solutions, specifically)`,
-    aggressionScore: 65,
-    damageAssessment: 'Manager called out for deflecting with motivation instead of action',
+    length: "short",
+    subject: "Re: Your Slack Messages",
+    body: "Hi Leo,\n\nI received your Slack communication this morning. All 23 messages of it. Each containing between 2 and 7 words. Arriving one. At. A. Time. Like a telegram from 1892.\n\nMy phone buzzed 23 times. My focus shattered 23 times. And the complete message, when reconstructed, was: 'Hey, do you have the Henderson file? I need it for a meeting at 2.'\n\nThat's one sentence. One message. One notification. Could we perhaps try that approach next time?\n\nMy notification sound is now associated with mild dread.\n\nBest",
+    aggressionScore: 63,
+    damageAssessment: "They'll compose full thoughts before hitting enter from now on",
     corporateTranslation: {
-      whatYouMean: 'A motivational quote is not a solution to understaffing. Hire people.',
-      corporateVersion: 'I appreciate the encouragement! I\'d also love to discuss concrete resource allocation to address the capacity gap.',
+      whatYouMean: "Stop sending 20 messages when one would do. My phone is vibrating off the desk.",
+      corporateVersion: "I'd love to discuss asynchronous communication best practices to minimize notification fatigue."
     },
-    tags: ['motivational', 'deflection', 'understaffing', 'hiring', 'solutions'],
+    tags: ["slack", "notifications", "messages", "communication", "focus"]
   },
   {
-    id: 'misc-not-my-job',
-    recipient: 'manager',
-    situation: 'Being asked to do something way outside your job description',
-    category: 'managers',
-    tone: 4,
-    length: 'medium',
-    subject: 'Re: Can You Fix the Toilet in the Men\'s Room?',
-    body: `Hi Carol,
-
-I received your request to fix the men's room toilet. I want to make sure this email was meant for me — I'm a Senior Software Engineer.
-
-While I appreciate your faith in my problem-solving abilities, I want to clarify that "fixing toilets" doesn't appear anywhere in my job description, my offer letter, or the career path I envisioned when I got my Computer Science degree.
-
-We have a facilities team for this. Their email is facilities@company.com. They are trained professionals who understand plumbing. I am trained in JavaScript, which, despite its many capabilities, cannot flush a toilet.
-
-Is there a software engineering task I can help with instead?
-
-Best`,
-    aggressionScore: 55,
-    damageAssessment: 'Manager realizes the absurdity of the request. Facilities contacted.',
+    id: "open-plan-phone-call-coworker-3",
+    recipient: "coworker",
+    situation: "Coworker takes personal calls at their desk in the open plan office",
+    category: "coworkers",
+    tone: 3,
+    length: "medium",
+    subject: "A Gentle Note About Phone Calls",
+    body: "Hi Charlotte,\n\nI hope you're well! I wanted to gently raise something. Over the past few weeks, I've become inadvertently invested in several chapters of your personal life, including:\n\n- The ongoing dispute with your energy provider\n- Your feelings about your sister's new boyfriend (I also think he sounds suspicious)\n- The detailed breakdown of your weekend plans\n\nWhile I find this more entertaining than my actual work, I'm not sure it's intentional. The phone booths on floor 2 are specifically designed for calls that you wouldn't want 40 colleagues overhearing.\n\nNo judgment on the content \u2014 just the volume and venue!\n\nBest",
+    aggressionScore: 46,
+    damageAssessment: "The sister's boyfriend detail shows exactly how much they've overheard",
     corporateTranslation: {
-      whatYouMean: 'I am not a plumber. I am an engineer. Please contact the correct department.',
-      corporateVersion: 'I want to ensure this request reaches the team best equipped to address it. Shall I redirect to facilities?',
+      whatYouMean: "The whole floor can hear your personal calls. Use a phone booth.",
+      corporateVersion: "I wanted to flag the availability of private call spaces for sensitive conversations."
     },
-    tags: ['not-my-job', 'absurd', 'job-description', 'boundaries', 'facilities'],
+    tags: ["phone-calls", "personal", "open-plan", "noise", "privacy"]
   },
+  {
+    id: "calendar-tetris-coworker-4",
+    recipient: "coworker",
+    situation: "Coworker books the only free slot in your packed calendar without asking",
+    category: "meetings",
+    tone: 4,
+    length: "short",
+    subject: "Re: Catch Up - Booked for 12:15",
+    body: "Hi James,\n\nI see you've found and claimed the 15-minute gap in my calendar between meetings. Like a heat-seeking missile targeting my only moment of peace today.\n\nThat 15-minute slot was not unused time. It was buffer time. It was 'walk to the next meeting room' time. It was 'briefly remember what my own name is' time. It was, frankly, 'use the bathroom' time.\n\nCould you move this to Thursday where I have actual availability? My bladder and I would appreciate it.\n\nBest",
+    aggressionScore: 64,
+    damageAssessment: "The bladder reference makes it impossible to decline the reschedule request",
+    corporateTranslation: {
+      whatYouMean: "Don't book into my only gap. That's my breathing space and I need it.",
+      corporateVersion: "I'd appreciate selecting from my explicitly available time slots for scheduling."
+    },
+    tags: ["calendar", "booking", "boundaries", "buffer-time"]
+  },
+  {
+    id: "email-at-5pm-friday-manager-4",
+    recipient: "manager",
+    situation: "Manager sends important project brief at 5 PM on Friday",
+    category: "managers",
+    tone: 4,
+    length: "short",
+    subject: "Re: New Project Brief - For Monday Discussion",
+    body: "Hi Andrew,\n\nI received the 47-page project brief at 5:02 PM on Friday, with the note 'let's discuss Monday morning.' This gives me the weekend to review it \u2014 or as I prefer to call it, my unpaid time off.\n\nI want to confirm: should I review this during hours I'm not paid for, or shall we schedule the discussion for Monday afternoon, giving me actual work hours to read it?\n\nI ask because the answer reveals quite a lot about expectations around boundaries in this team. No wrong answer! (There is a wrong answer.)\n\nBest",
+    aggressionScore: 66,
+    damageAssessment: "The 'no wrong answer (there is a wrong answer)' is peak passive aggression",
+    corporateTranslation: {
+      whatYouMean: "I'm not reading this over the weekend. Send things earlier or push the meeting.",
+      corporateVersion: "I'd like to ensure adequate review time within business hours for thorough preparation."
+    },
+    tags: ["friday-email", "work-life-balance", "boundaries", "preparation"]
+  },
+  {
+    id: "stealing-ideas-meeting-coworker-5",
+    recipient: "coworker",
+    situation: "Coworker repeats your idea 5 minutes later in a meeting and gets praised",
+    category: "coworkers",
+    tone: 5,
+    length: "medium",
+    subject: "Re: Great Discussion Today!",
+    body: "Hi Michael,\n\nGreat meeting today! I particularly enjoyed the part where I suggested restructuring the client onboarding flow, received silence, and then five minutes later you said 'What if we restructured the client onboarding flow?' and received applause.\n\nIt's a fascinating phenomenon. My idea, spoken through my mouth, was invisible. The same idea, spoken through yours, was 'brilliant thinking.' I've started to wonder if my voice is at a frequency only certain people can hear.\n\nGoing forward, perhaps we could try crediting ideas to their original source? Something like 'Building on what [my name] said...' would be a nice touch. Or I could wear a sign that says 'I said it first' \u2014 whichever feels more natural.\n\nBest regards",
+    aggressionScore: 77,
+    damageAssessment: "They'll either credit you next time or avoid sitting near you in meetings",
+    corporateTranslation: {
+      whatYouMean: "You stole my idea in real-time, in front of my face, and got credit for it.",
+      corporateVersion: "I'd love to establish clearer attribution practices in our collaborative discussions."
+    },
+    tags: ["idea-theft", "meeting", "credit", "recognition", "invisible"]
+  },
+  {
+    id: "read-receipt-coworker-6",
+    recipient: "coworker",
+    situation: "Coworker has read receipts on and clearly reads your messages but doesn't reply",
+    category: "coworkers",
+    tone: 6,
+    length: "short",
+    subject: "Re: Quick Question (Read 3 Days Ago)",
+    body: "Hi Sophie,\n\nI hope you're well! I'm following up on my Slack message from Tuesday, which your read receipts confirm you opened at 2:34 PM on Tuesday. It is now Friday.\n\nI mention the read receipts not to be confrontational, but because they've robbed you of the 'I didn't see it' defence. The technology has betrayed you. You saw it. We both know you saw it. The blue ticks know you saw it.\n\nA simple 'I'll get back to you' would genuinely suffice. The silence, combined with confirmed receipt, is creating a narrative that's worse than any actual answer could be.\n\nBest :)",
+    aggressionScore: 79,
+    damageAssessment: "The 'technology has betrayed you' line is perfect - they can't deny it",
+    corporateTranslation: {
+      whatYouMean: "I know you read my message 3 days ago. The ticks don't lie. Reply.",
+      corporateVersion: "I'm following up to ensure my query didn't get lost in your message queue."
+    },
+    tags: ["read-receipts", "ignored", "blue-ticks", "follow-up"]
+  },
+  {
+    id: "jargon-email-new-starter-2",
+    recipient: "coworker",
+    situation: "Responding to a company-wide email full of unexplained acronyms",
+    category: "corporate-buzzwords",
+    tone: 2,
+    length: "short",
+    subject: "Re: FYI - EOD Update on BAU KPIs for the PMO",
+    body: "Hi Team,\n\nQuick question: could we include a glossary with company-wide emails? I've just spent 15 minutes trying to decode this message and I'm still not sure if the PMO is a team, a tool, or a medical condition.\n\nI count 12 acronyms in a 3-paragraph email. For those of us who haven't been here since the acronyms were born, a brief translation would be incredibly helpful.\n\nAlternatively: full words. They're longer but self-explanatory.\n\nThanks!",
+    aggressionScore: 33,
+    damageAssessment: "Gentle enough to seem helpful, pointed enough to highlight the absurdity",
+    corporateTranslation: {
+      whatYouMean: "I can't understand anything you write because it's all acronyms.",
+      corporateVersion: "I'd appreciate acronym definitions for inclusivity and clarity in cross-team communications."
+    },
+    tags: ["acronyms", "jargon", "clarity", "communication", "new-starter"]
+  },
+  {
+    id: "working-from-home-suspicion-manager-4",
+    recipient: "manager",
+    situation: "Manager implies you're not actually working when WFH",
+    category: "managers",
+    tone: 4,
+    length: "medium",
+    subject: "Re: WFH Productivity Check-In",
+    body: "Hi Paul,\n\nThank you for your email asking me to 'confirm what I accomplished yesterday while working from home.' I notice this email was not sent to office-based colleagues. Interesting.\n\nHere's yesterday's output:\n- Completed the Henderson proposal (4 hours)\n- Client call with Meridian Corp (1 hour)\n- Revised the budget spreadsheet (1.5 hours)\n- Responded to 34 emails (throughout)\n- Wrote this response to your check-in (5 minutes of mild irritation)\n\nFor comparison, my most unproductive days tend to be office days, where I lose approximately 2 hours to commuting, 45 minutes to 'quick chats,' and 30 minutes to whoever microwaves fish at 11:30.\n\nI'm happy to provide daily reports if required. For everyone. Equally. Regardless of location.\n\nBest regards",
+    aggressionScore: 69,
+    damageAssessment: "Flips the productivity narrative with data they can't argue with",
+    corporateTranslation: {
+      whatYouMean: "You don't trust me to work from home and it's insulting. I produce more at home than in the office.",
+      corporateVersion: "I'm happy to provide visibility into output metrics across all working locations."
+    },
+    tags: ["WFH", "trust", "productivity", "micromanaging", "remote-work"]
+  },
+  {
+    id: "volunteered-for-task-coworker-5",
+    recipient: "manager",
+    situation: "Manager volunteered you for a task without asking first",
+    category: "managers",
+    tone: 5,
+    length: "medium",
+    subject: "Re: Charity Bake Sale Coordinator (!)",
+    body: "Hi Helen,\n\nPer your email to the department: 'Great news! [My name] has kindly volunteered to coordinate the charity bake sale!'\n\nI want to clarify a subtle but important distinction: I did not volunteer. I was volunteered. These are different verbs involving different levels of consent.\n\nTo be clear, I support charity. I support bake sales. What I don't support is being enrolled in voluntary activities involuntarily. The word for that is... well, it's not 'volunteering.'\n\nIf someone does need to coordinate this, I'm happy to discuss. But perhaps we could try the radical approach of asking first? I believe the phrase is 'would you be willing to...' rather than 'you will be doing this.'\n\nBest",
+    aggressionScore: 72,
+    damageAssessment: "The 'different verbs' line is something they'll remember every time they think of volunteering someone",
+    corporateTranslation: {
+      whatYouMean: "You signed me up without asking. That's not volunteering, that's being voluntold.",
+      corporateVersion: "I'd appreciate being consulted on additional commitments before they're communicated to the team."
+    },
+    tags: ["voluntold", "consent", "additional-tasks", "boundaries"]
+  },
+  {
+    id: "instructions-not-followed-client-5",
+    recipient: "client",
+    situation: "Client ignored your detailed instructions then asks why something doesn't work",
+    category: "clients",
+    tone: 5,
+    length: "medium",
+    subject: "Re: URGENT - Website is Broken!",
+    body: "Hi Penny,\n\nPer your email reporting the website is 'completely broken,' I've investigated. The issue is that you uploaded a 4GB video file to the 'logo' field. The logo field is designed for logos. It expects a small image. It received a feature-length film.\n\nFor reference, the upload guide I sent you on March 1st states:\n- Page 3: 'Logo field: PNG or SVG only, max 500KB'\n- Page 3 (bold): 'Do NOT upload video files'\n- Page 3 (highlighted): 'Video files will crash the page'\n\nThe website is not broken. It is performing exactly as expected when someone uploads a wedding video to a logo field. I've removed the file and normal service has resumed.\n\nPerhaps a quick re-read of the guide would prevent future emergencies?\n\nBest regards",
+    aggressionScore: 76,
+    damageAssessment: "They'll actually read the guide next time (probably)",
+    corporateTranslation: {
+      whatYouMean: "You broke it by ignoring my very clear instructions. RTFM.",
+      corporateVersion: "I've resolved the issue and recommend reviewing the CMS guide to prevent similar incidents."
+    },
+    tags: ["instructions", "user-error", "support", "documentation", "RTFM"]
+  },
+  {
+    id: "email-novel-coworker-3",
+    recipient: "coworker",
+    situation: "Coworker writes 2000-word emails for simple questions",
+    category: "coworkers",
+    tone: 3,
+    length: "short",
+    subject: "Re: Re: Re: Various Points to Discuss (Long Email Below)",
+    body: "Hi Derek,\n\nThank you for your comprehensive email. I've read all 2,100 words and identified the question buried in paragraph 7: 'Should we use Zoom or Teams for Friday's call?'\n\nTeams.\n\nFor future reference, I'm very happy receiving short emails. One-line emails, even. The context, background, historical overview, and three analogies are appreciated but not required for logistical questions.\n\nYour brevity will be my joy.\n\nBest",
+    aggressionScore: 47,
+    damageAssessment: "Educational and funny - they might actually write shorter emails",
+    corporateTranslation: {
+      whatYouMean: "Your emails are so long that the actual question gets lost. Please be brief.",
+      corporateVersion: "I'd suggest leading with the action item for quick-reference accessibility."
+    },
+    tags: ["long-emails", "brevity", "communication", "questions"]
+  },
+  {
+    id: "diet-commentary-coworker-2",
+    recipient: "coworker",
+    situation: "Coworker always comments on what you're eating for lunch",
+    category: "coworkers",
+    tone: 2,
+    length: "short",
+    subject: "Lunchtime Observations",
+    body: "Hi Gillian,\n\nI wanted to have a light-hearted word about our lunch routine. Specifically, your commentary on mine. This week's reviews include:\n\n- Monday: 'Ooh, that's a big portion!'\n- Tuesday: 'Pizza again?'\n- Wednesday: 'You're so good with your salads!'\n- Thursday: 'Treating yourself today!'\n\nI appreciate the attention, but I'm not a food critic's experiment. Could we perhaps establish a lunch-commentary-free zone? I'll enjoy my food in peace, and you'll enjoy yours, and neither of us will narrate the other's choices.\n\nDeal?\n\nThanks!",
+    aggressionScore: 37,
+    damageAssessment: "Lighthearted enough to not damage the relationship, clear enough to stop the behaviour",
+    corporateTranslation: {
+      whatYouMean: "Stop commenting on my food. Every day. It's weird.",
+      corporateVersion: "I'd appreciate maintaining personal boundaries around individual meal choices."
+    },
+    tags: ["food-commentary", "lunch", "boundaries", "personal-space"]
+  },
+  {
+    id: "scheduling-over-holiday-manager-5",
+    recipient: "manager",
+    situation: "Manager scheduled important meeting during your approved holiday",
+    category: "managers",
+    tone: 5,
+    length: "medium",
+    subject: "Re: All-Hands Thursday - Mandatory Attendance",
+    body: "Hi Sandra,\n\nPer the meeting invite marked 'mandatory,' I wanted to flag that I'll be in Portugal on Thursday. On annual leave. Which you approved. On March 3rd. It's in the system. There was a form. You signed it.\n\nI appreciate the meeting is mandatory for those who are, by definition, at work. I will not be at work. I will be at a pool, reading a book, and not thinking about quarterly objectives.\n\nI'm happy to receive the minutes and catch up on my return. Alternatively, I can attend via video call from the pool, though I suspect my swim trunks violate the dress code.\n\nBest regards from my upcoming out-of-office",
+    aggressionScore: 73,
+    damageAssessment: "The pool imagery makes it clear you will absolutely not be attending",
+    corporateTranslation: {
+      whatYouMean: "I'm on approved holiday. I will not be joining. Don't even think about asking.",
+      corporateVersion: "I'll be utilising my approved leave on this date and will review materials upon return."
+    },
+    tags: ["holiday", "annual-leave", "boundaries", "mandatory-meeting"]
+  },
+  {
+    id: "pronouncing-name-wrong-coworker-2",
+    recipient: "coworker",
+    situation: "Coworker keeps mispronouncing your name after being corrected multiple times",
+    category: "coworkers",
+    tone: 2,
+    length: "short",
+    subject: "Quick Note on Pronunciation",
+    body: "Hi Greg,\n\nJust a friendly reminder: my name is Siobhan (pronounced 'Shi-vawn'). Not 'See-oh-ban,' not 'Sy-oh-ban,' and definitely not 'Shobbo' (though I admire the creativity on that last one).\n\nThis is the fourth time I've mentioned it, and I promise it's not personal \u2014 but every mispronunciation chips away at my soul just a tiny bit.\n\nI've attached an audio clip. Feel free to save it as a ringtone if that helps with retention.\n\nThanks!",
+    aggressionScore: 34,
+    damageAssessment: "The audio clip offer is both helpful and wonderfully passive aggressive",
+    corporateTranslation: {
+      whatYouMean: "Learn my name. It's not hard. I've told you four times.",
+      corporateVersion: "I'd appreciate ensuring correct pronunciation for professional interactions."
+    },
+    tags: ["name", "pronunciation", "respect", "identity", "correction"]
+  }
 ];

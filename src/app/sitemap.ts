@@ -13,12 +13,19 @@ const CATEGORIES = [
   "corporate-buzzwords",
 ];
 
+const BLOG_SLUGS = [
+  "ultimate-guide-passive-aggressive-emails",
+  "per-my-last-email-history",
+  "corporate-buzzwords-decoded",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     "",
     "/examples",
     "/hall-of-fame",
     "/categories",
+    "/blog",
     "/about",
     "/methodology",
     "/editorial-standards",
@@ -29,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}${path}`,
     lastModified: new Date(),
     changeFrequency: path === "" ? ("daily" as const) : ("weekly" as const),
-    priority: path === "" ? 1 : 0.8,
+    priority: path === "" ? 1 : path === "/blog" ? 0.9 : 0.8,
   }));
 
   const categoryPages = CATEGORIES.map((slug) => ({
@@ -39,5 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages];
+  const blogPages = BLOG_SLUGS.map((slug) => ({
+    url: `${SITE_URL}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...blogPages];
 }

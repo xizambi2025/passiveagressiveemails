@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
-import { MicrosoftClarity } from "@/components/analytics/microsoft-clarity";
 import { JsonLd, organizationSchema } from "@/components/seo/json-ld";
 import "./globals.css";
 
@@ -62,17 +62,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <TooltipProvider>
-          <JsonLd data={organizationSchema()} />
-          <Header />
-          {children}
-          <Footer />
-        </TooltipProvider>
+        <ThemeProvider>
+          <TooltipProvider>
+            <JsonLd data={organizationSchema()} />
+            <Header />
+            {children}
+            <Footer />
+          </TooltipProvider>
+        </ThemeProvider>
         <GoogleAnalytics />
-        <MicrosoftClarity />
       </body>
     </html>
   );

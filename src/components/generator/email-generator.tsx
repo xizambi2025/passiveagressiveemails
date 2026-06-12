@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Loader2 } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,13 +17,77 @@ import { ToneSlider } from "./tone-slider";
 import { EmailResult } from "./email-result";
 import { trackGeneration } from "@/lib/analytics";
 
+function ManagerIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="7" r="4" />
+      <path d="M5.5 21v-2a5.5 5.5 0 0 1 11 0v2" />
+      <circle cx="12" cy="7" r="1.5" fill="#2563eb" stroke="none" />
+    </svg>
+  );
+}
+
+function ClientIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="#0d9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 21c-1.5-1.5-6-5-6-9a4 4 0 0 1 6-3.46A4 4 0 0 1 18 12c0 4-4.5 7.5-6 9z" fill="#0d948833" />
+      <path d="M8 12.5l2.5 2L16 9" stroke="#0d9488" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+function SupplierIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 8h14l-1.5 10H6.5L5 8z" fill="#7c3aed22" />
+      <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+      <path d="M12 12v4M10 14h4" />
+    </svg>
+  );
+}
+
+function CoworkerIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="#ea580c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="7" width="18" height="13" rx="2" fill="#ea580c22" />
+      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      <path d="M12 12v3" />
+      <path d="M3 12h18" />
+    </svg>
+  );
+}
+
+function EmployeeIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="#0d9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="3" width="16" height="18" rx="2" fill="#0d948822" />
+      <circle cx="12" cy="10" r="3" />
+      <path d="M8 17c0-2 1.8-3 4-3s4 1 4 3" />
+      <line x1="14" y1="5" x2="18" y2="5" />
+    </svg>
+  );
+}
+
+function FreelancerIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="#db2777" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="14" r="8" fill="#db277722" />
+      <circle cx="9" cy="12" r="1.2" fill="#ef4444" stroke="none" />
+      <circle cx="14" cy="11" r="1.2" fill="#3b82f6" stroke="none" />
+      <circle cx="11" cy="16" r="1.2" fill="#eab308" stroke="none" />
+      <circle cx="15" cy="15" r="1.2" fill="#22c55e" stroke="none" />
+      <path d="M12 6V3M12 3l-2 2M12 3l2 2" />
+    </svg>
+  );
+}
+
 const RECIPIENTS = [
-  { id: "manager", label: "Manager", emoji: "👔" },
-  { id: "client", label: "Client", emoji: "🤝" },
-  { id: "supplier", label: "Supplier", emoji: "📦" },
-  { id: "coworker", label: "Coworker", emoji: "💼" },
-  { id: "employee", label: "Employee", emoji: "📋" },
-  { id: "freelancer", label: "Freelancer", emoji: "🎨" },
+  { id: "manager", label: "Manager", icon: ManagerIcon },
+  { id: "client", label: "Client", icon: ClientIcon },
+  { id: "supplier", label: "Supplier", icon: SupplierIcon },
+  { id: "coworker", label: "Coworker", icon: CoworkerIcon },
+  { id: "employee", label: "Employee", icon: EmployeeIcon },
+  { id: "freelancer", label: "Freelancer", icon: FreelancerIcon },
 ];
 
 const SITUATIONS = [
@@ -143,7 +207,10 @@ export function EmailGenerator() {
               <SelectContent>
                 {RECIPIENTS.map((r) => (
                   <SelectItem key={r.id} value={r.id}>
-                    {r.emoji} {r.label}
+                    <span className="inline-flex items-center gap-2">
+                      <r.icon className="w-5 h-5 inline-block flex-shrink-0" />
+                      {r.label}
+                    </span>
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -156,7 +223,7 @@ export function EmailGenerator() {
               <SelectTrigger id="situation">
                 <SelectValue placeholder="Select situation" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="w-[var(--radix-select-trigger-width)]">
                 {SITUATIONS.map((s) => (
                   <SelectItem key={s} value={s}>
                     {s}
@@ -213,7 +280,7 @@ export function EmailGenerator() {
               </>
             ) : (
               <>
-                <Sparkles className="w-4 h-4 mr-2" />
+                <Send className="w-4 h-4 mr-2" />
                 Generate Email
               </>
             )}

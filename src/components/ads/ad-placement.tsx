@@ -9,7 +9,6 @@ interface AdPlacementProps {
 }
 
 export function AdPlacement({ slot, format = "auto", className }: AdPlacementProps) {
-  const adRef = useRef<HTMLDivElement>(null);
   const pushed = useRef(false);
 
   useEffect(() => {
@@ -24,7 +23,7 @@ export function AdPlacement({ slot, format = "auto", className }: AdPlacementPro
   }, []);
 
   return (
-    <div ref={adRef} className={className}>
+    <div className={className}>
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}

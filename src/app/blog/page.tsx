@@ -1,5 +1,4 @@
 import { createMetadata } from "@/lib/seo";
-import { AdLateral1 } from "@/components/ads/ad-placement";
 import Link from "next/link";
 
 export const metadata = createMetadata({
@@ -101,9 +100,6 @@ export default function BlogPage() {
           ))}
         </div>
 
-        <div className="mt-8">
-          <AdLateral1 className="min-h-[90px]" />
-        </div>
       </div>
     </main>
   );

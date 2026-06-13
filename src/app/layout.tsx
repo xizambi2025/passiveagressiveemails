@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { GoogleAdSense } from "@/components/analytics/google-adsense";
 import { JsonLd, organizationSchema } from "@/components/seo/json-ld";
 import "./globals.css";
 
@@ -75,6 +76,7 @@ export default function RootLayout({
           </TooltipProvider>
         </ThemeProvider>
         <GoogleAnalytics />
+        <GoogleAdSense />
       </body>
     </html>
   );

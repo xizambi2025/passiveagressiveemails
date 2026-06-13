@@ -1,5 +1,6 @@
 import { createMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
+import { AdLateral2 } from "@/components/ads/ad-placement";
 import Link from "next/link";
 
 export const metadata = createMetadata({
@@ -178,6 +179,10 @@ export default function HallOfFamePage() {
             >
               Create Your Masterpiece
             </Link>
+          </div>
+
+          <div className="mt-8">
+            <AdLateral2 className="min-h-[90px]" />
           </div>
         </div>
       </main>

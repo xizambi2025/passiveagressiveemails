@@ -1,5 +1,6 @@
 import { EmailGenerator } from "@/components/generator/email-generator";
 import { SignatureAnimation } from "@/components/generator/signature-animation";
+import { AdLateral1, AdLateral2 } from "@/components/ads/ad-placement";
 import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
 
@@ -72,6 +73,10 @@ export default function HomePage() {
           </div>
         </section>
 
+        <div className="max-w-4xl mx-auto px-4 py-6">
+          <AdLateral1 className="min-h-[90px]" />
+        </div>
+
         <section className="py-16 px-4 bg-muted/30 border-t border-border">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4">
@@ -137,6 +142,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <div className="max-w-4xl mx-auto px-4 py-6">
+          <AdLateral2 className="min-h-[90px]" />
+        </div>
       </main>
     </>
   );

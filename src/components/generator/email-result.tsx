@@ -182,7 +182,7 @@ export function EmailResult({
             Know someone who would send this?
           </p>
           <ShareButtons
-            url={emailId ? `https://passiveaggressiveemails.com/e/${emailId}` : "https://passiveaggressiveemails.com"}
+            url={emailId ? `https://www.passiveaggressiveemails.com/e/${emailId}` : "https://www.passiveaggressiveemails.com"}
             text={`💀 "${subject}"\n\nAggression score: ${aggressionScore}/100. Tone: ${toneLabel}.\n\nI found a passive-aggressive email generator and I'm scared at how accurate it is. You NEED to try this.`}
             emailId={emailId || ""}
           />

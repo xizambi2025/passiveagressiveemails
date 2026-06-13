@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const SITE_URL = "https://passiveaggressiveemails.com";
+const SITE_URL = "https://www.passiveaggressiveemails.com";
 const SITE_NAME = "PassiveAggressiveEmails.com";
 
 export function createMetadata(params: {

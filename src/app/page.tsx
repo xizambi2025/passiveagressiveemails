@@ -11,7 +11,7 @@ export default function HomePage() {
           "@context": "https://schema.org",
           "@type": "WebApplication",
           name: "Passive Aggressive Email Generator",
-          url: "https://passiveaggressiveemails.com",
+          url: "https://www.passiveaggressiveemails.com",
           description:
             "Generate workplace emails ranging from politely professional to 'per my previous email.' The definitive tool for crafting passive-aggressive corporate communication.",
           applicationCategory: "BusinessApplication",

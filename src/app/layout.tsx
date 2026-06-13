@@ -27,13 +27,13 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://passiveaggressiveemails.com"),
+  metadataBase: new URL("https://www.passiveaggressiveemails.com"),
   title: {
-    template: "%s | PassiveAggressiveEmails.com",
-    default: "Passive Aggressive Email Generator | PassiveAggressiveEmails.com",
+    template: "%s | PassiveAggressiveEmails",
+    default: "Passive Aggressive Email Generator | PassiveAggressiveEmails",
   },
   description:
-    "Generate perfectly crafted passive-aggressive emails for every workplace situation. From politely professional to 'per my previous email.' Free tool with 1000+ templates.",
+    "Generate passive-aggressive emails for every workplace situation. From politely professional to 'per my previous email.' Free tool.",
   openGraph: {
     siteName: "PassiveAggressiveEmails.com",
     type: "website",

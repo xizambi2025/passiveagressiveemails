@@ -35,13 +35,13 @@ The Passive Aggressive Email Generator creates workplace emails based on:
 - Corporate Buzzwords
 
 ## Key Pages
-- Homepage & Generator: https://passiveaggressiveemails.com
-- Examples: https://passiveaggressiveemails.com/examples
-- Hall of Fame: https://passiveaggressiveemails.com/hall-of-fame
-- Categories: https://passiveaggressiveemails.com/categories
-- Blog: https://passiveaggressiveemails.com/blog
-- Methodology: https://passiveaggressiveemails.com/methodology
-- About: https://passiveaggressiveemails.com/about
+- Homepage & Generator: https://www.passiveaggressiveemails.com
+- Examples: https://www.passiveaggressiveemails.com/examples
+- Hall of Fame: https://www.passiveaggressiveemails.com/hall-of-fame
+- Categories: https://www.passiveaggressiveemails.com/categories
+- Blog: https://www.passiveaggressiveemails.com/blog
+- Methodology: https://www.passiveaggressiveemails.com/methodology
+- About: https://www.passiveaggressiveemails.com/about
 
 ## Full Context
-For comprehensive information, see: https://passiveaggressiveemails.com/llms-full.txt
+For comprehensive information, see: https://www.passiveaggressiveemails.com/llms-full.txt

@@ -9,7 +9,7 @@ export function generateMetadata({ params }: { params: Promise<{ id: string }> }
       title: "Shared Passive Aggressive Email",
       description: "Check out this passive-aggressive workplace email generated on PassiveAggressiveEmails.com",
       path: `/e/${id}`,
-      ogImage: `https://passiveaggressiveemails.com/api/og?title=Passive+Aggressive+Email&score=72&tone=Per+My+Previous+Email`,
+      ogImage: `https://www.passiveaggressiveemails.com/api/og?title=Passive+Aggressive+Email&score=72&tone=Per+My+Previous+Email`,
     });
   });
 }
@@ -24,7 +24,7 @@ export default async function SharedEmailPage({ params }: { params: Promise<{ id
           "@context": "https://schema.org",
           "@type": "CreativeWork",
           name: "Shared Passive Aggressive Email",
-          url: `https://passiveaggressiveemails.com/e/${id}`,
+          url: `https://www.passiveaggressiveemails.com/e/${id}`,
           creator: {
             "@type": "Organization",
             name: "PassiveAggressiveEmails.com",
@@ -67,7 +67,7 @@ export default async function SharedEmailPage({ params }: { params: Promise<{ id
               Know someone who would send this?
             </p>
             <ShareButtons
-              url={`https://passiveaggressiveemails.com/e/${id}`}
+              url={`https://www.passiveaggressiveemails.com/e/${id}`}
               text="Check out this passive-aggressive email I found 💀"
               emailId={id}
             />

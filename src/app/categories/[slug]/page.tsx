@@ -164,7 +164,7 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
     if (!category) return {};
     return createMetadata({
       title: `${category.label} - Passive Aggressive Email Templates`,
-      description: category.longDescription,
+      description: category.description,
       path: `/categories/${slug}`,
     });
   });

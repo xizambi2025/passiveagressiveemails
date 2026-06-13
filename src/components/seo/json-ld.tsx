@@ -16,7 +16,7 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "PassiveAggressiveEmails.com",
-    url: "https://passiveaggressiveemails.com",
+    url: "https://www.passiveaggressiveemails.com",
     description:
       "The definitive destination for passive-aggressive workplace communication. Generate, browse, and share professionally hostile emails.",
     sameAs: [],
@@ -28,7 +28,7 @@ export function webApplicationSchema() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Passive Aggressive Email Generator",
-    url: "https://passiveaggressiveemails.com",
+    url: "https://www.passiveaggressiveemails.com",
     description:
       "Generate workplace emails ranging from politely professional to 'per my previous email.'",
     applicationCategory: "BusinessApplication",
@@ -63,7 +63,7 @@ export function articleSchema(params: {
     publisher: {
       "@type": "Organization",
       name: "PassiveAggressiveEmails.com",
-      url: "https://passiveaggressiveemails.com",
+      url: "https://www.passiveaggressiveemails.com",
     },
     mainEntityOfPage: params.url,
   };

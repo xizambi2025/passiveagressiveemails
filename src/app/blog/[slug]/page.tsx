@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           datePublished: post.date,
           dateModified: post.date,
           author: post.author,
-          url: `https://passiveaggressiveemails.com/blog/${slug}`,
+          url: `https://www.passiveaggressiveemails.com/blog/${slug}`,
         })}
       />
       <main className="flex-1 py-16 px-4">

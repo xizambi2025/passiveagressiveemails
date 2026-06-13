@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://passiveaggressiveemails.com";
+const SITE_URL = "https://www.passiveaggressiveemails.com";
 
 const CATEGORIES = [
   "clients",

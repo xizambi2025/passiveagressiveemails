@@ -12,7 +12,7 @@ interface BreadcrumbsProps {
 }
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://passiveaggressiveemails.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.passiveaggressiveemails.com";
 
   return (
     <>

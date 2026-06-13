@@ -111,7 +111,7 @@ export default function HallOfFamePage() {
           "@type": "CollectionPage",
           name: "Hall of Fame - Best Passive Aggressive Emails",
           description: "The greatest passive-aggressive workplace emails, ranked by the community",
-          url: "https://passiveaggressiveemails.com/hall-of-fame",
+          url: "https://www.passiveaggressiveemails.com/hall-of-fame",
         }}
       />
       <main className="flex-1 py-16 px-4">

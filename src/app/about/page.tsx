@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = createMetadata({
   title: "About PassiveAggressiveEmails.com",
   description:
-    "Learn about PassiveAggressiveEmails.com - the definitive destination for passive-aggressive workplace communication. Our mission, methodology, and the team behind the professional hostility.",
+    "The story behind PassiveAggressiveEmails.com. Our mission, methodology, and the team crafting professional hostility.",
   path: "/about",
 });
 
@@ -17,7 +17,7 @@ export default function AboutPage() {
           "@context": "https://schema.org",
           "@type": "AboutPage",
           name: "About PassiveAggressiveEmails.com",
-          url: "https://passiveaggressiveemails.com/about",
+          url: "https://www.passiveaggressiveemails.com/about",
         }}
       />
       <main className="flex-1 py-16 px-4">

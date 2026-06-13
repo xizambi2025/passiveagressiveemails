@@ -4,7 +4,7 @@ import { JsonLd, faqSchema } from "@/components/seo/json-ld";
 export const metadata = createMetadata({
   title: "Methodology - How We Craft Passive Aggressive Emails",
   description:
-    "Our systematic approach to crafting workplace emails. Learn about our 6-point tone scale, aggression scoring methodology, and the science behind effective passive-aggressive communication.",
+    "How we craft passive-aggressive emails. Our 6-point tone scale, aggression scoring methodology, and the science behind it.",
   path: "/methodology",
 });
 

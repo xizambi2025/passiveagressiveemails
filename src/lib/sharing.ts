@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://passiveaggressiveemails.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.passiveaggressiveemails.com";
 
 export function generateShareId(): string {
   return nanoid(8);

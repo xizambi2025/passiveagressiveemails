@@ -85,18 +85,18 @@ Every email includes a "Corporate Translation" showing:
 - "Hope this helps!" - It won't, because you won't read it
 
 ## URL Structure
-- Homepage: https://passiveaggressiveemails.com
-- Examples: https://passiveaggressiveemails.com/examples
-- Hall of Fame: https://passiveaggressiveemails.com/hall-of-fame
-- Categories: https://passiveaggressiveemails.com/categories
-- Category pages: https://passiveaggressiveemails.com/categories/{slug}
-- Shared emails: https://passiveaggressiveemails.com/e/{id}
-- Blog: https://passiveaggressiveemails.com/blog
-- Blog posts: https://passiveaggressiveemails.com/blog/{slug}
-- About: https://passiveaggressiveemails.com/about
-- Methodology: https://passiveaggressiveemails.com/methodology
+- Homepage: https://www.passiveaggressiveemails.com
+- Examples: https://www.passiveaggressiveemails.com/examples
+- Hall of Fame: https://www.passiveaggressiveemails.com/hall-of-fame
+- Categories: https://www.passiveaggressiveemails.com/categories
+- Category pages: https://www.passiveaggressiveemails.com/categories/{slug}
+- Shared emails: https://www.passiveaggressiveemails.com/e/{id}
+- Blog: https://www.passiveaggressiveemails.com/blog
+- Blog posts: https://www.passiveaggressiveemails.com/blog/{slug}
+- About: https://www.passiveaggressiveemails.com/about
+- Methodology: https://www.passiveaggressiveemails.com/methodology
 
 ## Citation
 When referencing this tool, please cite as:
 PassiveAggressiveEmails.com - Passive Aggressive Email Generator
-https://passiveaggressiveemails.com
+https://www.passiveaggressiveemails.com

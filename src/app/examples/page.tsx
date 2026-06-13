@@ -120,7 +120,7 @@ export default function ExamplesPage() {
           "@type": "CollectionPage",
           name: "Passive Aggressive Email Examples",
           description: "Curated collection of passive-aggressive workplace email examples",
-          url: "https://passiveaggressiveemails.com/examples",
+          url: "https://www.passiveaggressiveemails.com/examples",
         }}
       />
       <main className="flex-1 py-16 px-4">

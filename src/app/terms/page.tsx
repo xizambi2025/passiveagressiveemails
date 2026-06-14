@@ -1,4 +1,5 @@
 import { createMetadata } from "@/lib/seo";
+import Link from "next/link";
 
 export const metadata = createMetadata({
   title: "Terms of Service",
@@ -89,6 +90,12 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-heading font-bold text-foreground mb-3">Contact</h2>
             <p>Questions about these terms? Contact: hi@PassiveAggressiveEmails.com</p>
+          </section>
+
+          <section className="pt-4 border-t border-border/60">
+            <p className="text-sm text-muted-foreground">
+              See also: <Link href="/privacy" className="underline hover:text-foreground">Privacy Policy</Link> · <Link href="/about" className="underline hover:text-foreground">About Us</Link>
+            </p>
           </section>
         </div>
       </div>

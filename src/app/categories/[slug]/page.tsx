@@ -19,7 +19,7 @@ const CATEGORIES: Record<string, {
   clients: {
     label: "Clients",
     emoji: "🤝",
-    description: "Passive-aggressive emails for client communication",
+    description: "Passive-aggressive email templates for client situations: scope creep, late payments, unclear briefs, and endless revisions.",
     longDescription: "Navigate the delicate art of client communication when briefs change daily, payments vanish, and scope creep becomes an extreme sport. These templates help you maintain professionalism while subtly reminding clients that your patience has limits.",
     faqs: [
       { question: "How do I follow up on an unpaid invoice without being rude?", answer: "Use a tone level 3-4 email that references the invoice number, original due date, and your continued availability - while subtly noting the passage of time." },
@@ -36,7 +36,7 @@ const CATEGORIES: Record<string, {
   coworkers: {
     label: "Coworkers",
     emoji: "💼",
-    description: "Passive-aggressive emails for coworker situations",
+    description: "Passive-aggressive email templates for coworkers: reply-all abusers, credit stealers, lunch thieves, and loud talkers.",
     longDescription: "For the daily indignities of shared workspace life: the reply-all abusers, the lunch thieves, the credit stealers, and the people who think 'quick sync' means a 90-minute unstructured conversation. These templates preserve workplace relationships while establishing boundaries.",
     faqs: [
       { question: "How do I address someone taking credit for my work?", answer: "The 'Corporate Assassin' level works well here. CC the relevant managers, attach original file metadata showing your authorship, and use phrases like 'building on the work I initiated.'" },
@@ -53,7 +53,7 @@ const CATEGORIES: Record<string, {
   managers: {
     label: "Managers",
     emoji: "👔",
-    description: "Passive-aggressive emails for manager communication",
+    description: "Passive-aggressive email templates for managers: micromanagement, unrealistic deadlines, pointless meetings, and vague feedback.",
     longDescription: "When your manager schedules a meeting to discuss whether you need a meeting, sends 'quick question' messages at 11pm, or uses the phrase 'going forward' as if the past never happened. Navigate upward communication with surgical precision.",
     faqs: [
       { question: "How do I push back on a manager who micromanages?", answer: "Use level 3-4 with proactive status updates that make their check-ins redundant. Phrases like 'as I'll detail in my already-scheduled update' work well." },
@@ -70,7 +70,7 @@ const CATEGORIES: Record<string, {
   suppliers: {
     label: "Suppliers",
     emoji: "📦",
-    description: "Passive-aggressive emails for supplier communication",
+    description: "Passive-aggressive email templates for suppliers: wrong orders, late deliveries, quality issues, and creative excuses.",
     longDescription: "For when 'express delivery' apparently means 'whenever the stars align,' and 'as described' is a loose interpretation. These templates help maintain vendor relationships while making your expectations crystalline.",
     faqs: [
       { question: "How do I address repeated wrong orders?", answer: "Use level 4-5 with a detailed table showing ordered vs received items across multiple orders. The data speaks volumes." },
@@ -87,7 +87,7 @@ const CATEGORIES: Record<string, {
   meetings: {
     label: "Meetings",
     emoji: "📅",
-    description: "Passive-aggressive emails about unnecessary meetings",
+    description: "Passive-aggressive email templates about meetings: the ones that should be emails, no-agenda meetings, and overtime culprits.",
     longDescription: "For the meeting that should have been an email, the meeting about the previous meeting, and the recurring 'optional' meeting that is somehow mandatory. Templates for protecting your calendar and sanity.",
     faqs: [
       { question: "How do I decline a meeting politely?", answer: "Use level 2-3 with a suggestion for an alternative format (email summary, async doc) and note your 'focus time commitments.'" },
@@ -104,7 +104,7 @@ const CATEGORIES: Record<string, {
   deadlines: {
     label: "Deadlines",
     emoji: "⏰",
-    description: "Passive-aggressive emails about missed deadlines",
+    description: "Passive-aggressive email templates for deadline management: missed dates, serial offenders, and creative excuses for delays.",
     longDescription: "For when 'end of day' is treated as a suggestion, 'ASAP' means 'whenever you get around to it,' and project timelines are viewed as aspirational fiction. Hold people accountable with style.",
     faqs: [
       { question: "How do I follow up on a missed deadline?", answer: "Reference the original date agreed upon, note the impact of the delay, and request a new realistic timeline - all while maintaining level 4-5 diplomatic hostility." },
@@ -121,7 +121,7 @@ const CATEGORIES: Record<string, {
   invoices: {
     label: "Invoices",
     emoji: "💰",
-    description: "Passive-aggressive emails about unpaid invoices",
+    description: "Passive-aggressive email templates for overdue invoices: payment follow-ups from polite reminders to the nuclear option.",
     longDescription: "For the delicate art of asking for money you're already owed. From gentle first reminders to emails that could serve as legal exhibits. Get paid without burning bridges (completely).",
     faqs: [
       { question: "How many follow-ups is appropriate before escalating?", answer: "Three at increasing tone levels (2, 4, 5) with 7-day intervals. After that, level 6 with legal team CC is warranted." },
@@ -138,7 +138,7 @@ const CATEGORIES: Record<string, {
   "corporate-buzzwords": {
     label: "Corporate Buzzwords",
     emoji: "🗣️",
-    description: "Passive-aggressive emails using corporate buzzword overload",
+    description: "Passive-aggressive email templates loaded with corporate buzzwords: synergy, circle back, leverage, and maximum jargon.",
     longDescription: "When you want to say absolutely nothing while appearing to say something profound. Master the art of corporate vocabulary: synergy, alignment, leverage, circle back, and other words that make people update their LinkedIn profiles.",
     faqs: [
       { question: "What are the most passive-aggressive corporate phrases?", answer: "'As per my last email,' 'going forward,' 'just to clarify,' 'for future reference,' and 'I trust this is helpful' are the power five of corporate hostility." },
@@ -163,7 +163,7 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
     const category = CATEGORIES[slug];
     if (!category) return {};
     return createMetadata({
-      title: `${category.label} - Passive Aggressive Email Templates`,
+      title: `${category.label} Email Templates`,
       description: category.description,
       path: `/categories/${slug}`,
     });

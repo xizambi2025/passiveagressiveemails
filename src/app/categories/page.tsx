@@ -2,7 +2,7 @@ import { createMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata = createMetadata({
-  title: "Email Categories - Passive Aggressive Emails by Situation",
+  title: "Email Categories",
   description:
     "Browse passive-aggressive email templates by category: clients, coworkers, managers, suppliers, meetings, deadlines, invoices, and corporate buzzwords.",
   path: "/categories",

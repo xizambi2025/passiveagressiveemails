@@ -2,7 +2,7 @@ import { createMetadata } from "@/lib/seo";
 import { JsonLd, faqSchema } from "@/components/seo/json-ld";
 
 export const metadata = createMetadata({
-  title: "Methodology - How We Craft Passive Aggressive Emails",
+  title: "Our Methodology",
   description:
     "How we craft passive-aggressive emails. Our 6-point tone scale, aggression scoring methodology, and the science behind it.",
   path: "/methodology",

@@ -46,8 +46,8 @@ const BLOG_POSTS: Record<string, {
     ],
   },
   "corporate-buzzwords-decoded": {
-    title: "50 Corporate Buzzwords Decoded: What They Actually Mean",
-    description: "A comprehensive dictionary of corporate speak and the passive-aggressive subtext behind each phrase.",
+    title: "50 Corporate Buzzwords Decoded",
+    description: "A dictionary of corporate speak and the passive-aggressive subtext behind each phrase.",
     category: "Corporate Humor",
     date: "2026-05-25",
     readTime: "10 min read",

@@ -1,4 +1,5 @@
 import { createMetadata } from "@/lib/seo";
+import Link from "next/link";
 
 export const metadata = createMetadata({
   title: "Editorial Standards",
@@ -103,6 +104,11 @@ export default function EditorialStandardsPage() {
               suggestions for improvement, please contact us. We take our editorial
               quality seriously — after all, poorly crafted passive aggression is
               just... aggression.
+            </p>
+          </section>
+          <section className="pt-4 border-t border-border/60">
+            <p className="text-sm text-muted-foreground">
+              See also: <Link href="/methodology" className="underline hover:text-foreground">Methodology</Link> · <Link href="/about" className="underline hover:text-foreground">About Us</Link>
             </p>
           </section>
         </div>

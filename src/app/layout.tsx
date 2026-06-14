@@ -35,12 +35,19 @@ export const metadata: Metadata = {
   description:
     "Generate passive-aggressive emails for every workplace situation. From politely professional to 'per my previous email.' Free tool.",
   openGraph: {
+    title: "Passive Aggressive Email Generator",
+    description: "Generate passive-aggressive emails for every workplace situation. From politely professional to 'per my previous email.' Free tool.",
     siteName: "PassiveAggressiveEmails.com",
     type: "website",
     locale: "en_US",
+    url: "https://www.passiveaggressiveemails.com",
+    images: [{ url: "https://www.passiveaggressiveemails.com/api/og?title=Passive+Aggressive+Email+Generator", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
+    title: "Passive Aggressive Email Generator",
+    description: "Generate passive-aggressive emails for every workplace situation. Free tool.",
+    images: ["https://www.passiveaggressiveemails.com/api/og?title=Passive+Aggressive+Email+Generator"],
   },
   alternates: {
     canonical: "/",

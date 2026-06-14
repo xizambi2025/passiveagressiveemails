@@ -1,4 +1,6 @@
 import { createMetadata } from "@/lib/seo";
+import { BlogIllustration } from "@/components/blog/blog-illustration";
+import { BLOG_POSTS } from "@/lib/blog";
 import Link from "next/link";
 
 export const metadata = createMetadata({
@@ -7,12 +9,6 @@ export const metadata = createMetadata({
     "Articles about workplace communication, corporate humor, email templates, professional writing, and the art of passive aggression.",
   path: "/blog",
 });
-
-const BLOG_POSTS = [
-  { slug: "ultimate-guide-passive-aggressive-emails", title: "Guide to Passive-Aggressive Emails", description: "Everything you need to know about crafting the perfect passive-aggressive workplace email. Tone selection, timing, CC strategy, and key phrases decoded.", category: "Workplace Communication", date: "2026-06-01", readTime: "8 min read" },
-  { slug: "per-my-last-email-history", title: "The History of 'Per My Last Email'", description: "How four words became the most feared phrase in corporate communication. The origin, evolution, and cultural impact of passive-aggressive email language.", category: "Corporate Humor", date: "2026-05-28", readTime: "6 min read" },
-  { slug: "corporate-buzzwords-decoded", title: "50 Corporate Buzzwords Decoded", description: "A dictionary of corporate speak and the passive-aggressive subtext behind each phrase. From synergy to circle back, decoded for clarity.", category: "Corporate Humor", date: "2026-05-25", readTime: "10 min read" },
-];
 
 export default function BlogPage() {
   return (
@@ -28,26 +24,29 @@ export default function BlogPage() {
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid gap-6 md:grid-cols-2">
           {BLOG_POSTS.map((post) => (
             <article
               key={post.slug}
-              className="border border-border rounded-lg p-6 hover:shadow-sm transition-shadow bg-card group"
+              className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-sm group"
             >
               <Link href={`/blog/${post.slug}`} className="block">
-                <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
-                  <span className="px-2 py-0.5 bg-muted rounded-full">
-                    {post.category}
-                  </span>
-                  <span>{post.date}</span>
-                  <span>{post.readTime}</span>
+                <BlogIllustration visual={post.visual} title={post.title} compact />
+                <div className="p-6">
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-3">
+                    <span className="px-2 py-0.5 bg-muted rounded-full">
+                      {post.category}
+                    </span>
+                    <span>{post.date}</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <h2 className="text-xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">
+                    {post.title}
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {post.description}
+                  </p>
                 </div>
-                <h2 className="text-xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">
-                  {post.title}
-                </h2>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {post.description}
-                </p>
               </Link>
             </article>
           ))}

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { BLOG_SLUGS } from "@/lib/blog";
 
 const SITE_URL = "https://www.passiveaggressiveemails.com";
 
@@ -11,12 +12,6 @@ const CATEGORIES = [
   "deadlines",
   "invoices",
   "corporate-buzzwords",
-];
-
-const BLOG_SLUGS = [
-  "ultimate-guide-passive-aggressive-emails",
-  "per-my-last-email-history",
-  "corporate-buzzwords-decoded",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

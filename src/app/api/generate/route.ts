@@ -1,9 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
-import { generateEmail } from "@/lib/openai";
+import { generateEmail } from "@/lib/ai";
+import { generateLocalEmail } from "@/lib/generator";
 
 export async function POST(request: NextRequest) {
+  let body: {
+    recipient?: string;
+    situation?: string;
+    tone?: number;
+    length?: "short" | "medium" | "long";
+  } = {};
+
   try {
-    const body = await request.json();
+    body = await request.json();
     const { recipient, situation, tone, length } = body;
 
     if (!recipient || !situation || !tone || !length) {
@@ -32,9 +40,15 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(email);
   } catch (error) {
     console.error("Generation error:", error);
-    return NextResponse.json(
-      { error: "Failed to generate email" },
-      { status: 500 }
-    );
+
+    const { recipient, situation, tone, length } = body;
+
+    if (recipient && situation && tone && length) {
+      return NextResponse.json(
+        generateLocalEmail({ recipient, situation, tone, length })
+      );
+    }
+
+    return NextResponse.json({ error: "Failed to generate email" }, { status: 500 });
   }
 }

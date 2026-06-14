@@ -1,9 +1,12 @@
 import { EmailGenerator } from "@/components/generator/email-generator";
 import { SignatureAnimation } from "@/components/generator/signature-animation";
 import { JsonLd } from "@/components/seo/json-ld";
+import { BLOG_POSTS } from "@/lib/blog";
 import Link from "next/link";
 
 export default function HomePage() {
+  const featuredPosts = BLOG_POSTS.slice(-3).reverse();
+
   return (
     <>
       <JsonLd
@@ -110,18 +113,20 @@ export default function HomePage() {
               From the Blog
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link href="/blog/ultimate-guide-passive-aggressive-emails" className="border border-border rounded-lg p-4 hover:shadow-sm transition-shadow bg-card group">
-                <h3 className="font-medium text-sm group-hover:text-primary transition-colors">Guide to Passive-Aggressive Emails</h3>
-                <p className="text-xs text-muted-foreground mt-1">Tone, timing, CC strategy, and key phrases.</p>
-              </Link>
-              <Link href="/blog/per-my-last-email-history" className="border border-border rounded-lg p-4 hover:shadow-sm transition-shadow bg-card group">
-                <h3 className="font-medium text-sm group-hover:text-primary transition-colors">The History of &lsquo;Per My Last Email&rsquo;</h3>
-                <p className="text-xs text-muted-foreground mt-1">How four words became corporate&apos;s most feared phrase.</p>
-              </Link>
-              <Link href="/blog/corporate-buzzwords-decoded" className="border border-border rounded-lg p-4 hover:shadow-sm transition-shadow bg-card group">
-                <h3 className="font-medium text-sm group-hover:text-primary transition-colors">50 Corporate Buzzwords Decoded</h3>
-                <p className="text-xs text-muted-foreground mt-1">What synergy, circle back, and leverage actually mean.</p>
-              </Link>
+              {featuredPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="border border-border rounded-lg p-4 hover:shadow-sm transition-shadow bg-card group"
+                >
+                  <h3 className="font-medium text-sm group-hover:text-primary transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {post.description}
+                  </p>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

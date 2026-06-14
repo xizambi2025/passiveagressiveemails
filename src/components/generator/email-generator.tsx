@@ -16,6 +16,7 @@ import {
 import { ToneSlider } from "./tone-slider";
 import { EmailResult } from "./email-result";
 import { trackGeneration } from "@/lib/analytics";
+import { generateLocalEmail } from "@/lib/generator";
 
 function ManagerIcon({ className }: { className?: string }) {
   return (
@@ -170,17 +171,12 @@ export function EmailGenerator() {
         category: isCustom ? undefined : "preset",
       });
     } catch {
-      setResult({
-        subject: "Re: Following Up (Again)",
-        body: "Hi,\n\nI hope this email finds you well, though I suspect it will find you the same way my last three emails did — unread.\n\nI wanted to circle back on this matter, which I first raised approximately one geological era ago. I understand everyone is busy, but I'm beginning to wonder if my emails are being delivered to an alternate dimension.\n\nPlease let me know if there's a better way to reach you. Perhaps carrier pigeon?\n\nBest regards",
-        aggressionScore: 72,
-        damageAssessment: "Relationship will survive, but they'll feel the sting",
-        corporateTranslation: {
-          whatYouMean: "Answer my emails or I'll escalate this.",
-          corporateVersion:
-            "I wanted to follow up regarding my previous communication to ensure alignment.",
-        },
-      });
+      setResult(generateLocalEmail({
+        recipient,
+        situation: effectiveSituation,
+        tone,
+        length,
+      }));
     } finally {
       setLoading(false);
     }

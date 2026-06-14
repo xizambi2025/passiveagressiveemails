@@ -1,8 +1,27 @@
 import OpenAI from "openai";
 
+const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1";
+const DEFAULT_MODEL = "openai/gpt-4o-mini";
+
+if (
+  process.env.NODE_ENV === "development" &&
+  process.env.OPENROUTER_ALLOW_INSECURE_LOCAL_TLS === "true"
+) {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
 function getClient() {
+  if (!process.env.OPENROUTER_API_KEY) {
+    throw new Error("OPENROUTER_API_KEY is not configured");
+  }
+
   return new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY || "missing",
+    apiKey: process.env.OPENROUTER_API_KEY,
+    baseURL: OPENROUTER_BASE_URL,
+    defaultHeaders: {
+      "HTTP-Referer": process.env.NEXT_PUBLIC_SITE_URL || "https://www.passiveaggressiveemails.com",
+      "X-Title": "PassiveAggressiveEmails.com",
+    },
   });
 }
 
@@ -48,13 +67,14 @@ export async function generateEmail(
 
   const client = getClient();
   const response = await client.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: process.env.OPENROUTER_MODEL || DEFAULT_MODEL,
     temperature: 0.8,
     response_format: { type: "json_object" },
     messages: [
       {
         role: "system",
-        content: `You are an expert at writing passive-aggressive workplace emails. You craft emails that are technically professional but dripping with subtext. You respond in JSON format only.`,
+        content:
+          "You are an expert at writing passive-aggressive workplace emails. You craft emails that are technically professional but dripping with subtext. You respond in valid JSON only.",
       },
       {
         role: "user",
@@ -81,7 +101,7 @@ Respond with a JSON object containing:
 
   const content = response.choices[0]?.message?.content;
   if (!content) {
-    throw new Error("No response from OpenAI");
+    throw new Error("No response from AI provider");
   }
 
   return JSON.parse(content) as GeneratedEmail;

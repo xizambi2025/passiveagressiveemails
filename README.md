@@ -34,9 +34,10 @@ npm install
 Copy `.env.example` to `.env.local` and fill in the values:
 
 ```
-OPENAI_API_KEY=your-openai-api-key
+OPENROUTER_API_KEY=your-openrouter-api-key
+OPENROUTER_MODEL=openai/gpt-4o-mini
 NEXT_PUBLIC_GA_ID=your-google-analytics-id
-NEXT_PUBLIC_SITE_URL=https://passiveaggressiveemails.com
+NEXT_PUBLIC_SITE_URL=https://www.passiveaggressiveemails.com
 ```
 
 ### Development
@@ -96,7 +97,7 @@ src/
 │   ├── ads/               # Ad placements (inactive)
 │   └── affiliates/        # Affiliate cards (inactive)
 ├── data/                  # Scenarios, categories, tones
-├── lib/                   # Utilities (openai, analytics, seo)
+├── lib/                   # Utilities (ai, analytics, seo)
 └── styles/                # Global CSS
 ```
 

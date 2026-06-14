@@ -9,9 +9,9 @@ export const metadata = createMetadata({
 });
 
 const BLOG_POSTS = [
-  { slug: "ultimate-guide-passive-aggressive-emails", title: "The Ultimate Guide to Passive-Aggressive Emails", description: "Everything you need to know about crafting the perfect passive-aggressive workplace email, from tone selection to strategic CC usage.", category: "Workplace Communication", date: "2026-06-01", readTime: "8 min read" },
-  { slug: "per-my-last-email-history", title: "The History of 'Per My Last Email'", description: "How four words became the most feared phrase in corporate communication. A deep dive into the evolution of passive-aggressive office language.", category: "Corporate Humor", date: "2026-05-28", readTime: "6 min read" },
-  { slug: "corporate-buzzwords-decoded", title: "50 Corporate Buzzwords Decoded", description: "From 'synergy' to 'circle back' — a dictionary of corporate speak and the passive-aggressive subtext behind each phrase.", category: "Corporate Humor", date: "2026-05-25", readTime: "10 min read" },
+  { slug: "ultimate-guide-passive-aggressive-emails", title: "Guide to Passive-Aggressive Emails", description: "Everything you need to know about crafting the perfect passive-aggressive workplace email. Tone selection, timing, CC strategy, and key phrases decoded.", category: "Workplace Communication", date: "2026-06-01", readTime: "8 min read" },
+  { slug: "per-my-last-email-history", title: "The History of 'Per My Last Email'", description: "How four words became the most feared phrase in corporate communication. The origin, evolution, and cultural impact of passive-aggressive email language.", category: "Corporate Humor", date: "2026-05-28", readTime: "6 min read" },
+  { slug: "corporate-buzzwords-decoded", title: "50 Corporate Buzzwords Decoded", description: "A dictionary of corporate speak and the passive-aggressive subtext behind each phrase. From synergy to circle back, decoded for clarity.", category: "Corporate Humor", date: "2026-05-25", readTime: "10 min read" },
 ];
 
 export default function BlogPage() {

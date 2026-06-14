@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = createMetadata({
   title: "Passive Aggressive Email Examples",
   description:
-    "Browse our curated collection of passive-aggressive workplace email examples. From mildly annoyed to corporate assassin level, find the perfect template for every situation.",
+    "Browse passive-aggressive workplace email examples. From mildly annoyed to corporate assassin level, find the perfect template.",
   path: "/examples",
 });
 

@@ -13,8 +13,8 @@ const BLOG_POSTS: Record<string, {
   content: string[];
 }> = {
   "ultimate-guide-passive-aggressive-emails": {
-    title: "The Ultimate Guide to Passive-Aggressive Emails",
-    description: "Everything you need to know about crafting the perfect passive-aggressive workplace email.",
+    title: "Guide to Passive-Aggressive Emails",
+    description: "Everything you need to know about crafting the perfect passive-aggressive workplace email. Tone selection, timing, CC strategy, and key phrases decoded.",
     category: "Workplace Communication",
     date: "2026-06-01",
     readTime: "8 min read",
@@ -31,7 +31,7 @@ const BLOG_POSTS: Record<string, {
   },
   "per-my-last-email-history": {
     title: "The History of 'Per My Last Email'",
-    description: "How four words became the most feared phrase in corporate communication.",
+    description: "How four words became the most feared phrase in corporate communication. The origin, evolution, and cultural impact of passive-aggressive email language.",
     category: "Corporate Humor",
     date: "2026-05-28",
     readTime: "6 min read",
@@ -47,7 +47,7 @@ const BLOG_POSTS: Record<string, {
   },
   "corporate-buzzwords-decoded": {
     title: "50 Corporate Buzzwords Decoded",
-    description: "A dictionary of corporate speak and the passive-aggressive subtext behind each phrase.",
+    description: "A dictionary of corporate speak and the passive-aggressive subtext behind each phrase. From synergy to circle back, decoded for clarity.",
     category: "Corporate Humor",
     date: "2026-05-25",
     readTime: "10 min read",

@@ -3,9 +3,9 @@ import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
 
 export const metadata = createMetadata({
-  title: "Hall of Fame - Best Passive Aggressive Emails",
+  title: "Hall of Fame",
   description:
-    "The greatest passive-aggressive workplace emails ever crafted. Our community's finest examples of professional hostility, ranked by aggression score and creativity.",
+    "The greatest passive-aggressive workplace emails ever crafted. Finest examples of professional hostility, ranked by aggression score.",
   path: "/hall-of-fame",
 });
 

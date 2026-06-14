@@ -41,7 +41,15 @@ export function Header() {
             alt="PassiveAggressiveEmails.com"
             width={160}
             height={40}
-            className="h-8 w-auto sm:h-10"
+            className="h-8 w-auto sm:h-10 dark:hidden"
+            priority
+          />
+          <Image
+            src="/logo-dark.png"
+            alt="PassiveAggressiveEmails.com"
+            width={160}
+            height={40}
+            className="h-8 w-auto sm:h-10 hidden dark:block"
             priority
           />
         </Link>

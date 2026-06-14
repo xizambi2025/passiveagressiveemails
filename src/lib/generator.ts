@@ -145,46 +145,7 @@ export function getRelatedScenarios(scenario: Scenario, limit: number = 5): Scen
 }
 
 export function generateLocalEmail(params: GenerateLocalEmailParams): LocalGeneratedEmail {
-  const { recipient, situation, tone, length } = params;
-  const match = getBestScenario(recipient, situation, tone, length);
-
-  if (match && match.relevance >= 4) {
-    return {
-      subject: adaptSubject(match.scenario.subject, situation, tone),
-      body: adaptBody(match.scenario.body, situation, tone, length),
-      aggressionScore: calculateAggressionScore(tone, length, situation),
-      damageAssessment: getDamageAssessment(tone),
-      corporateTranslation: {
-        whatYouMean: getPlainMeaning(recipient, situation, tone),
-        corporateVersion: getCorporateVersion(situation, tone),
-      },
-    };
-  }
-
   return createParametricEmail(params);
-}
-
-function getBestScenario(
-  recipient: string,
-  situation: string,
-  tone: number,
-  length: 'short' | 'medium' | 'long'
-): { scenario: Scenario; relevance: number } | null {
-  const query = situation.toLowerCase();
-
-  const ranked = scenarios
-    .map((scenario) => {
-      let relevance = getRelevanceScore(scenario, query);
-      if (scenario.recipient === recipient) relevance += 8;
-      if (scenario.tone === tone) relevance += 5;
-      else relevance += Math.max(0, 3 - Math.abs(scenario.tone - tone));
-      if (scenario.length === length) relevance += 3;
-
-      return { scenario, relevance };
-    })
-    .sort((a, b) => b.relevance - a.relevance);
-
-  return ranked[0] ?? null;
 }
 
 function createParametricEmail({
@@ -220,36 +181,6 @@ function createParametricEmail({
       corporateVersion: getCorporateVersion(context, tone),
     },
   };
-}
-
-function adaptSubject(subject: string, situation: string, tone: number): string {
-  if (tone <= 2) return `Quick follow-up: ${situation}`;
-  if (tone >= 5) return `Re: ${situation}`;
-  return subject;
-}
-
-function adaptBody(
-  body: string,
-  situation: string,
-  tone: number,
-  length: 'short' | 'medium' | 'long'
-): string {
-  const contextLine = getMiddleLine(situation, tone);
-  const paragraphs = body.split("\n\n");
-
-  if (length === 'short') {
-    return [paragraphs[0] ?? "Hi,", contextLine, getClosingLine(tone)].join("\n\n");
-  }
-
-  if (length === 'long') {
-    return [
-      ...paragraphs,
-      getNextStepLine(situation, tone),
-      getClosingLine(tone),
-    ].join("\n\n");
-  }
-
-  return [paragraphs[0] ?? "Hi,", contextLine, ...paragraphs.slice(1, 3)].join("\n\n");
 }
 
 function calculateAggressionScore(
@@ -290,7 +221,7 @@ function getSubject(situation: string, tone: number): string {
   if (tone === 3) return `Following up on ${situation}`;
   if (tone === 4) return `Revisiting ${situation}`;
   if (tone === 5) return `Re: ${situation}`;
-  return `For visibility: ${situation}`;
+  return `Escalation notice: ${situation}`;
 }
 
 function getOpeningLine(situation: string, tone: number): string {
@@ -306,7 +237,7 @@ function getOpeningLine(situation: string, tone: number): string {
   if (tone === 5) {
     return `Per my previous note, ${situation.toLowerCase()} remains unresolved.`;
   }
-  return `For visibility, ${situation.toLowerCase()} is now creating avoidable friction and needs to be addressed.`;
+  return `For visibility and documentation, ${situation.toLowerCase()} has now moved beyond a routine follow-up and requires immediate ownership.`;
 }
 
 function getMiddleLine(situation: string, tone: number): string {
@@ -322,7 +253,7 @@ function getMiddleLine(situation: string, tone: number): string {
   if (tone === 5) {
     return "As this has already been raised, I would appreciate a direct confirmation rather than another round of ambiguity.";
   }
-  return `I am documenting this because "${situation}" has moved beyond a minor inconvenience and into something that needs clear ownership.`;
+  return `I am documenting this because "${situation}" has now created enough avoidable friction that silence or ambiguity would be difficult to interpret as anything other than a decision.`;
 }
 
 function getNextStepLine(situation: string, tone: number): string {
@@ -332,7 +263,7 @@ function getNextStepLine(situation: string, tone: number): string {
   if (tone <= 5) {
     return "Please confirm today how this will be resolved and who owns the next step.";
   }
-  return "Please reply today with the resolution plan so I can decide whether this needs to be escalated.";
+  return "Please reply today with the resolution plan, owner, and timing so I can determine whether broader visibility is required.";
 }
 
 function getClosingLine(tone: number): string {
@@ -340,7 +271,7 @@ function getClosingLine(tone: number): string {
   if (tone === 3) return "Thanks for helping keep this moving.";
   if (tone === 4) return "Looking forward to finally closing the loop.";
   if (tone === 5) return "I appreciate your prompt attention to this, at this stage.";
-  return "Regards.";
+  return "Regards, and thank you in advance for treating this with the urgency it now requires.";
 }
 
 function getDamageAssessment(tone: number): string {

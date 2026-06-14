@@ -58,12 +58,22 @@ const LENGTH_TOKENS: Record<string, string> = {
   long: "8-12 sentences",
 };
 
+const SCORE_BANDS: Record<number, { min: number; max: number; guidance: string }> = {
+  1: { min: 10, max: 24, guidance: "warm, helpful, no visible hostility" },
+  2: { min: 25, max: 39, guidance: "polite with a faint edge" },
+  3: { min: 40, max: 54, guidance: "formal concern, clearly losing patience" },
+  4: { min: 55, max: 72, guidance: "obvious subtext, still plausibly professional" },
+  5: { min: 73, max: 88, guidance: "documented frustration, receipt-heavy, escalation implied" },
+  6: { min: 89, max: 100, guidance: "career-limiting, highly documented, escalation-ready" },
+};
+
 export async function generateEmail(
   params: GenerateEmailParams
 ): Promise<GeneratedEmail> {
   const { recipient, situation, tone, length } = params;
   const toneLabel = TONE_LABELS[tone] || "Professional";
   const lengthGuide = LENGTH_TOKENS[length] || "4-6 sentences";
+  const scoreBand = SCORE_BANDS[tone] || SCORE_BANDS[3];
 
   const client = getClient();
   const response = await client.chat.completions.create({
@@ -74,7 +84,7 @@ export async function generateEmail(
       {
         role: "system",
         content:
-          "You are an expert at writing passive-aggressive workplace emails. You craft emails that are technically professional but dripping with subtext. You respond in valid JSON only.",
+          "You are an expert at writing passive-aggressive workplace emails. You craft fresh emails that are technically professional but calibrated to the requested tone. Never reuse the same wording for different tone levels. You respond in valid JSON only.",
       },
       {
         role: "user",
@@ -83,6 +93,20 @@ export async function generateEmail(
 - Situation: ${situation}
 - Tone level: ${tone}/6 (${toneLabel})
 - Length: ${lengthGuide}
+
+Tone calibration:
+- Level 1: warm, helpful, safe, no visible hostility.
+- Level 2: polite with mild impatience.
+- Level 3: formal concern, controlled pressure.
+- Level 4: clear passive aggression with plausible deniability.
+- Level 5: "per my previous email" energy; documented frustration, receipts, escalation implied.
+- Level 6: "Corporate Assassin"; sharper than level 5, escalation-ready, highly documented, socially devastating while still technically professional.
+
+Score rules:
+- The aggressionScore must be between ${scoreBand.min} and ${scoreBand.max}.
+- For this tone, aim for: ${scoreBand.guidance}.
+- Tone 6 must be materially harsher than tone 5 in subject, body, damageAssessment, and score.
+- Use 100 only for a maximum-damage email involving receipts, repeated failures, visibility/escalation, or formal consequences.
 
 Respond with a JSON object containing:
 {
@@ -104,7 +128,18 @@ Respond with a JSON object containing:
     throw new Error("No response from AI provider");
   }
 
-  return JSON.parse(content) as GeneratedEmail;
+  return normalizeGeneratedEmail(JSON.parse(content) as GeneratedEmail, tone);
 }
 
 export default getClient;
+
+function normalizeGeneratedEmail(email: GeneratedEmail, tone: number): GeneratedEmail {
+  const scoreBand = SCORE_BANDS[tone] || SCORE_BANDS[3];
+  const numericScore = Number(email.aggressionScore);
+  const score = Number.isFinite(numericScore) ? numericScore : scoreBand.min;
+
+  return {
+    ...email,
+    aggressionScore: Math.min(scoreBand.max, Math.max(scoreBand.min, Math.round(score))),
+  };
+}

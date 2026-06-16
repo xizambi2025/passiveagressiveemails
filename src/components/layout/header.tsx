@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
 import {
@@ -14,17 +15,77 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+} from "@/components/ui/select";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { DEFAULT_LOCALE, LAYOUT_COPY, LOCALES, LOCALE_CONFIG, isLocale, localizedPath, type Locale } from "@/lib/i18n";
+
+const LOCALE_STORAGE_KEY = "pa-locale";
 
 const navLinks = [
-  { href: "/", label: "Generator" },
-  { href: "/examples", label: "Examples" },
-  { href: "/hall-of-fame", label: "Hall of Fame" },
-  { href: "/categories", label: "Categories" },
+  { href: "/", key: "generator" },
+  { href: "/examples", key: "examples" },
+  { href: "/hall-of-fame", key: "hallOfFame" },
+  { href: "/categories", key: "categories" },
 ] as const;
+
+function getStoredLocale(): Locale {
+  if (typeof window === "undefined") return DEFAULT_LOCALE;
+  const stored = localStorage.getItem(LOCALE_STORAGE_KEY);
+  return stored && isLocale(stored) ? stored : DEFAULT_LOCALE;
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const urlLocale = isLocale(pathname.split("/").filter(Boolean)[0] || "")
+    ? (pathname.split("/").filter(Boolean)[0] as Locale)
+    : null;
+
+  const [storedLocale, setStoredLocale] = useState<Locale>(DEFAULT_LOCALE);
+
+  useEffect(() => {
+    const saved = getStoredLocale();
+    setStoredLocale(saved);
+    if (urlLocale && urlLocale !== saved) {
+      localStorage.setItem(LOCALE_STORAGE_KEY, urlLocale);
+      setStoredLocale(urlLocale);
+    }
+  }, [urlLocale]);
+
+  const activeLocale = urlLocale ?? storedLocale;
+  const copy = LAYOUT_COPY[activeLocale];
+
+  const getPagePath = (): string => {
+    const parts = pathname.split("/").filter(Boolean);
+    const [first, ...rest] = parts;
+    if (first && isLocale(first)) {
+      return rest.length ? `/${rest.join("/")}` : "/";
+    }
+    return pathname === "" ? "/" : pathname;
+  };
+
+  const handleLocaleChange = (locale: string | null) => {
+    if (!locale || !isLocale(locale)) return;
+    localStorage.setItem(LOCALE_STORAGE_KEY, locale);
+    const pagePath = getPagePath();
+    if (locale === DEFAULT_LOCALE) {
+      window.location.href = pagePath === "/" ? "/" : pagePath;
+    } else {
+      window.location.href = localizedPath(locale, pagePath);
+    }
+  };
+
+  const getNavHref = (href: string) => {
+    if (activeLocale === DEFAULT_LOCALE) return href;
+    if (href === "/") return localizedPath(activeLocale);
+    return localizedPath(activeLocale, href);
+  };
 
   return (
     <motion.header
@@ -59,19 +120,51 @@ export function Header() {
           {navLinks.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              href={getNavHref(link.href)}
               className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              {link.label}
+              {copy.nav[link.key]}
             </Link>
           ))}
           <div className="ml-2">
             <ThemeToggle />
           </div>
+          <Select value={activeLocale} onValueChange={handleLocaleChange}>
+            <SelectTrigger
+              size="sm"
+              aria-label={copy.languageLabel}
+              className="ml-2 h-8 rounded-full border-border bg-muted/60 px-3 shadow-sm"
+            >
+              <span className="text-sm font-medium">{LOCALE_CONFIG[activeLocale].label}</span>
+            </SelectTrigger>
+            <SelectContent align="end" className="min-w-40">
+              {LOCALES.map((locale) => (
+                <SelectItem key={locale} value={locale}>
+                  {LOCALE_CONFIG[locale].label} — {LOCALE_CONFIG[locale].languageName}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </nav>
 
         {/* Mobile menu */}
         <div className="flex items-center gap-2 md:hidden">
+          <Select value={activeLocale} onValueChange={handleLocaleChange}>
+            <SelectTrigger
+              size="sm"
+              aria-label={copy.languageLabel}
+              className="h-8 rounded-full border-border bg-muted/60 px-3 shadow-sm"
+            >
+              <span className="text-sm font-medium">{LOCALE_CONFIG[activeLocale].label}</span>
+            </SelectTrigger>
+            <SelectContent align="end" className="min-w-40">
+              {LOCALES.map((locale) => (
+                <SelectItem key={locale} value={locale}>
+                  {LOCALE_CONFIG[locale].label} — {LOCALE_CONFIG[locale].languageName}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
@@ -93,13 +186,13 @@ export function Header() {
                     key={link.href}
                     render={
                       <Link
-                        href={link.href}
+                        href={getNavHref(link.href)}
                         className="rounded-md px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                       />
                     }
                     onClick={() => setOpen(false)}
                   >
-                    {link.label}
+                    {copy.nav[link.key]}
                   </SheetClose>
                 ))}
               </nav>

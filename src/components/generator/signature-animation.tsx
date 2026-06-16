@@ -2,27 +2,21 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { DEFAULT_LOCALE, LAYOUT_COPY, type Locale } from "@/lib/i18n";
 
-const PHRASES = [
-  { text: "Just checking in...", score: 15 },
-  { text: "Hope you're doing well...", score: 25 },
-  { text: "Wanted to circle back...", score: 40 },
-  { text: "Per our previous conversation...", score: 60 },
-  { text: "As previously mentioned...", score: 75 },
-  { text: "As mentioned in my previous emails...", score: 92 },
-];
-
-export function SignatureAnimation() {
+export function SignatureAnimation({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const copy = LAYOUT_COPY[locale].signature;
+  const phrases = copy.phrases;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % PHRASES.length);
+      setCurrentIndex((prev) => (prev + 1) % phrases.length);
     }, 2500);
     return () => clearInterval(interval);
-  }, []);
+  }, [phrases.length]);
 
-  const current = PHRASES[currentIndex];
+  const current = phrases[currentIndex] ?? phrases[0];
   const progress = current.score / 100;
 
   return (
@@ -30,7 +24,7 @@ export function SignatureAnimation() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <span className="text-xs uppercase tracking-widest text-muted-foreground">
-            Aggression Level
+            {copy.label}
           </span>
           <motion.span
             key={current.score}

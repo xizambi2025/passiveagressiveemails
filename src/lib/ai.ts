@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { DEFAULT_LOCALE, LOCALE_CONFIG, type Locale } from "@/lib/i18n";
 
 const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1";
 const DEFAULT_MODEL = "openai/gpt-4o-mini";
@@ -30,6 +31,7 @@ export interface GenerateEmailParams {
   situation: string;
   tone: number;
   length: "short" | "medium" | "long";
+  locale?: Locale;
 }
 
 export interface GeneratedEmail {
@@ -70,10 +72,11 @@ const SCORE_BANDS: Record<number, { min: number; max: number; guidance: string }
 export async function generateEmail(
   params: GenerateEmailParams
 ): Promise<GeneratedEmail> {
-  const { recipient, situation, tone, length } = params;
+  const { recipient, situation, tone, length, locale = DEFAULT_LOCALE } = params;
   const toneLabel = TONE_LABELS[tone] || "Professional";
   const lengthGuide = LENGTH_TOKENS[length] || "4-6 sentences";
   const scoreBand = SCORE_BANDS[tone] || SCORE_BANDS[3];
+  const languageName = LOCALE_CONFIG[locale].languageName;
 
   const client = getClient();
   const response = await client.chat.completions.create({
@@ -93,6 +96,7 @@ export async function generateEmail(
 - Situation: ${situation}
 - Tone level: ${tone}/6 (${toneLabel})
 - Length: ${lengthGuide}
+- Output language: ${languageName}
 
 Tone calibration:
 - Level 1: warm, helpful, safe, no visible hostility.
@@ -111,12 +115,12 @@ Score rules:
 Respond with a JSON object containing:
 {
   "subject": "email subject line",
-  "body": "the full email body text",
+  "body": "the full email body text in ${languageName}",
   "aggressionScore": <number 0-100 based on how aggressive it is>,
-  "damageAssessment": "<one sentence assessment of potential damage>",
+  "damageAssessment": "<one sentence assessment of potential damage in ${languageName}>",
   "corporateTranslation": {
-    "whatYouMean": "<what the sender actually means in plain language>",
-    "corporateVersion": "<the polished corporate version of that meaning>"
+    "whatYouMean": "<what the sender actually means in plain language, in ${languageName}>",
+    "corporateVersion": "<the polished corporate version of that meaning, in ${languageName}>"
   }
 }`,
       },

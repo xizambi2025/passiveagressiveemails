@@ -183,6 +183,15 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       <JsonLd data={faqSchema(category.faqs)} />
       <main className="flex-1 py-16 px-4">
         <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <Link
+              href="/categories"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              ← Back to Categories
+            </Link>
+          </div>
+
           <div className="text-center mb-12">
             <span className="text-4xl mb-4 block">{category.emoji}</span>
             <h1 className="text-4xl md:text-5xl font-heading font-bold tracking-tight mb-4">

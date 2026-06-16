@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { BLOG_SLUGS } from "@/lib/blog";
+import { LOCALIZED_BLOG_SLUGS } from "@/lib/blog-localized";
+import { LOCALES, localizedPath } from "@/lib/i18n";
 
 const SITE_URL = "https://www.passiveaggressiveemails.com";
 
@@ -48,5 +50,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...blogPages];
+  const localizedHomePages = LOCALES.map((locale) => ({
+    url: `${SITE_URL}${localizedPath(locale)}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  const localizedBlogIndexPages = LOCALES.map((locale) => ({
+    url: `${SITE_URL}${localizedPath(locale, "/blog")}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  const localizedBlogPages = LOCALES.flatMap((locale) =>
+    LOCALIZED_BLOG_SLUGS.map((slug) => ({
+      url: `${SITE_URL}${localizedPath(locale, `/blog/${slug}`)}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  );
+
+  return [
+    ...staticPages,
+    ...categoryPages,
+    ...blogPages,
+    ...localizedHomePages,
+    ...localizedBlogIndexPages,
+    ...localizedBlogPages,
+  ];
 }

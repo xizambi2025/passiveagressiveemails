@@ -11,12 +11,12 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
 } from "@/components/ui/select";
 import { ToneSlider } from "./tone-slider";
 import { EmailResult } from "./email-result";
 import { trackGeneration } from "@/lib/analytics";
 import { generateLocalEmail } from "@/lib/generator";
+import { DEFAULT_LOCALE, GENERATOR_COPY, HOME_COPY, type Locale } from "@/lib/i18n";
 
 function ManagerIcon({ className }: { className?: string }) {
   return (
@@ -91,32 +91,6 @@ const RECIPIENTS = [
   { id: "freelancer", label: "Freelancer", icon: FreelancerIcon },
 ];
 
-const SITUATIONS = [
-  "Late reply to important email",
-  "Missed deadline (again)",
-  "Taking credit for my work",
-  "Scheduling meetings during lunch",
-  "Not reading the brief",
-  "Replying all unnecessarily",
-  "Ignoring previous instructions",
-  "Micromanaging every task",
-  "Late payment on invoice",
-  "Sending vague requirements",
-  "Cancelling meeting last minute",
-  "Not showing up to standup",
-  "Stealing food from fridge",
-  "Playing music without headphones",
-  "CC'ing the entire company",
-];
-
-const TONE_LABELS: Record<number, string> = {
-  1: "Professional",
-  2: "Slightly Annoyed",
-  3: "Concerned",
-  4: "Passive Aggressive",
-  5: "Per My Previous Email",
-  6: "Corporate Assassin",
-};
 
 interface GeneratedResult {
   subject: string;
@@ -129,7 +103,8 @@ interface GeneratedResult {
   };
 }
 
-export function EmailGenerator() {
+export function EmailGenerator({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const copy = GENERATOR_COPY[locale];
   const [recipient, setRecipient] = useState("");
   const [situation, setSituation] = useState("");
   const [customSituation, setCustomSituation] = useState("");
@@ -155,6 +130,7 @@ export function EmailGenerator() {
           situation: effectiveSituation,
           tone,
           length,
+          locale,
         }),
       });
 
@@ -176,6 +152,7 @@ export function EmailGenerator() {
         situation: effectiveSituation,
         tone,
         length,
+        locale,
       }));
     } finally {
       setLoading(false);
@@ -195,17 +172,21 @@ export function EmailGenerator() {
           className="space-y-6"
         >
           <div className="space-y-2">
-            <Label htmlFor="recipient">Who are you emailing?</Label>
+            <Label htmlFor="recipient">{copy.recipientLabel}</Label>
             <Select value={recipient} onValueChange={(v) => setRecipient(v ?? "")}>
               <SelectTrigger id="recipient">
-                <SelectValue placeholder="Select recipient" />
+                {recipient ? (
+                  <span>{copy.recipients[recipient] || recipient}</span>
+                ) : (
+                  <span className="text-muted-foreground">{copy.recipientPlaceholder}</span>
+                )}
               </SelectTrigger>
               <SelectContent>
                 {RECIPIENTS.map((r) => (
                   <SelectItem key={r.id} value={r.id}>
                     <span className="inline-flex items-center gap-2">
                       <r.icon className="w-5 h-5 inline-block flex-shrink-0" />
-                      {r.label}
+                      {copy.recipients[r.id] || r.label}
                     </span>
                   </SelectItem>
                 ))}
@@ -214,18 +195,24 @@ export function EmailGenerator() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="situation">What happened?</Label>
+            <Label htmlFor="situation">{copy.situationLabel}</Label>
             <Select value={situation} onValueChange={(v) => setSituation(v ?? "")}>
               <SelectTrigger id="situation">
-                <SelectValue placeholder="Select situation" />
+                {situation ? (
+                  <span className="truncate">
+                    {situation === "custom" ? `✍️ ${copy.customSituation}` : situation}
+                  </span>
+                ) : (
+                  <span className="text-muted-foreground">{copy.situationPlaceholder}</span>
+                )}
               </SelectTrigger>
               <SelectContent className="w-[var(--radix-select-trigger-width)]">
-                {SITUATIONS.map((s) => (
+                {copy.situations.map((s) => (
                   <SelectItem key={s} value={s}>
                     {s}
                   </SelectItem>
                 ))}
-                <SelectItem value="custom">✍️ Custom situation...</SelectItem>
+                <SelectItem value="custom">✍️ {copy.customSituation}</SelectItem>
               </SelectContent>
             </Select>
             {isCustom && (
@@ -234,7 +221,7 @@ export function EmailGenerator() {
                 animate={{ opacity: 1, height: "auto" }}
               >
                 <Textarea
-                  placeholder="Describe your workplace situation..."
+                  placeholder={copy.customPlaceholder}
                   value={customSituation}
                   onChange={(e) => setCustomSituation(e.target.value)}
                   className="mt-2"
@@ -244,10 +231,15 @@ export function EmailGenerator() {
             )}
           </div>
 
-          <ToneSlider value={tone} onChange={setTone} />
+          <ToneSlider
+            value={tone}
+            onChange={setTone}
+            label={copy.toneLabel}
+            toneLabels={HOME_COPY[locale].tones.map((t) => t.label)}
+          />
 
           <div className="space-y-2">
-            <Label>Length</Label>
+            <Label>{copy.lengthLabel}</Label>
             <div className="flex gap-2">
               {(["short", "medium", "long"] as const).map((l) => (
                 <Button
@@ -257,7 +249,7 @@ export function EmailGenerator() {
                   onClick={() => setLength(l)}
                   className="capitalize"
                 >
-                  {l}
+                  {copy.lengths[l]}
                 </Button>
               ))}
             </div>
@@ -272,12 +264,12 @@ export function EmailGenerator() {
             {loading ? (
               <>
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                Crafting passive aggression...
+                {copy.loading}
               </>
             ) : (
               <>
                 <Send className="w-4 h-4 mr-2" />
-                Generate Email
+                {copy.generate}
               </>
             )}
           </Button>
@@ -289,7 +281,7 @@ export function EmailGenerator() {
           aggressionScore={result.aggressionScore}
           damageAssessment={result.damageAssessment}
           corporateTranslation={result.corporateTranslation}
-          toneLabel={TONE_LABELS[tone]}
+          toneLabel={HOME_COPY[locale].tones[tone - 1]?.label ?? ""}
           onGenerateAnother={handleReset}
         />
       )}

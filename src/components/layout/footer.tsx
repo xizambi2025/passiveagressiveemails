@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { DEFAULT_LOCALE, LAYOUT_COPY, isLocale, localizedPath, type Locale } from "@/lib/i18n";
+import { DEFAULT_LOCALE, COOKIE_CONSENT_COPY, LAYOUT_COPY, isLocale, localizedPath, type Locale } from "@/lib/i18n";
+import { openConsentSettings, triggerDoNotSell } from "@/lib/consent";
 
 const footerColumns = [
   {
@@ -55,6 +56,7 @@ export function Footer() {
 
   const activeLocale = urlLocale ?? storedLocale;
   const copy = LAYOUT_COPY[activeLocale].footer;
+  const cookieCopy = COOKIE_CONSENT_COPY[activeLocale];
   const hrefFor = (href: string) =>
     activeLocale === DEFAULT_LOCALE ? href : localizedPath(activeLocale, href);
 
@@ -85,8 +87,26 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col items-center gap-2 border-t border-border/40 py-6 text-xs text-muted-foreground sm:flex-row sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} PassiveAggressiveEmails. {copy.rights}</p>
+        <div className="flex flex-col items-center gap-3 border-t border-border/40 py-6 text-xs text-muted-foreground sm:flex-row sm:justify-between">
+          <div className="flex flex-col items-center gap-2 sm:items-start">
+            <p>&copy; {new Date().getFullYear()} PassiveAggressiveEmails. {copy.rights}</p>
+            <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 sm:justify-start">
+              <button
+                type="button"
+                onClick={openConsentSettings}
+                className="underline-offset-4 hover:text-foreground hover:underline"
+              >
+                {cookieCopy.cookieSettings}
+              </button>
+              <button
+                type="button"
+                onClick={triggerDoNotSell}
+                className="underline-offset-4 hover:text-foreground hover:underline"
+              >
+                {cookieCopy.doNotSell}
+              </button>
+            </div>
+          </div>
           <p className="italic">{copy.tagline}</p>
         </div>
       </div>

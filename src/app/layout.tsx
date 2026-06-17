@@ -4,8 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { GoogleAnalytics } from "@/components/analytics/google-analytics";
-import { GoogleAdSense } from "@/components/analytics/google-adsense";
+import { ConsentProvider } from "@/components/consent/consent-provider";
+import { GoogleTag } from "@/components/analytics/google-tag";
 import { AdSidebars } from "@/components/ads/ad-sidebars";
 import { JsonLd, organizationSchema } from "@/components/seo/json-ld";
 import "./globals.css";
@@ -79,17 +79,18 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
-          <TooltipProvider>
-            <JsonLd data={organizationSchema()} />
-            <Header />
-            <AdSidebars>
-              {children}
-            </AdSidebars>
-            <Footer />
-          </TooltipProvider>
+          <ConsentProvider>
+            <TooltipProvider>
+              <JsonLd data={organizationSchema()} />
+              <Header />
+              <AdSidebars>
+                {children}
+              </AdSidebars>
+              <Footer />
+            </TooltipProvider>
+          </ConsentProvider>
         </ThemeProvider>
-        <GoogleAnalytics />
-        <GoogleAdSense />
+        <GoogleTag />
       </body>
     </html>
   );

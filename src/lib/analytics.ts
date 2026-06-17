@@ -1,7 +1,10 @@
+import { hasAnalyticsConsent } from "@/lib/consent";
+
 type EventParams = Record<string, string | number | boolean>;
 
 export function trackEvent(eventName: string, params?: EventParams) {
   if (typeof window === "undefined") return;
+  if (!hasAnalyticsConsent()) return;
 
   if (window.gtag) {
     window.gtag("event", eventName, params);

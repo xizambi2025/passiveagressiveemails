@@ -640,3 +640,102 @@ export const GENERATOR_COPY: Record<
     ],
   },
 };
+
+export const COOKIE_CONSENT_COPY: Record<
+  Locale,
+  {
+    bannerTitle: string;
+    bannerDescription: string;
+    settingsTitle: string;
+    settingsDescription: string;
+    acceptAll: string;
+    rejectNonEssential: string;
+    customize: string;
+    savePreferences: string;
+    cancel: string;
+    privacyLink: string;
+    doNotSell: string;
+    cookieSettings: string;
+    analyticsLabel: string;
+    analyticsDescription: string;
+    advertisingLabel: string;
+    advertisingDescription: string;
+  }
+> = {
+  "en-en": {
+    bannerTitle: "We value your privacy",
+    bannerDescription:
+      "We use cookies for analytics (Google Analytics) and advertising (Google AdSense). You can accept all, reject non-essential cookies, or customize your choices. See our Privacy Policy for details.",
+    settingsTitle: "Cookie preferences",
+    settingsDescription: "Choose which optional cookies and data uses you allow. Essential cookies are always active.",
+    acceptAll: "Accept all",
+    rejectNonEssential: "Reject non-essential",
+    customize: "Customize",
+    savePreferences: "Save preferences",
+    cancel: "Cancel",
+    privacyLink: "Privacy Policy",
+    doNotSell: "Do Not Sell or Share My Personal Information",
+    cookieSettings: "Cookie Settings",
+    analyticsLabel: "Analytics",
+    analyticsDescription: "Helps us understand how the site is used via Google Analytics.",
+    advertisingLabel: "Advertising",
+    advertisingDescription: "Allows Google AdSense to show ads and measure ad performance.",
+  },
+  "pt-pt": {
+    bannerTitle: "Valorizamos a sua privacidade",
+    bannerDescription:
+      "Utilizamos cookies para análise (Google Analytics) e publicidade (Google AdSense). Pode aceitar todos, rejeitar os não essenciais ou personalizar as suas escolhas. Consulte a nossa Política de Privacidade.",
+    settingsTitle: "Preferências de cookies",
+    settingsDescription: "Escolha que cookies opcionais e usos de dados permite. Os cookies essenciais estão sempre ativos.",
+    acceptAll: "Aceitar todos",
+    rejectNonEssential: "Rejeitar não essenciais",
+    customize: "Personalizar",
+    savePreferences: "Guardar preferências",
+    cancel: "Cancelar",
+    privacyLink: "Política de Privacidade",
+    doNotSell: "Não Vender nem Partilhar os Meus Dados",
+    cookieSettings: "Definições de Cookies",
+    analyticsLabel: "Análise",
+    analyticsDescription: "Ajuda-nos a perceber como o site é usado via Google Analytics.",
+    advertisingLabel: "Publicidade",
+    advertisingDescription: "Permite que o Google AdSense mostre anúncios e meça o desempenho.",
+  },
+  "fr-fr": {
+    bannerTitle: "Nous respectons votre vie privée",
+    bannerDescription:
+      "Nous utilisons des cookies pour l'analyse (Google Analytics) et la publicité (Google AdSense). Vous pouvez tout accepter, refuser les cookies non essentiels ou personnaliser vos choix. Consultez notre Politique de Confidentialité.",
+    settingsTitle: "Préférences cookies",
+    settingsDescription: "Choisissez les cookies optionnels et usages de données que vous autorisez. Les cookies essentiels restent actifs.",
+    acceptAll: "Tout accepter",
+    rejectNonEssential: "Refuser les non essentiels",
+    customize: "Personnaliser",
+    savePreferences: "Enregistrer",
+    cancel: "Annuler",
+    privacyLink: "Politique de Confidentialité",
+    doNotSell: "Ne Pas Vendre ni Partager Mes Informations",
+    cookieSettings: "Paramètres Cookies",
+    analyticsLabel: "Analyse",
+    analyticsDescription: "Nous aide à comprendre l'utilisation du site via Google Analytics.",
+    advertisingLabel: "Publicité",
+    advertisingDescription: "Permet à Google AdSense d'afficher des annonces et mesurer leurs performances.",
+  },
+  "es-es": {
+    bannerTitle: "Valoramos tu privacidad",
+    bannerDescription:
+      "Usamos cookies para análisis (Google Analytics) y publicidad (Google AdSense). Puedes aceptar todas, rechazar las no esenciales o personalizar tus opciones. Consulta nuestra Política de Privacidad.",
+    settingsTitle: "Preferencias de cookies",
+    settingsDescription: "Elige qué cookies opcionales y usos de datos permites. Las cookies esenciales siempre están activas.",
+    acceptAll: "Aceptar todas",
+    rejectNonEssential: "Rechazar no esenciales",
+    customize: "Personalizar",
+    savePreferences: "Guardar preferencias",
+    cancel: "Cancelar",
+    privacyLink: "Política de Privacidad",
+    doNotSell: "No Vender ni Compartir Mi Información",
+    cookieSettings: "Configuración de Cookies",
+    analyticsLabel: "Análisis",
+    analyticsDescription: "Nos ayuda a entender cómo se usa el sitio con Google Analytics.",
+    advertisingLabel: "Publicidad",
+    advertisingDescription: "Permite que Google AdSense muestre anuncios y mida su rendimiento.",
+  },
+};

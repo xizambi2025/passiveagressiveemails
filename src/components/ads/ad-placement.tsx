@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { CONSENT_UPDATED_EVENT, hasAdvertisingConsent, loadConsent } from "@/lib/consent";
 
 interface AdPlacementProps {
   slot: string;
@@ -11,16 +12,28 @@ interface AdPlacementProps {
 export function AdPlacement({ slot, format = "auto", className }: AdPlacementProps) {
   const pushed = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [adsAllowed, setAdsAllowed] = useState(false);
 
   useEffect(() => {
-    if (pushed.current) return;
+    setAdsAllowed(hasAdvertisingConsent());
+
+    const onConsentUpdated = () => {
+      setAdsAllowed(hasAdvertisingConsent());
+    };
+    window.addEventListener(CONSENT_UPDATED_EVENT, onConsentUpdated);
+    return () => window.removeEventListener(CONSENT_UPDATED_EVENT, onConsentUpdated);
+  }, []);
+
+  useEffect(() => {
     if (process.env.NODE_ENV !== "production") return;
+    if (!adsAllowed) return;
 
     const container = containerRef.current;
     if (!container) return;
 
     const pushAd = () => {
       if (pushed.current || container.offsetWidth <= 0) return;
+      if (!loadConsent()?.advertising || loadConsent()?.saleOptOut) return;
 
       try {
         ((window as unknown as { adsbygoogle: unknown[] }).adsbygoogle =
@@ -38,12 +51,11 @@ export function AdPlacement({ slot, format = "auto", className }: AdPlacementPro
     observer.observe(container);
 
     return () => observer.disconnect();
-  }, []);
+  }, [adsAllowed]);
 
-  useEffect(() => {
-    if (process.env.NODE_ENV === "production") return;
-    pushed.current = true;
-  }, []);
+  if (process.env.NODE_ENV !== "production" || !adsAllowed) {
+    return null;
+  }
 
   return (
     <div ref={containerRef} className={className}>

@@ -52,7 +52,7 @@ const translations: Record<Exclude<Locale, "en-en">, Record<string, BlogTranslat
       ],
     },
     "per-my-last-email-history": {
-      title: "A História de 'Conforme o Meu Email Anterior'",
+      title: "A Frase Mais Temida do Email",
       description:
         "Como quatro palavras se tornaram a frase mais temida da comunicação corporativa. A origem, evolução e impacto cultural da linguagem passivo-agressiva por email.",
       category: "Humor Corporativo",
@@ -150,7 +150,7 @@ const translations: Record<Exclude<Locale, "en-en">, Record<string, BlogTranslat
       ],
     },
     "how-to-follow-up-without-sounding-desperate": {
-      title: "Como Fazer Seguimento Sem Parecer Desesperado",
+      title: "Seguimento Sem Soar Desesperado",
       description:
         "Como escrever emails de seguimento que soam calmos, profissionais e firmes sem implorar por resposta ou fingir que não está irritado.",
       category: "Estratégia de Email",
@@ -277,7 +277,7 @@ const translations: Record<Exclude<Locale, "en-en">, Record<string, BlogTranslat
       ],
     },
     "client-scope-creep-email-examples": {
-      title: "Exemplos de Emails para Alargamento de Âmbito",
+      title: "Emails para Alargamento de Âmbito",
       description:
         "Como responder quando um cliente continua a adicionar pedidos extra, com formulações educadas que protegem o âmbito e o orçamento do projeto.",
       category: "Emails para Clientes",
@@ -595,7 +595,7 @@ const translations: Record<Exclude<Locale, "en-en">, Record<string, BlogTranslat
       ],
     },
     "client-scope-creep-email-examples": {
-      title: "Exemples d'E-mails sur la Dérive de Périmètre",
+      title: "E-mails sur la Dérive de Périmètre",
       description:
         "Comment répondre quand un client ne cesse d'ajouter des demandes, avec une formulation polie qui protège le périmètre et le budget du projet.",
       category: "E-mails Client",
@@ -616,7 +616,7 @@ const translations: Record<Exclude<Locale, "en-en">, Record<string, BlogTranslat
       ],
     },
     "meeting-follow-up-emails-that-document-everything": {
-      title: "Comptes Rendus de Réunion qui Documentent Tout",
+      title: "Suivis de Réunion: Tout Documenté",
       description:
         "Comment rédiger des suivis de réunion qui confirment les décisions, attribuent la responsabilité et préviennent subtilement la confusion future.",
       category: "Réunions",
@@ -786,7 +786,7 @@ const translations: Record<Exclude<Locale, "en-en">, Record<string, BlogTranslat
       ],
     },
     "how-to-follow-up-without-sounding-desperate": {
-      title: "Cómo Hacer Seguimiento Sin Parecer Desesperado",
+      title: "Seguimiento Sin Sonar Desesperado",
       description:
         "Cómo escribir emails de seguimiento que suenan calmados, profesionales y firmes sin suplicar una respuesta o fingir que no estás molesto.",
       category: "Estrategia de Email",
@@ -840,7 +840,7 @@ const translations: Record<Exclude<Locale, "en-en">, Record<string, BlogTranslat
       ],
     },
     "what-to-say-instead-of-just-checking-in": {
-      title: "Qué Decir en Lugar de 'Solo Quería Comprobar'",
+      title: "Mejor que 'Solo Quería Comprobar'",
       description:
         "Mejores alternativas a 'solo quería comprobar' que hacen los seguimientos más claros, más útiles y más difíciles de ignorar.",
       category: "Frases de Email",
@@ -913,7 +913,7 @@ const translations: Record<Exclude<Locale, "en-en">, Record<string, BlogTranslat
       ],
     },
     "client-scope-creep-email-examples": {
-      title: "Ejemplos de Emails para Ampliación de Alcance",
+      title: "Emails para Ampliación de Alcance",
       description:
         "Cómo responder cuando un cliente sigue añadiendo peticiones extra, con redacción educada que protege el alcance y el presupuesto del proyecto.",
       category: "Emails para Clientes",

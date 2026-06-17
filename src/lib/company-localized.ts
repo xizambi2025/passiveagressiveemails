@@ -639,7 +639,7 @@ const editorialCopy: Record<Locale, EditorialCopy> = {
   "es-es": {
     metadataTitle: "Normas Editoriales",
     metadataDescription:
-      "Nuestras normas editoriales garantizan que cada plantilla de email pasivo-agresivo cumple nuestros estándares de humor, profesionalismo y plausibilidad de negación.",
+      "Nuestras normas editoriales garantizan que cada plantilla de email pasivo-agresivo cumple los estándares de humor, profesionalismo y plausibilidad de negación.",
     title: "Normas Editoriales",
     subtitle: "Control de calidad para la hostilidad profesional.",
     principlesTitle: "Principios de Contenido",

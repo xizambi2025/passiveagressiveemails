@@ -73,6 +73,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  const STATIC_INNER_PAGES = [
+    "/examples",
+    "/hall-of-fame",
+    "/categories",
+    "/about",
+    "/methodology",
+    "/editorial-standards",
+    "/contact",
+    "/privacy",
+    "/terms",
+  ];
+
+  const localizedStaticPages = LOCALES.flatMap((locale) =>
+    STATIC_INNER_PAGES.map((path) => ({
+      url: `${SITE_URL}${localizedPath(locale, path)}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+  );
+
+  const localizedCategoryPages = LOCALES.flatMap((locale) =>
+    CATEGORIES.map((slug) => ({
+      url: `${SITE_URL}${localizedPath(locale, `/categories/${slug}`)}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+  );
+
   return [
     ...staticPages,
     ...categoryPages,
@@ -80,5 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedHomePages,
     ...localizedBlogIndexPages,
     ...localizedBlogPages,
+    ...localizedStaticPages,
+    ...localizedCategoryPages,
   ];
 }

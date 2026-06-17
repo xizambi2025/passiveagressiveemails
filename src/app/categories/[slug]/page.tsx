@@ -1,5 +1,6 @@
 import { createMetadata } from "@/lib/seo";
 import { JsonLd, faqSchema } from "@/components/seo/json-ld";
+import { BLOG_POST_MAP, CATEGORY_RELATED_POST_SLUGS } from "@/lib/blog";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -178,6 +179,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const relatedBlogPosts = (CATEGORY_RELATED_POST_SLUGS[slug] ?? [])
+    .map((s) => BLOG_POST_MAP[s])
+    .filter(Boolean);
+
   return (
     <>
       <JsonLd data={faqSchema(category.faqs)} />
@@ -251,6 +256,33 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
               ))}
             </div>
           </section>
+
+          {relatedBlogPosts.length > 0 && (
+            <section className="mb-16">
+              <h2 className="text-2xl font-heading font-bold mb-6">From the Blog</h2>
+              <div className="space-y-3">
+                {relatedBlogPosts.map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={`/blog/${p.slug}`}
+                    className="flex items-center justify-between rounded-lg border border-border bg-card p-4 hover:shadow-sm transition-shadow group"
+                  >
+                    <div>
+                      <span className="text-xs px-2 py-0.5 bg-muted rounded-full text-muted-foreground">
+                        {p.category}
+                      </span>
+                      <h3 className="mt-1 text-sm font-medium group-hover:text-primary transition-colors">
+                        {p.title}
+                      </h3>
+                    </div>
+                    <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-4">
+                      →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className="text-center">
             <Link

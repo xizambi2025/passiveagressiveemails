@@ -1,7 +1,7 @@
 import { createMetadata } from "@/lib/seo";
 import { JsonLd, articleSchema } from "@/components/seo/json-ld";
 import { BlogIllustration } from "@/components/blog/blog-illustration";
-import { BLOG_POST_MAP, BLOG_SLUGS } from "@/lib/blog";
+import { BLOG_POST_MAP, BLOG_SLUGS, getRelatedPosts } from "@/lib/blog";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -28,6 +28,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) {
     notFound();
   }
+
+  const relatedPosts = getRelatedPosts(slug);
 
   return (
     <>
@@ -142,6 +144,29 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               );
             })}
           </article>
+
+          {relatedPosts.length > 0 && (
+            <section className="mt-12 pt-8 border-t border-border">
+              <h2 className="text-xl font-heading font-bold mb-6">Related Posts</h2>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {relatedPosts.map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={`/blog/${p.slug}`}
+                    className="group rounded-xl border border-border bg-card p-4 hover:shadow-sm transition-shadow"
+                  >
+                    <span className="text-xs px-2 py-0.5 bg-muted rounded-full text-muted-foreground">
+                      {p.category}
+                    </span>
+                    <h3 className="mt-2 text-sm font-heading font-semibold group-hover:text-primary transition-colors leading-snug">
+                      {p.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-primary font-medium">Read →</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className="mt-12 pt-8 border-t border-border text-center">
             <h3 className="text-xl font-heading font-bold mb-3">

@@ -1,6 +1,7 @@
 import { BlogIllustration } from "@/components/blog/blog-illustration";
 import { JsonLd, articleSchema } from "@/components/seo/json-ld";
 import { getLocalizedBlogPostMap, LOCALIZED_BLOG_SLUGS } from "@/lib/blog-localized";
+import { getRelatedPostSlugs } from "@/lib/blog";
 import { BLOG_INDEX_COPY, LOCALES, localizedPath, type Locale } from "@/lib/i18n";
 import { createMetadata } from "@/lib/seo";
 import Link from "next/link";
@@ -35,10 +36,15 @@ export default async function LocalizedBlogPostPage({
   params: Promise<{ locale: Locale; slug: string }>;
 }) {
   const { locale, slug } = await params;
-  const post = getLocalizedBlogPostMap(locale)[slug];
+  const localizedMap = getLocalizedBlogPostMap(locale);
+  const post = localizedMap[slug];
   const copy = BLOG_INDEX_COPY[locale];
 
   if (!post || !copy) notFound();
+
+  const relatedPosts = getRelatedPostSlugs(slug)
+    .map((s) => localizedMap[s])
+    .filter(Boolean);
 
   return (
     <>
@@ -139,6 +145,29 @@ export default async function LocalizedBlogPostPage({
               );
             })}
           </article>
+
+          {relatedPosts.length > 0 && (
+            <section className="mt-12 pt-8 border-t border-border">
+              <h2 className="text-xl font-heading font-bold mb-6">{copy.relatedPosts}</h2>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {relatedPosts.map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={localizedPath(locale, `/blog/${p.slug}`)}
+                    className="group rounded-xl border border-border bg-card p-4 hover:shadow-sm transition-shadow"
+                  >
+                    <span className="text-xs px-2 py-0.5 bg-muted rounded-full text-muted-foreground">
+                      {p.category}
+                    </span>
+                    <h3 className="mt-2 text-sm font-heading font-semibold group-hover:text-primary transition-colors leading-snug">
+                      {p.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-primary font-medium">{copy.readMore}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className="mt-12 pt-8 border-t border-border text-center">
             <h3 className="text-xl font-heading font-bold mb-3">{copy.ready}</h3>

@@ -221,7 +221,7 @@ export const HOME_COPY: Record<
 
 export const BLOG_INDEX_COPY: Record<
   Locale,
-  { title: string; description: string; backToBlog: string; by: string; ready: string; cta: string }
+  { title: string; description: string; backToBlog: string; by: string; ready: string; cta: string; relatedPosts: string; readMore: string; fromBlog: string }
 > = {
   "en-en": {
     title: "Blog",
@@ -231,6 +231,9 @@ export const BLOG_INDEX_COPY: Record<
     by: "By",
     ready: "Ready to craft your own?",
     cta: "Generate an Email",
+    relatedPosts: "Related Posts",
+    readMore: "Read →",
+    fromBlog: "From the Blog",
   },
   "pt-pt": {
     title: "Blog",
@@ -240,6 +243,9 @@ export const BLOG_INDEX_COPY: Record<
     by: "Por",
     ready: "Pronto para criar o seu?",
     cta: "Gerar um Email",
+    relatedPosts: "Artigos Relacionados",
+    readMore: "Ler →",
+    fromBlog: "Do Blog",
   },
   "fr-fr": {
     title: "Blog",
@@ -249,6 +255,9 @@ export const BLOG_INDEX_COPY: Record<
     by: "Par",
     ready: "Prêt à rédiger le vôtre ?",
     cta: "Générer un E-mail",
+    relatedPosts: "Articles Similaires",
+    readMore: "Lire →",
+    fromBlog: "Depuis le Blog",
   },
   "es-es": {
     title: "Blog",
@@ -258,6 +267,9 @@ export const BLOG_INDEX_COPY: Record<
     by: "Por",
     ready: "¿Listo para crear el tuyo?",
     cta: "Generar un Email",
+    relatedPosts: "Artículos Relacionados",
+    readMore: "Leer →",
+    fromBlog: "Del Blog",
   },
 };
 

@@ -6,7 +6,9 @@ import {
   isCategorySlug,
 } from "@/lib/category-detail-localized";
 import { getCategoriesPageCopy } from "@/lib/pages-localized";
-import { LOCALES, LOCALE_CONFIG, localizedPath, type Locale } from "@/lib/i18n";
+import { BLOG_INDEX_COPY, LOCALES, LOCALE_CONFIG, localizedPath, type Locale } from "@/lib/i18n";
+import { CATEGORY_RELATED_POST_SLUGS } from "@/lib/blog";
+import { getLocalizedBlogPostMap } from "@/lib/blog-localized";
 import { createMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -43,6 +45,11 @@ export default async function LocaleCategoryPage({
 
   const category = getLocalizedCategoryDetail(locale, slug);
   const categoriesCopy = getCategoriesPageCopy(locale);
+  const blogCopy = BLOG_INDEX_COPY[locale];
+  const localizedBlogMap = getLocalizedBlogPostMap(locale);
+  const relatedBlogPosts = (CATEGORY_RELATED_POST_SLUGS[slug] ?? [])
+    .map((s) => localizedBlogMap[s])
+    .filter(Boolean);
 
   return (
     <>
@@ -117,6 +124,33 @@ export default async function LocaleCategoryPage({
               ))}
             </div>
           </section>
+
+          {relatedBlogPosts.length > 0 && (
+            <section className="mb-16">
+              <h2 className="text-2xl font-heading font-bold mb-6">{blogCopy.fromBlog}</h2>
+              <div className="space-y-3">
+                {relatedBlogPosts.map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={localizedPath(locale, `/blog/${p.slug}`)}
+                    className="flex items-center justify-between rounded-lg border border-border bg-card p-4 hover:shadow-sm transition-shadow group"
+                  >
+                    <div>
+                      <span className="text-xs px-2 py-0.5 bg-muted rounded-full text-muted-foreground">
+                        {p.category}
+                      </span>
+                      <h3 className="mt-1 text-sm font-medium group-hover:text-primary transition-colors">
+                        {p.title}
+                      </h3>
+                    </div>
+                    <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-4">
+                      →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className="text-center">
             <Link

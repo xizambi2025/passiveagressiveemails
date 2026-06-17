@@ -58,6 +58,8 @@ type CategoriesPageCopy = {
   description: string;
   templatesLabel: string;
   backToCategories: string;
+  relatedReading: string;
+  readMore: string;
   categories: LocalizedCategory[];
 };
 
@@ -985,6 +987,8 @@ const categoriesCopy: Record<Locale, CategoriesPageCopy> = {
       "Every workplace frustration, categorized and catalogued for your passive-aggressive convenience.",
     templatesLabel: "templates",
     backToCategories: "Back to Categories",
+    relatedReading: "From the Blog",
+    readMore: "Read →",
     categories: [
       {
         slug: "clients",
@@ -1037,6 +1041,8 @@ const categoriesCopy: Record<Locale, CategoriesPageCopy> = {
       "Todas as frustrações do trabalho, categorizadas e catalogadas para a sua conveniência passivo-agressiva.",
     templatesLabel: "modelos",
     backToCategories: "Voltar às Categorias",
+    relatedReading: "Do Blog",
+    readMore: "Ler →",
     categories: [
       {
         slug: "clients",
@@ -1089,6 +1095,8 @@ const categoriesCopy: Record<Locale, CategoriesPageCopy> = {
       "Toutes les frustrations au travail, catégorisées et cataloguées pour votre confort passif-agressif.",
     templatesLabel: "modèles",
     backToCategories: "Retour aux Catégories",
+    relatedReading: "Depuis le Blog",
+    readMore: "Lire →",
     categories: [
       {
         slug: "clients",
@@ -1141,6 +1149,8 @@ const categoriesCopy: Record<Locale, CategoriesPageCopy> = {
       "Todas las frustraciones laborales, categorizadas y catalogadas para tu comodidad pasivo-agresiva.",
     templatesLabel: "plantillas",
     backToCategories: "Volver a Categorías",
+    relatedReading: "Del Blog",
+    readMore: "Leer →",
     categories: [
       {
         slug: "clients",

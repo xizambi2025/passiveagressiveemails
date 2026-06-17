@@ -460,3 +460,37 @@ export const BLOG_POST_MAP = Object.fromEntries(
 ) as Record<string, BlogPost>;
 
 export const BLOG_SLUGS = BLOG_POSTS.map((post) => post.slug);
+
+const RELATED_POSTS_MAP: Record<string, string[]> = {
+  "ultimate-guide-passive-aggressive-emails": ["email-tone-scale-polite-to-nuclear", "per-my-last-email-history", "what-to-say-instead-of-just-checking-in"],
+  "per-my-last-email-history": ["ultimate-guide-passive-aggressive-emails", "corporate-buzzwords-decoded", "email-tone-scale-polite-to-nuclear"],
+  "corporate-buzzwords-decoded": ["per-my-last-email-history", "ultimate-guide-passive-aggressive-emails", "professional-ways-to-say-no-by-email"],
+  "email-tone-scale-polite-to-nuclear": ["ultimate-guide-passive-aggressive-emails", "how-to-follow-up-without-sounding-desperate", "professional-ways-to-say-no-by-email"],
+  "how-to-follow-up-without-sounding-desperate": ["what-to-say-instead-of-just-checking-in", "meeting-follow-up-emails-that-document-everything", "deadline-reminder-emails-that-work"],
+  "what-to-say-instead-of-just-checking-in": ["how-to-follow-up-without-sounding-desperate", "meeting-follow-up-emails-that-document-everything", "email-tone-scale-polite-to-nuclear"],
+  "professional-ways-to-say-no-by-email": ["client-scope-creep-email-examples", "email-tone-scale-polite-to-nuclear", "deadline-reminder-emails-that-work"],
+  "deadline-reminder-emails-that-work": ["how-to-follow-up-without-sounding-desperate", "meeting-follow-up-emails-that-document-everything", "professional-ways-to-say-no-by-email"],
+  "client-scope-creep-email-examples": ["professional-ways-to-say-no-by-email", "deadline-reminder-emails-that-work", "how-to-follow-up-without-sounding-desperate"],
+  "meeting-follow-up-emails-that-document-everything": ["deadline-reminder-emails-that-work", "how-to-follow-up-without-sounding-desperate", "what-to-say-instead-of-just-checking-in"],
+};
+
+export const CATEGORY_RELATED_POST_SLUGS: Record<string, string[]> = {
+  "clients": ["client-scope-creep-email-examples", "professional-ways-to-say-no-by-email", "deadline-reminder-emails-that-work"],
+  "coworkers": ["ultimate-guide-passive-aggressive-emails", "email-tone-scale-polite-to-nuclear", "per-my-last-email-history"],
+  "managers": ["how-to-follow-up-without-sounding-desperate", "professional-ways-to-say-no-by-email", "email-tone-scale-polite-to-nuclear"],
+  "suppliers": ["deadline-reminder-emails-that-work", "professional-ways-to-say-no-by-email", "how-to-follow-up-without-sounding-desperate"],
+  "meetings": ["meeting-follow-up-emails-that-document-everything", "what-to-say-instead-of-just-checking-in", "how-to-follow-up-without-sounding-desperate"],
+  "deadlines": ["deadline-reminder-emails-that-work", "how-to-follow-up-without-sounding-desperate", "meeting-follow-up-emails-that-document-everything"],
+  "invoices": ["deadline-reminder-emails-that-work", "client-scope-creep-email-examples", "professional-ways-to-say-no-by-email"],
+  "corporate-buzzwords": ["corporate-buzzwords-decoded", "per-my-last-email-history", "ultimate-guide-passive-aggressive-emails"],
+};
+
+export function getRelatedPosts(currentSlug: string): BlogPost[] {
+  return (RELATED_POSTS_MAP[currentSlug] ?? [])
+    .map((s) => BLOG_POST_MAP[s])
+    .filter(Boolean) as BlogPost[];
+}
+
+export function getRelatedPostSlugs(currentSlug: string): string[] {
+  return RELATED_POSTS_MAP[currentSlug] ?? [];
+}

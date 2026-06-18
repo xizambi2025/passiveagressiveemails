@@ -1,7 +1,11 @@
 import type { MetadataRoute } from "next";
 import { BLOG_SLUGS } from "@/lib/blog";
 import { LOCALIZED_BLOG_SLUGS } from "@/lib/blog-localized";
-import { LOCALES, localizedPath } from "@/lib/i18n";
+import { LOCALES, localizedPath, DEFAULT_LOCALE } from "@/lib/i18n";
+
+// Exclude the default (English) locale — those pages are already covered
+// by the root-level English URLs with no locale prefix.
+const NON_DEFAULT_LOCALES = LOCALES.filter((l) => l !== DEFAULT_LOCALE);
 
 const SITE_URL = "https://www.passiveaggressiveemails.com";
 
@@ -50,21 +54,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const localizedHomePages = LOCALES.map((locale) => ({
+  const localizedHomePages = NON_DEFAULT_LOCALES.map((locale) => ({
     url: `${SITE_URL}${localizedPath(locale)}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
 
-  const localizedBlogIndexPages = LOCALES.map((locale) => ({
+  const localizedBlogIndexPages = NON_DEFAULT_LOCALES.map((locale) => ({
     url: `${SITE_URL}${localizedPath(locale, "/blog")}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
 
-  const localizedBlogPages = LOCALES.flatMap((locale) =>
+  const localizedBlogPages = NON_DEFAULT_LOCALES.flatMap((locale) =>
     LOCALIZED_BLOG_SLUGS.map((slug) => ({
       url: `${SITE_URL}${localizedPath(locale, `/blog/${slug}`)}`,
       lastModified: new Date(),
@@ -85,7 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms",
   ];
 
-  const localizedStaticPages = LOCALES.flatMap((locale) =>
+  const localizedStaticPages = NON_DEFAULT_LOCALES.flatMap((locale) =>
     STATIC_INNER_PAGES.map((path) => ({
       url: `${SITE_URL}${localizedPath(locale, path)}`,
       lastModified: new Date(),
@@ -94,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  const localizedCategoryPages = LOCALES.flatMap((locale) =>
+  const localizedCategoryPages = NON_DEFAULT_LOCALES.flatMap((locale) =>
     CATEGORIES.map((slug) => ({
       url: `${SITE_URL}${localizedPath(locale, `/categories/${slug}`)}`,
       lastModified: new Date(),

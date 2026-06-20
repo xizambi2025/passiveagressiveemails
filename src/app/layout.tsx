@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ConsentProvider } from "@/components/consent/consent-provider";
 import { GoogleTag } from "@/components/analytics/google-tag";
+import { AnalyticsPageView } from "@/components/analytics/analytics-page-view";
 import { AdSidebars } from "@/components/ads/ad-sidebars";
 import { JsonLd, organizationSchema } from "@/components/seo/json-ld";
 import "./globals.css";
@@ -80,6 +81,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
           <ConsentProvider>
+            <AnalyticsPageView />
             <TooltipProvider>
               <JsonLd data={organizationSchema()} />
               <Header />

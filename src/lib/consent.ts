@@ -52,6 +52,16 @@ export function hasAdvertisingConsent(): boolean {
   return consent.advertising && !consent.saleOptOut;
 }
 
+function sendPageView() {
+  if (typeof window === "undefined" || !window.gtag) return;
+
+  window.gtag("event", "page_view", {
+    page_location: window.location.href,
+    page_path: window.location.pathname,
+    page_title: document.title,
+  });
+}
+
 export function applyGoogleConsent(choices: ConsentChoices) {
   if (typeof window === "undefined" || !window.gtag) return;
 
@@ -64,6 +74,10 @@ export function applyGoogleConsent(choices: ConsentChoices) {
     ad_personalization: allowAds ? "granted" : "denied",
     analytics_storage: allowAnalytics ? "granted" : "denied",
   });
+
+  if (allowAnalytics) {
+    sendPageView();
+  }
 
   window.dispatchEvent(new CustomEvent(CONSENT_UPDATED_EVENT, { detail: choices }));
 }

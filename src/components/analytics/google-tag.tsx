@@ -29,7 +29,6 @@ export function GoogleTag() {
       <Script id="google-analytics-config" strategy="afterInteractive">
         {`
           gtag('js', new Date());
-          gtag('config', '${GA_ID}', { anonymize_ip: true });
           try {
             var raw = localStorage.getItem('pa-consent-v1');
             if (raw) {
@@ -51,6 +50,7 @@ export function GoogleTag() {
               });
             }
           } catch (e) {}
+          gtag('config', '${GA_ID}', { anonymize_ip: true, send_page_view: false });
         `}
       </Script>
       <Script

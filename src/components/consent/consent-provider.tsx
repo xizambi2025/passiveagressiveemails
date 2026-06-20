@@ -58,7 +58,7 @@ function useActiveLocale(): Locale {
 
 function persistAndApply(choices: ConsentChoices, setChoices: (c: ConsentChoices) => void, setShowBanner: (v: boolean) => void, setShowSettings: (v: boolean) => void) {
   saveConsent(choices);
-  applyGoogleConsent(choices);
+  void applyGoogleConsent(choices);
   setChoices(choices);
   setShowBanner(false);
   setShowSettings(false);
@@ -80,7 +80,7 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
 
     if (saved) {
       setChoices(saved);
-      applyGoogleConsent(saved);
+      void applyGoogleConsent(saved);
       return;
     }
 
@@ -88,7 +88,7 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
       const gpcChoices = doNotSellConsent();
       setChoices(gpcChoices);
       saveConsent(gpcChoices);
-      applyGoogleConsent(gpcChoices);
+      void applyGoogleConsent(gpcChoices);
       return;
     }
 

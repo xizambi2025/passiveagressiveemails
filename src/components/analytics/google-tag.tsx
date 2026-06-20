@@ -1,6 +1,6 @@
 import Script from "next/script";
+import { GA_MEASUREMENT_ID } from "@/lib/ga-config";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-CT7B0TSPMM";
 const ADSENSE_CLIENT = "ca-pub-2873608919569451";
 
 export function GoogleTag() {
@@ -18,31 +18,31 @@ export function GoogleTag() {
             'analytics_storage': 'denied',
             'functionality_storage': 'granted',
             'security_storage': 'granted',
-            'wait_for_update': 500
+            'wait_for_update': 2000
           });
         `}
       </Script>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics-config" strategy="afterInteractive">
         {`
-          gtag('js', new Date());
+          window.gtag('js', new Date());
           try {
             var raw = localStorage.getItem('pa-consent-v1');
             if (raw) {
               var c = JSON.parse(raw);
               var allowAds = c.advertising && !c.saleOptOut;
               var allowAnalytics = c.analytics && !c.saleOptOut;
-              gtag('consent', 'update', {
+              window.gtag('consent', 'update', {
                 ad_storage: allowAds ? 'granted' : 'denied',
                 ad_user_data: allowAds ? 'granted' : 'denied',
                 ad_personalization: allowAds ? 'granted' : 'denied',
                 analytics_storage: allowAnalytics ? 'granted' : 'denied'
               });
             } else if (navigator.globalPrivacyControl) {
-              gtag('consent', 'update', {
+              window.gtag('consent', 'update', {
                 ad_storage: 'denied',
                 ad_user_data: 'denied',
                 ad_personalization: 'denied',
@@ -50,7 +50,7 @@ export function GoogleTag() {
               });
             }
           } catch (e) {}
-          gtag('config', '${GA_ID}', { anonymize_ip: true, send_page_view: false });
+          window.gtag('config', '${GA_MEASUREMENT_ID}', { anonymize_ip: true, send_page_view: false });
         `}
       </Script>
       <Script

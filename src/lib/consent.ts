@@ -1,5 +1,3 @@
-import { applyConsentToGtag } from "@/lib/ga-config";
-
 export const CONSENT_STORAGE_KEY = "pa-consent-v1";
 export const CONSENT_UPDATED_EVENT = "pa-consent-updated";
 export const CONSENT_SETTINGS_EVENT = "pa-open-consent-settings";
@@ -55,7 +53,6 @@ export function hasAdvertisingConsent(): boolean {
 }
 
 export function applyGoogleConsent(choices: ConsentChoices) {
-  applyConsentToGtag(choices);
   window.dispatchEvent(new CustomEvent(CONSENT_UPDATED_EVENT, { detail: choices }));
 }
 

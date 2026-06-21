@@ -1,23 +1,23 @@
 import Script from "next/script";
+import { GA_MEASUREMENT_ID } from "@/lib/ga-config";
 
 const ADSENSE_CLIENT = "ca-pub-2873608919569451";
 
 export function GoogleTag() {
   return (
     <>
-      <Script id="google-consent-default" strategy="beforeInteractive">
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics-config" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag(){window.dataLayer.push(arguments);}
           window.gtag = gtag;
-          gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied',
-            'functionality_storage': 'granted',
-            'security_storage': 'granted',
-            'wait_for_update': 500
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}', {
+            anonymize_ip: true
           });
         `}
       </Script>

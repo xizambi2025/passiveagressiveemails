@@ -1,25 +1,34 @@
+import type { ConsentChoices } from "@/lib/consent";
+
 export const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_ID || "G-CT7B0TSPMM";
 
-export function waitForGtag(maxMs = 5000): Promise<void> {
-  return new Promise((resolve) => {
-    const started = Date.now();
+export const GA_SCRIPT_ID = "google-gtag-script";
 
-    const check = () => {
-      if (typeof window !== "undefined" && typeof window.gtag === "function") {
-        resolve();
-        return;
-      }
+export function ensureGtagStub() {
+  if (typeof window === "undefined") return;
 
-      if (Date.now() - started >= maxMs) {
-        resolve();
-        return;
-      }
-
-      window.setTimeout(check, 50);
+  window.dataLayer = window.dataLayer || [];
+  if (!window.gtag) {
+    window.gtag = (...args: unknown[]) => {
+      window.dataLayer!.push(args);
     };
+  }
+}
 
-    check();
+export function applyConsentToGtag(choices: ConsentChoices) {
+  if (typeof window === "undefined") return;
+
+  ensureGtagStub();
+
+  const allowAds = choices.advertising && !choices.saleOptOut;
+  const allowAnalytics = choices.analytics && !choices.saleOptOut;
+
+  window.gtag!("consent", "update", {
+    ad_storage: allowAds ? "granted" : "denied",
+    ad_user_data: allowAds ? "granted" : "denied",
+    ad_personalization: allowAds ? "granted" : "denied",
+    analytics_storage: allowAnalytics ? "granted" : "denied",
   });
 }
 
@@ -35,13 +44,53 @@ export function sendAnalyticsPageView() {
   });
 }
 
-export async function sendAnalyticsPageViewWithRetry(retries = 5) {
-  for (let attempt = 0; attempt < retries; attempt += 1) {
-    await waitForGtag();
-    if (window.gtag) {
-      sendAnalyticsPageView();
-      return;
-    }
-    await new Promise((resolve) => window.setTimeout(resolve, 150 * (attempt + 1)));
+let scriptLoadPromise: Promise<boolean> | null = null;
+
+export function loadGtagScript(): Promise<boolean> {
+  if (typeof document === "undefined") return Promise.resolve(false);
+
+  ensureGtagStub();
+
+  const existing = document.getElementById(GA_SCRIPT_ID) as HTMLScriptElement | null;
+  if (existing?.dataset.loaded === "true") {
+    return Promise.resolve(true);
   }
+
+  if (scriptLoadPromise) return scriptLoadPromise;
+
+  scriptLoadPromise = new Promise((resolve) => {
+    const script = existing ?? document.createElement("script");
+    script.id = GA_SCRIPT_ID;
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+
+    const finish = (loaded: boolean) => {
+      script.dataset.loaded = loaded ? "true" : "false";
+      scriptLoadPromise = null;
+      resolve(loaded);
+    };
+
+    script.onload = () => finish(true);
+    script.onerror = () => finish(false);
+
+    if (!existing) {
+      document.head.appendChild(script);
+    }
+  });
+
+  return scriptLoadPromise;
+}
+
+export async function activateAnalytics(choices: ConsentChoices) {
+  const allowAnalytics = choices.analytics && !choices.saleOptOut;
+  if (!allowAnalytics) return false;
+
+  applyConsentToGtag(choices);
+
+  const loaded = await loadGtagScript();
+  if (!loaded || !window.gtag) return false;
+
+  window.gtag("js", new Date());
+  sendAnalyticsPageView();
+  return true;
 }

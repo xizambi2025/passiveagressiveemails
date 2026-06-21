@@ -1,4 +1,4 @@
-import { sendAnalyticsPageViewWithRetry } from "@/lib/ga-config";
+import { applyConsentToGtag } from "@/lib/ga-config";
 
 export const CONSENT_STORAGE_KEY = "pa-consent-v1";
 export const CONSENT_UPDATED_EVENT = "pa-consent-updated";
@@ -54,23 +54,8 @@ export function hasAdvertisingConsent(): boolean {
   return consent.advertising && !consent.saleOptOut;
 }
 
-export async function applyGoogleConsent(choices: ConsentChoices) {
-  if (typeof window === "undefined" || !window.gtag) return;
-
-  const allowAds = choices.advertising && !choices.saleOptOut;
-  const allowAnalytics = choices.analytics && !choices.saleOptOut;
-
-  window.gtag("consent", "update", {
-    ad_storage: allowAds ? "granted" : "denied",
-    ad_user_data: allowAds ? "granted" : "denied",
-    ad_personalization: allowAds ? "granted" : "denied",
-    analytics_storage: allowAnalytics ? "granted" : "denied",
-  });
-
-  if (allowAnalytics) {
-    await sendAnalyticsPageViewWithRetry();
-  }
-
+export function applyGoogleConsent(choices: ConsentChoices) {
+  applyConsentToGtag(choices);
   window.dispatchEvent(new CustomEvent(CONSENT_UPDATED_EVENT, { detail: choices }));
 }
 

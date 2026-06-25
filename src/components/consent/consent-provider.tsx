@@ -14,11 +14,8 @@ import { COOKIE_CONSENT_COPY, DEFAULT_LOCALE, isLocale, localizedPath, type Loca
 import {
   acceptAllConsent,
   applyGoogleConsent,
-  CONSENT_DO_NOT_SELL_EVENT,
   CONSENT_SETTINGS_EVENT,
   createConsentChoices,
-  doNotSellConsent,
-  hasGlobalPrivacyControl,
   loadConsent,
   rejectNonEssentialConsent,
   saveConsent,
@@ -29,7 +26,6 @@ import Link from "next/link";
 type ConsentContextValue = {
   choices: ConsentChoices | null;
   openSettings: () => void;
-  optOutOfSale: () => void;
 };
 
 const ConsentContext = createContext<ConsentContextValue | null>(null);
@@ -71,7 +67,6 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
   const [showBanner, setShowBanner] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [draftAnalytics, setDraftAnalytics] = useState(true);
-  const [draftAdvertising, setDraftAdvertising] = useState(true);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -84,14 +79,6 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
       return;
     }
 
-    if (hasGlobalPrivacyControl()) {
-      const gpcChoices = doNotSellConsent();
-      setChoices(gpcChoices);
-      saveConsent(gpcChoices);
-      applyGoogleConsent(gpcChoices);
-      return;
-    }
-
     setShowBanner(true);
   }, []);
 
@@ -99,29 +86,18 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
     const openSettings = () => {
       const current = loadConsent();
       setDraftAnalytics(current?.analytics ?? false);
-      setDraftAdvertising(current?.advertising ?? false);
       setShowSettings(true);
       setShowBanner(false);
     };
 
-    const handleDoNotSell = () => {
-      persistAndApply(doNotSellConsent(), setChoices, setShowBanner, setShowSettings);
-    };
-
     window.addEventListener(CONSENT_SETTINGS_EVENT, openSettings);
-    window.addEventListener(CONSENT_DO_NOT_SELL_EVENT, handleDoNotSell);
     return () => {
       window.removeEventListener(CONSENT_SETTINGS_EVENT, openSettings);
-      window.removeEventListener(CONSENT_DO_NOT_SELL_EVENT, handleDoNotSell);
     };
   }, []);
 
   const openSettings = useCallback(() => {
     window.dispatchEvent(new Event(CONSENT_SETTINGS_EVENT));
-  }, []);
-
-  const optOutOfSale = useCallback(() => {
-    window.dispatchEvent(new Event(CONSENT_DO_NOT_SELL_EVENT));
   }, []);
 
   const handleAcceptAll = () => {
@@ -134,23 +110,19 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
 
   const handleSaveCustom = () => {
     persistAndApply(
-      createConsentChoices(draftAnalytics, draftAdvertising, false),
+      createConsentChoices(draftAnalytics),
       setChoices,
       setShowBanner,
       setShowSettings,
     );
   };
 
-  const handleDoNotSellFromBanner = () => {
-    persistAndApply(doNotSellConsent(), setChoices, setShowBanner, setShowSettings);
-  };
-
   if (!mounted) {
-    return <ConsentContext.Provider value={{ choices, openSettings, optOutOfSale }}>{children}</ConsentContext.Provider>;
+    return <ConsentContext.Provider value={{ choices, openSettings }}>{children}</ConsentContext.Provider>;
   }
 
   return (
-    <ConsentContext.Provider value={{ choices, openSettings, optOutOfSale }}>
+    <ConsentContext.Provider value={{ choices, openSettings }}>
       {children}
 
       {(showBanner || showSettings) && (
@@ -185,18 +157,6 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
                     <span className="block text-xs text-muted-foreground mt-1">{copy.analyticsDescription}</span>
                   </span>
                 </label>
-                <label className="flex items-start gap-3 rounded-lg border border-border p-4">
-                  <input
-                    type="checkbox"
-                    checked={draftAdvertising}
-                    onChange={(e) => setDraftAdvertising(e.target.checked)}
-                    className="mt-1"
-                  />
-                  <span>
-                    <span className="block text-sm font-medium">{copy.advertisingLabel}</span>
-                    <span className="block text-xs text-muted-foreground mt-1">{copy.advertisingDescription}</span>
-                  </span>
-                </label>
                 <div className="flex flex-wrap gap-2 pt-1">
                   <Button onClick={handleSaveCustom}>{copy.savePreferences}</Button>
                   <Button
@@ -225,14 +185,6 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
                   <Link href={localizedPath(locale, "/privacy")} className="underline hover:text-foreground">
                     {copy.privacyLink}
                   </Link>
-                  {" · "}
-                  <button
-                    type="button"
-                    onClick={handleDoNotSellFromBanner}
-                    className="underline hover:text-foreground"
-                  >
-                    {copy.doNotSell}
-                  </button>
                 </p>
               </div>
             )}

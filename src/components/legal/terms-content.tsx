@@ -66,9 +66,9 @@ export function TermsContent({ locale }: { locale?: Locale }) {
           </section>
 
           <section>
-            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Advertising and Affiliate Links</h2>
+            <h2 className="text-xl font-heading font-bold text-foreground mb-3">Affiliate Links</h2>
             <p>
-              This site displays advertisements and contains affiliate links to third-party products and services. These help cover the costs of running the service and keeping it free for all users. Clicking on affiliate links may take you to external websites with their own terms, privacy policies, and cookie practices. We are not responsible for the content or practices of these third-party sites. The presence of ads and affiliate links implies no cost to the user for using PassiveAggressiveEmails.com.
+              This site may contain affiliate links to third-party products and services. These help cover the costs of running the service and keeping it free for all users. Clicking on affiliate links may take you to external websites with their own terms, privacy policies, and cookie practices. We are not responsible for the content or practices of these third-party sites. The presence of affiliate links implies no cost to the user for using PassiveAggressiveEmails.com.
             </p>
           </section>
 

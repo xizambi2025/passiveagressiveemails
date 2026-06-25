@@ -21,7 +21,7 @@ export function PrivacyContent({ locale }: { locale?: Locale }) {
           <section>
             <h2 className="text-xl font-heading font-bold text-foreground mb-3">Overview</h2>
             <p>
-              PassiveAggressiveEmails.com (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) respects your privacy. This policy explains what information we collect, how we use it, your choices regarding cookies and advertising, and your rights under applicable privacy laws including the GDPR (European Union/EEA/UK) and the CCPA/CPRA (California).
+              PassiveAggressiveEmails.com (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) respects your privacy. This policy explains what information we collect, how we use it, your choices regarding cookies, and your rights under applicable privacy laws including the GDPR (European Union/EEA/UK) and the CCPA/CPRA (California).
             </p>
           </section>
 
@@ -48,10 +48,9 @@ export function PrivacyContent({ locale }: { locale?: Locale }) {
             </p>
             <ul className="list-disc list-inside space-y-1 mb-4">
               <li><strong className="text-foreground">Analytics cookies</strong> — Google Analytics to understand how our site is used</li>
-              <li><strong className="text-foreground">Advertising cookies</strong> — Google AdSense to display ads and measure ad performance</li>
             </ul>
             <p className="mb-2">
-              You can manage your preferences at any time using <strong className="text-foreground">Cookie Settings</strong> in the site footer. We implement Google Consent Mode v2 so that analytics and advertising tags respect your choices.
+              You can manage your preferences at any time using <strong className="text-foreground">Cookie Settings</strong> in the site footer.
             </p>
             <p>
               This site also contains affiliate links to third-party products and services. When you navigate to external sites through these links, those sites may set their own cookies and track your activity according to their own privacy policies.
@@ -72,20 +71,9 @@ export function PrivacyContent({ locale }: { locale?: Locale }) {
                 </a>
                 .
               </li>
-              <li>
-                <strong className="text-foreground">Google AdSense</strong> — display advertising. Google and its partners may use cookies to serve ads based on your visits to this and other sites. Learn more at{" "}
-                <a href="https://policies.google.com/technologies/ads" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
-                  How Google uses cookies in advertising
-                </a>
-                . Manage ad personalization at{" "}
-                <a href="https://adssettings.google.com" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
-                  Google Ads Settings
-                </a>
-                .
-              </li>
               <li>AI services — custom email generation</li>
               <li>Vercel — hosting and infrastructure</li>
-              <li>Affiliate and advertising partners — display ads and affiliate programs</li>
+              <li>Affiliate partners — third-party product or service links</li>
             </ul>
           </section>
 
@@ -93,7 +81,7 @@ export function PrivacyContent({ locale }: { locale?: Locale }) {
             <h2 className="text-xl font-heading font-bold text-foreground mb-3">Legal Bases for Processing (GDPR)</h2>
             <p className="mb-2">If you are in the European Economic Area, United Kingdom, or Switzerland, we process personal data on the following bases:</p>
             <ul className="list-disc list-inside space-y-1">
-              <li><strong className="text-foreground">Consent</strong> — for analytics and advertising cookies (Google Analytics and Google AdSense)</li>
+              <li><strong className="text-foreground">Consent</strong> — for analytics cookies (Google Analytics)</li>
               <li><strong className="text-foreground">Legitimate interests</strong> — for site security, fraud prevention, and improving our service, balanced against your rights</li>
               <li><strong className="text-foreground">Contractual necessity</strong> — to provide the email generation service you request</li>
             </ul>
@@ -123,14 +111,11 @@ export function PrivacyContent({ locale }: { locale?: Locale }) {
             <ul className="list-disc list-inside space-y-1 mb-4">
               <li><strong className="text-foreground">Right to know</strong> — what personal information we collect, use, and disclose</li>
               <li><strong className="text-foreground">Right to delete</strong> — request deletion of personal information we hold about you</li>
-              <li><strong className="text-foreground">Right to opt out of sale or sharing</strong> — we use Google Analytics and Google AdSense, which may involve &ldquo;sharing&rdquo; of device and usage data for cross-context behavioral advertising under CPRA</li>
+              <li><strong className="text-foreground">Right to opt out of sale or sharing</strong> — we do not sell personal information for monetary consideration and do not use display ad services</li>
               <li><strong className="text-foreground">Right to non-discrimination</strong> — we will not discriminate against you for exercising your privacy rights</li>
             </ul>
-            <p className="mb-2">
-              <strong className="text-foreground">Do Not Sell or Share My Personal Information:</strong> Use the link in our site footer or cookie banner to opt out. We honor the Global Privacy Control (GPC) signal where supported by your browser.
-            </p>
             <p>
-              We do not sell personal information for monetary consideration. We may share data with advertising and analytics partners as described above. California residents may contact hi@PassiveAggressiveEmails.com to submit a verifiable consumer request.
+              We do not sell personal information for monetary consideration. California residents may contact hi@PassiveAggressiveEmails.com to submit a verifiable consumer request.
             </p>
           </section>
 

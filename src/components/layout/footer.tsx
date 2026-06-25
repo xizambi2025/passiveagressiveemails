@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DEFAULT_LOCALE, COOKIE_CONSENT_COPY, LAYOUT_COPY, isLocale, localizedPath, type Locale } from "@/lib/i18n";
-import { openConsentSettings, triggerDoNotSell } from "@/lib/consent";
+import { openConsentSettings } from "@/lib/consent";
 
 const footerColumns = [
   {
@@ -97,13 +97,6 @@ export function Footer() {
                 className="underline-offset-4 hover:text-foreground hover:underline"
               >
                 {cookieCopy.cookieSettings}
-              </button>
-              <button
-                type="button"
-                onClick={triggerDoNotSell}
-                className="underline-offset-4 hover:text-foreground hover:underline"
-              >
-                {cookieCopy.doNotSell}
               </button>
             </div>
           </div>

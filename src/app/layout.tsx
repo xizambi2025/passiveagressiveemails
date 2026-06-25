@@ -7,7 +7,6 @@ import { Footer } from "@/components/layout/footer";
 import { ConsentProvider } from "@/components/consent/consent-provider";
 import { GoogleTag } from "@/components/analytics/google-tag";
 import { AnalyticsPageView } from "@/components/analytics/analytics-page-view";
-import { AdSidebars } from "@/components/ads/ad-sidebars";
 import { JsonLd, organizationSchema } from "@/components/seo/json-ld";
 import "./globals.css";
 
@@ -53,9 +52,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  other: {
-    "google-adsense-account": "ca-pub-2873608919569451",
-  },
 };
 
 export const viewport: Viewport = {
@@ -85,9 +81,7 @@ export default function RootLayout({
             <TooltipProvider>
               <JsonLd data={organizationSchema()} />
               <Header />
-              <AdSidebars>
-                {children}
-              </AdSidebars>
+              {children}
               <Footer />
             </TooltipProvider>
           </ConsentProvider>

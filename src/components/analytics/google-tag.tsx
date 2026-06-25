@@ -1,8 +1,6 @@
 import Script from "next/script";
 import { GA_MEASUREMENT_ID } from "@/lib/ga-config";
 
-const ADSENSE_CLIENT = "ca-pub-2873608919569451";
-
 export function GoogleTag() {
   return (
     <>
@@ -21,11 +19,6 @@ export function GoogleTag() {
           });
         `}
       </Script>
-      <Script
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
     </>
   );
 }

@@ -38,6 +38,10 @@ OPENROUTER_API_KEY=your-openrouter-api-key
 OPENROUTER_MODEL=openai/gpt-4o-mini
 NEXT_PUBLIC_GA_ID=your-google-analytics-id
 NEXT_PUBLIC_SITE_URL=https://www.passiveaggressiveemails.com
+
+# Rate limiting (required in production — use Upstash Redis or Vercel KV)
+UPSTASH_REDIS_REST_URL=your-upstash-redis-url
+UPSTASH_REDIS_REST_TOKEN=your-upstash-redis-token
 ```
 
 ### Development
@@ -67,7 +71,8 @@ This project is optimized for Vercel deployment.
 1. Push to a Git repository
 2. Import the project in Vercel
 3. Set environment variables in Vercel dashboard
-4. Deploy
+4. Connect [Upstash Redis](https://vercel.com/integrations/upstash) or Vercel KV for IP rate limiting (5 generations/hour)
+5. Deploy
 
 ### Key Vercel Settings
 

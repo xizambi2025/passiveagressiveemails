@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { generateEmail } from "@/lib/ai";
 import { generateLocalEmail } from "@/lib/generator";
 import { DEFAULT_LOCALE, isLocale, type Locale } from "@/lib/i18n";
+import { checkGenerateRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export async function POST(request: NextRequest) {
   let body: {
@@ -38,9 +39,33 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const ip = getClientIp(request);
+    const { success, remaining, reset } = await checkGenerateRateLimit(ip);
+
+    if (!success) {
+      const retryAfter = Math.max(1, Math.ceil((reset - Date.now()) / 1000));
+      return NextResponse.json(
+        { error: "Rate limit exceeded", retryAfter },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": String(retryAfter),
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": String(Math.ceil(reset / 1000)),
+          },
+        },
+      );
+    }
+
     const email = await generateEmail({ recipient, situation, tone, length, locale });
 
-    return NextResponse.json(email);
+    return NextResponse.json(email, {
+      headers: {
+        "X-RateLimit-Remaining": String(remaining),
+        "X-RateLimit-Reset": String(Math.ceil(reset / 1000)),
+      },
+    });
+
   } catch (error) {
     console.error("Generation error:", error);
 

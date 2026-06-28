@@ -495,6 +495,7 @@ export const GENERATOR_COPY: Record<
     lengths: Record<"short" | "medium" | "long", string>;
     loading: string;
     generate: string;
+    rateLimitError: string;
     recipients: Record<string, string>;
     situations: string[];
   }
@@ -511,6 +512,7 @@ export const GENERATOR_COPY: Record<
     lengths: { short: "short", medium: "medium", long: "long" },
     loading: "Crafting passive aggression...",
     generate: "Generate Email",
+    rateLimitError: "You've reached the limit of 5 generations per hour. Please try again later.",
     recipients: {
       manager: "Manager",
       client: "Client",
@@ -549,6 +551,7 @@ export const GENERATOR_COPY: Record<
     lengths: { short: "curto", medium: "médio", long: "longo" },
     loading: "A criar agressividade subtil...",
     generate: "Gerar Email",
+    rateLimitError: "Atingiu o limite de 5 gerações por hora. Tente novamente mais tarde.",
     recipients: {
       manager: "Chefia",
       client: "Cliente",
@@ -587,6 +590,7 @@ export const GENERATOR_COPY: Record<
     lengths: { short: "court", medium: "moyen", long: "long" },
     loading: "Rédaction du sous-texte...",
     generate: "Générer l'e-mail",
+    rateLimitError: "Vous avez atteint la limite de 5 générations par heure. Réessayez plus tard.",
     recipients: {
       manager: "Manager",
       client: "Client",
@@ -625,6 +629,7 @@ export const GENERATOR_COPY: Record<
     lengths: { short: "corto", medium: "medio", long: "largo" },
     loading: "Redactando agresividad sutil...",
     generate: "Generar Email",
+    rateLimitError: "Has alcanzado el límite de 5 generaciones por hora. Inténtalo de nuevo más tarde.",
     recipients: {
       manager: "Jefe",
       client: "Cliente",

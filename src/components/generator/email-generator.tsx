@@ -111,6 +111,7 @@ export function EmailGenerator({ locale = DEFAULT_LOCALE }: { locale?: Locale })
   const [tone, setTone] = useState(4);
   const [length, setLength] = useState<"short" | "medium" | "long">("medium");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<GeneratedResult | null>(null);
 
   const isCustom = situation === "custom";
@@ -120,6 +121,7 @@ export function EmailGenerator({ locale = DEFAULT_LOCALE }: { locale?: Locale })
     if (!recipient || !effectiveSituation) return;
     setLoading(true);
     setResult(null);
+    setError(null);
 
     try {
       const response = await fetch("/api/generate", {
@@ -133,6 +135,11 @@ export function EmailGenerator({ locale = DEFAULT_LOCALE }: { locale?: Locale })
           locale,
         }),
       });
+
+      if (response.status === 429) {
+        setError(copy.rateLimitError);
+        return;
+      }
 
       if (!response.ok) throw new Error("Generation failed");
 
@@ -254,6 +261,12 @@ export function EmailGenerator({ locale = DEFAULT_LOCALE }: { locale?: Locale })
               ))}
             </div>
           </div>
+
+          {error && (
+            <p className="text-sm text-destructive text-center" role="alert">
+              {error}
+            </p>
+          )}
 
           <Button
             onClick={handleGenerate}
